@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
+import { bool, func, node } from "prop-types";
+
 import { BackdropModal } from "./backdrop-modal";
 
 function Modal({
@@ -50,6 +52,12 @@ function Modal({
       </dialog>
     </BackdropModal>
   );
+}
+
+Modal.propTypes = {
+  open: bool,
+  onClose: func,
+  children: node,
 }
 
 export { Modal };
