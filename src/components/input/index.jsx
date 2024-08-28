@@ -15,14 +15,14 @@ function Input({ label, placeholder, errorMessage }) {
     <div className="flex flex-col w-full">
       <label
         htmlFor={label}
-        className="font-medium text-[16px] text-[#1a1a1a]"
+        className="font-medium text-[16px] text-social-black"
       >
         {label}
       </label>
       <div
         className={`
-          py-[20px] px-4 my-2 bg-[#fafafa] flex items-center justify-between gap-x-4 rounded
-          ${containsError ? 'border-[1px] border-solid border-[#FF6347] text-[#FF6347]' : 'border-[1px] border-solid border-[#059A00] text-[#059A00]'}
+          py-[20px] px-4 my-2 bg-social-white flex items-center justify-between gap-x-4 rounded
+          ${containsError ? 'border-[1px] border-solid border-social-red text-social-red' : 'border-[1px] border-solid border-social-brand text-social-brand'}
         `}
         onClick={() => handleInputClick()}
       >
@@ -30,14 +30,14 @@ function Input({ label, placeholder, errorMessage }) {
           type="text"
           id={label}
           placeholder={placeholder}
-          className="outline-none placeholder:text-[#afafaf] bg-[#fafafa] placeholder:font-regular placeholder:text-[16px] w-full"
+          className="outline-none placeholder:text-social-gray bg-social-white placeholder:font-regular placeholder:text-[16px] w-full"
           ref={inputReference}
           onClick={event => event.stopPropagation()}
           aria-label={label}
         />
         {containsError && (
           <X
-            className="text-[#FF6347]"
+            className="text-social-red"
             size={23}
             aria-hidden="true"
           />
@@ -51,7 +51,7 @@ function Input({ label, placeholder, errorMessage }) {
         )}
       </div>
       {containsError && (
-        <span className="text-[#FF6347] font-regular text-[16px]">{errorMessage}</span>
+        <span className="text-social-red font-regular text-[16px]">{errorMessage}</span>
       )}
     </div>
   );

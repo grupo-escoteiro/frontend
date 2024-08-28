@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "light-social-brand": "#E2F0E1",
+        "light-social-blue": "#5F9EA0",
+        "social-brand": "#059A00",
+        "social-white": "#FAFAFA",
+        "social-red": "#FF6347",
+        "social-gray": "#AFAFAF",
+        "social-black": "#1A1A1A",
+      },
+    },
   },
   plugins: [],
 }

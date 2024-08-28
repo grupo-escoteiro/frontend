@@ -7,8 +7,8 @@ function Button({ variant }) {
         <button
             type="button"
             className={`
-                rounded font-bold text-[16px] uppercase text-[#fff] py-[10px] px-[75px] inline-flex gap-x-[10px]
-                ${variant === 'green' ? 'bg-[#059A00]' : 'bg-[#FF6347]'}
+                rounded font-bold text-[16px] uppercase text-social-white py-[10px] px-[75px] inline-flex gap-x-[10px]
+                ${variant === 'green' ? 'bg-social-brand' : 'bg-social-red'}
             `}
         >
             { variant !== 'green' && (
