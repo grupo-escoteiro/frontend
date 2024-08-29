@@ -2,23 +2,28 @@ function Header() {
     return (
         <header className="w-full h-[156px] bg-[#E2F0E1]">
             <div className="px-[188px] py-[28px] flex justify-between items-center">
-                <div className="flex gap-[16px] items-center">
+                <figure 
+                    className="flex gap-[16px] items-center"
+                    title="Voltar à home"
+                    ariaLabel="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
+                >
                     <img
                         className="w-[95px] h-[98px]"
                         src="./src/img/logoterrasaudade.svg" 
-                        alt="Logo do grupo escoteiro terra da saudade"
+                        alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
                     />
-                    <p className="text-base">
-                        Grupo <span className="text-[#059A00] font-medium">Escoteiro</span> Terra Da <br></br>Saudade - 05/SP
-                    </p>
-                </div>
+                    <caption className="text-left max-w-[180px]">
+                        Grupo <strong className="text-[#059A00]">Escoteiro</strong> Terra Da Saudade - 05/SP
+                    </caption>
+                </figure>
                 <menu className="flex justify-end">
                     <ul className="flex gap-[16px]">
                         <li>
                             <a 
                                 className="no-underline text-[#059A00] font-medium"
                                 href="#" 
-                                alt="Link da página Home"
+                                target="_self"
+                                rel="Home"
                             >
                                 Home
                             </a>
@@ -27,7 +32,8 @@ function Header() {
                             <a
                                 className="no-underline"
                                 href="#"
-                                alt="Link da página Ramos"
+                                target="_self"
+                                rel="Ramos"
                             >
                                 Ramos
                             </a>
@@ -36,7 +42,8 @@ function Header() {
                             <a
                                 className="no-underline"
                                 href="#"
-                                alt="Link da página de Galeria"
+                                target="_self"
+                                alt="Galeria"
                             >
                                 Galeria
                             </a>
@@ -45,7 +52,8 @@ function Header() {
                             <a
                                 className="no-underline"
                                 href="#"
-                                alt="Link da página de Nossas Atividades"
+                                target="_self"
+                                alt="Nossas Atividades"
                             >
                                 Nossas atividades
                             </a>
@@ -54,7 +62,8 @@ function Header() {
                             <a
                                 className="no-underline"
                                 href="#"
-                                alt="Link da página de Login"
+                                target="_self"
+                                alt="Login"
                             >
                                 Login
                             </a>
