@@ -23,7 +23,7 @@ function Header() {
                                 className="no-underline text-[#059A00] font-medium"
                                 href="#" 
                                 target="_self"
-                                rel="Home"
+                                rel="next noopener noreferrer follow"
                             >
                                 Home
                             </a>
@@ -33,7 +33,7 @@ function Header() {
                                 className="no-underline"
                                 href="#"
                                 target="_self"
-                                rel="Ramos"
+                                rel="next noopener noreferrer follow"
                             >
                                 Ramos
                             </a>
@@ -43,7 +43,7 @@ function Header() {
                                 className="no-underline"
                                 href="#"
                                 target="_self"
-                                alt="Galeria"
+                                rel="next noopener noreferrer follow"
                             >
                                 Galeria
                             </a>
@@ -53,7 +53,7 @@ function Header() {
                                 className="no-underline"
                                 href="#"
                                 target="_self"
-                                alt="Nossas Atividades"
+                                rel="next noopener noreferrer follow"
                             >
                                 Nossas atividades
                             </a>
@@ -63,7 +63,7 @@ function Header() {
                                 className="no-underline"
                                 href="#"
                                 target="_self"
-                                alt="Login"
+                                rel="next noopener noreferrer follow"
                             >
                                 Login
                             </a>
