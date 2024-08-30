@@ -1,32 +1,30 @@
+import logo from '../../../public/logo.svg';
+import { AnimatedLink } from './components/AnimatedLink';
+
 function Header() {
     return (
-        <header className="w-full h-[156px] bg-[#E2F0E1]">
-            <div className="px-[188px] py-[28px] flex justify-between items-center">
-                <figure 
-                    className="flex gap-[16px] items-center"
+        <header className="w-full bg-light-social-brand">
+            <div className="px-48 py-7 flex justify-between items-center">
+                <figure
+                    className="flex gap-4 items-center cursor-pointer"
                     title="Voltar à home"
-                    ariaLabel="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
+                    aria-label="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
                 >
                     <img
-                        className="w-[95px] h-[98px]"
-                        src="./src/img/logoterrasaudade.svg" 
+                        className="w-[95px] h-[95px]"
+                        src={logo}
                         alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
                     />
-                    <caption className="text-left max-w-[180px]">
-                        Grupo <strong className="text-[#059A00]">Escoteiro</strong> Terra Da Saudade - 05/SP
+                    <caption className="text-left max-w-44">
+                        Grupo
+                        <strong className="text-social-brand">Escoteiro</strong>
+                        Terra Da Saudade - 05/SP
                     </caption>
                 </figure>
-                <menu className="flex justify-end">
-                    <ul className="flex gap-[16px]">
+                <menu>
+                    <ul className="flex gap-4">
                         <li>
-                            <a 
-                                className="no-underline text-[#059A00] font-medium"
-                                href="#" 
-                                target="_self"
-                                rel="next noopener noreferrer follow"
-                            >
-                                Home
-                            </a>
+                            <AnimatedLink text={"Home"} />
                         </li>
                         <li>
                             <a
