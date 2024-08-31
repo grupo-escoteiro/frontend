@@ -1,6 +1,18 @@
 # Projeto Integrador
 
+## Sumário
+
+1. [Configuração De Ambiente](#environment-configuration)
+  - [Instalação do Nodejs](#nodejs-instalation)
+  - [Como puxar o repositório para o meu computador?](#how-to-pull)
+2. [Baixando e configurando ESLint](#make-eslint-configurations)
+3. [Boas práticas do trabalho com git](#good-practices)
+
+<a id="environment-configuration"></a>
+
 ## Configurações De Ambiente
+
+<a id="nodejs-instalation"></a>
 
 ### Instalação do Nodejs
 
@@ -34,6 +46,8 @@ a versão do Node.js, então siga para os próximos passos. Caso contrário, pul
         nvm install --lts
       ```
 
+<a id="how-to-pull"></a>
+
 ### Como puxar o repositório para o meu computador?
 
 1. Para trazer o repositório do GitHub para o seu computador, execute um dos seguintes comandos (o mais comum é p HTTPS, mas se souber o que está fazendo, pode executar qualquer um dos outros):
@@ -57,6 +71,8 @@ a versão do Node.js, então siga para os próximos passos. Caso contrário, pul
       npm run dev # Este comando irá rodar o ambiente de desenvolvimento onde você poderá ver suas alterações em tempo real
     ```
 
+<a id="make-eslint-configurations"></a>
+
 ### Baixando e configurando o ESLint
 
 1. Inicialmente se faz necessário instalar uma extensão chamada `ESLint`. Para isso, procurem a aba de extensões (ou usem o atalho `ctrl+x`). Daí, pesquisem por `ESLint` e irá aparecer a extensão abaixo. Instale-a e vá para o próximo passo.
@@ -72,8 +88,9 @@ a versão do Node.js, então siga para os próximos passos. Caso contrário, pul
 
 ![Comandos de configuração do ESLint](./docs/eslint/eslint-configurations.png)
 
+<a id="good-practices"></a>
 
-## Boas práticas
+## Boas práticas do trabalho com git
 
 Quando se trabalha em um repostiório de código compartilhado utilizando Git, existem algumas práticas que são interessante de se seguir. Segue uma lista do que sempre (ou quase sempre) deve ser feito antes de iniciar qualquer desenvolvimento.
 
