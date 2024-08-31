@@ -2,6 +2,8 @@
 
 ## Configurações De Ambiente
 
+### Instalação do Nodejs
+
 1. Verifique se você possue o `Node.js` instalado executando o seguinte comando: `node --version`. Se o comando não retornar
 a versão do Node.js, então siga para os próximos passos. Caso contrário, pule para a próxima sessão.
 2. Instale o Node.js no seu computador seguindo o passo a passo abaixo que corresponde ao seu sistema operacional.
@@ -31,7 +33,10 @@ a versão do Node.js, então siga para os próximos passos. Caso contrário, pul
         sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
         nvm install --lts
       ```
-4. Agora, para trazer o repositório do GitHub para o seu computador, execute um dos seguintes comandos (o mais comum é p HTTPS, mas se souber o que está fazendo, pode executar qualquer um dos outros):
+
+### Como puxar o repositório para o meu computador?
+
+1. Para trazer o repositório do GitHub para o seu computador, execute um dos seguintes comandos (o mais comum é p HTTPS, mas se souber o que está fazendo, pode executar qualquer um dos outros):
     - HTTPS
         ```bash
           git clone https://github.com/Interdisciplinary-Project/Frontend.git
@@ -44,13 +49,29 @@ a versão do Node.js, então siga para os próximos passos. Caso contrário, pul
         ```bash
           gh repo clone Interdisciplinary-Project/Frontend
         ```
-5. Agora, execute os seguintes comandos para configurar o seu ambiente de desenvolvimento:
+2. Agora, execute os seguintes comandos para configurar o seu ambiente de desenvolvimento:
     ```bash
       cd Frontend # Este comando irá entrar dentro da pasta do projeto
       npm i # Este comando irá instalar todas as dependências necessárias para rodar o projeto
       code . # Este comando só deverá ser usado se você estiver usando o Visual Studio Code como Editor de Código Fonte
       npm run dev # Este comando irá rodar o ambiente de desenvolvimento onde você poderá ver suas alterações em tempo real
     ```
+
+### Baixando e configurando o ESLint
+
+1. Inicialmente se faz necessário instalar uma extensão chamada `ESLint`. Para isso, procurem a aba de extensões (ou usem o atalho `ctrl+x`). Daí, pesquisem por `ESLint` e irá aparecer a extensão abaixo. Instale-a e vá para o próximo passo.
+
+![Imagem da extensão ESLint](./docs/eslint/eslint-extension.png)
+
+2. Agora, com a extensão já instalada, você deve abrir o JSON de configurações do VSCode. Para isso, use o atalho `ctrl+shift+p`. Irá aparecer a seguinte barra de pesquisa:
+
+![Paleta de comandos do VSCode](./docs/eslint/command-pallete.png)
+
+3. Agora, pesquise `Preferences: Open User Settings (JSON)` e tecle `Enter`.
+4. Dentro do par de {} que irá ter neste arquivo (caso ele não tenha nenhuma configuração previamente preenchida), insira os comandos abaixo
+
+![Comandos de configuração do ESLint](./docs/eslint/eslint-configurations.png)
+
 
 ## Boas práticas
 
@@ -66,13 +87,13 @@ Quando se trabalha em um repostiório de código compartilhado utilizando Git, e
         git push origin ESCREVA_AQUI_O_NOME_DA_SUA_BRANCH
       ```
   - Vá até o seu GitHub, no repositório Frontend, e clique no botão verde de `Compare & Pull Request`.
-    ![Imagem de exemplo do botão de Pull Request](./docs/pr-first-step.png)
+    ![Imagem de exemplo do botão de Pull Request](./docs/good-practices/pr-first-step.png)
   - Confira se a sua branch está na direita e na esquerda está a branch main
-    ![Imagem de exemplo para o segundo passo do PR](./docs/pr-second-step.png)
+    ![Imagem de exemplo para o segundo passo do PR](./docs/good-practices/pr-second-step.png)
   - Clique no botão de `Create Pull Request`
-    ![Imagem de exemplo para o terceiro passo do PR](./docs/pr-third-step.png)
+    ![Imagem de exemplo para o terceiro passo do PR](./docs/good-practices/pr-third-step.png)
   - Ao fim, você chegará nesta tela. Não faça mais nada e avise alguém para revisar o código (pelo WhatsApp mesmo) e fazer o merge do seu código com a branch principal
-    ![Imagem de exemplo para o passo final do PR](./docs/pr-final-step.png)
+    ![Imagem de exemplo para o passo final do PR](./docs/good-practices/pr-final-step.png)
 2. Sempre que finalizar uma tarefa e for iniciar a próxima tarefa garanta que a sua branch main esteja atualizada e jamais crie novas branchs de desenvolvimento a partir de qualquer outra branch que não seja a main. Assim, após a criação do seu `Pull Request`, execute os seguintes passos:
     ```bash
       git switch main
