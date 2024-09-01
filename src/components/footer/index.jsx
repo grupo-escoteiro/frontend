@@ -2,14 +2,14 @@ import logo from '../../../public/logo.svg';
 
 function Footer() {
     return (
-        <footer className="w-full h-[234px] bg-light-social-brand">
+        <footer className="w-full py-4 bg-light-social-brand">
             <figure 
                 className="flex gap-12 items-center cursor-pointer px-48 pt-16"
                 title="Voltar à home"
                 aria-label="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
             >
                 <img
-                    className="w-[95px] h-[95px]"
+                    className="w-24 h-24"
                     src={logo}
                     alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
                 />
