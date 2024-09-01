@@ -15,6 +15,9 @@ export default {
         "social-gray": "#AFAFAF",
         "social-black": "#1A1A1A",
       },
+      boxShadow: {
+        default: '2px 4px 10px 0 rgba(26, 26, 26, 0.25)',
+      },
     },
   },
   plugins: [],
