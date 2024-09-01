@@ -3,8 +3,8 @@
 ## Sumário
 
 1. [Configuração De Ambiente](#environment-configuration)
-  - [Instalação do Nodejs](#nodejs-instalation)
-  - [Como puxar o repositório para o meu computador?](#how-to-pull)
+    - [Instalação do Nodejs](#nodejs-instalation)
+    - [Como puxar o repositório para o meu computador?](#how-to-pull)
 2. [Baixando e configurando ESLint](#make-eslint-configurations)
 3. [Boas práticas do trabalho com git](#good-practices)
 
