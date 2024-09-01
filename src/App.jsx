@@ -1,9 +1,9 @@
-import { Footer } from "./components/footer"
+import { Cards } from "./components/cards"
 
 function App() {
   return (
     <>
-      <Footer />
+      <Cards />
     </>
   )
 }
