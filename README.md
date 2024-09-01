@@ -6,7 +6,8 @@
     - [Instalação do Nodejs](#nodejs-instalation)
     - [Como puxar o repositório para o meu computador?](#how-to-pull)
 2. [Baixando e configurando ESLint](#make-eslint-configurations)
-3. [Boas práticas do trabalho com git](#good-practices)
+3. [Como fazer o deploy](#deploy)
+4. [Boas práticas do trabalho com git](#good-practices)
 
 <a id="environment-configuration"></a>
 
@@ -87,6 +88,18 @@ a versão do Node.js, então siga para os próximos passos. Caso contrário, pul
 4. Dentro do par de {} que irá ter neste arquivo (caso ele não tenha nenhuma configuração previamente preenchida), insira os comandos abaixo
 
 ![Comandos de configuração do ESLint](./docs/eslint/eslint-configurations.png)
+
+<a id="deploy"></a>
+
+## Como fazer o deploy
+
+Para realizar o deploy, basta executar o seguinte comando:
+
+```bash
+npm run deploy
+```
+
+Esse comando irá executar o linting, o build e o deploy. Assim, somente o código mais atualizado irá subir para produção
 
 <a id="good-practices"></a>
 
