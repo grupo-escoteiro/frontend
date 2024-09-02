@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "run-s install:extensions start",
+    "deploy": "run-s lint build firebase",
     "build": "vite build",
+    "start": "vite",
     "lint": "eslint .",
+    "firebase": "firebase deploy",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
-    "firebase": "firebase deploy",
-    "deploy": "run-s lint build firebase"
+    "install:extensions": "code --install-extension dbaeumer.vscode-eslint"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
