@@ -1,9 +1,9 @@
-import { arrayOf, func, number, node, shape } from 'prop-types';
+import { arrayOf, func, number, node, shape, bool } from 'prop-types';
 import { Box } from '../box';
 
-function Dropdown({ itemsList }) {
+function Dropdown({ visible = false, itemsList }) {
   return (
-    <Box className="p-4">
+    <Box className={`p-4 ${visible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}>
       <nav>
         <ul className='flex flex-col gap-y-6'>
           {itemsList && itemsList.map(item => {
@@ -27,6 +27,7 @@ function Dropdown({ itemsList }) {
 }
 
 Dropdown.propTypes = {
+  visible: bool,
   itemsList: arrayOf(
     shape({
       id: number.isRequired,
