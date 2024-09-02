@@ -21,7 +21,7 @@ function Header() {
                         Terra Da Saudade - 05/SP
                     </caption>
                 </figure>
-                <menu>
+                <nav>
                     <ul className="flex gap-4">
                         <li>
                             <AnimatedLink text={"Home"} />
@@ -67,7 +67,7 @@ function Header() {
                             </a>
                         </li>
                     </ul>
-                </menu>
+                </nav>
             </div>
         </header>
     );
