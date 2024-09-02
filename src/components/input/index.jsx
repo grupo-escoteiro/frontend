@@ -22,7 +22,10 @@ function Input({ label, placeholder, errorMessage }) {
       <div
         className={`
           py-[20px] px-4 my-2 bg-social-white flex items-center justify-between gap-x-4 rounded
-          ${containsError ? 'border-[1px] border-solid border-social-red text-social-red' : 'border-[1px] border-solid border-social-brand text-social-brand'}
+          ${containsError
+            ? 'border-[1px] border-solid border-social-red text-social-red'
+            : 'border-[1px] border-solid border-social-brand text-social-brand'
+          }
         `}
         onClick={() => handleInputClick()}
       >
@@ -30,7 +33,10 @@ function Input({ label, placeholder, errorMessage }) {
           type="text"
           id={label}
           placeholder={placeholder}
-          className="outline-none placeholder:text-social-gray bg-social-white placeholder:font-regular placeholder:text-[16px] w-full"
+          className={`
+            outline-none placeholder:text-social-gray bg-social-white
+            placeholder:font-regular placeholder:text-[16px] w-full
+          `}
           ref={inputReference}
           onClick={event => event.stopPropagation()}
           aria-label={label}
@@ -61,6 +67,6 @@ Input.propTypes = {
   label: string,
   placeholder: string,
   errorMessage: string,
-}
+};
 
 export { Input };

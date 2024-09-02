@@ -1,4 +1,4 @@
-import { node, string } from "prop-types";
+import { node, string } from 'prop-types';
 
 function Container({ children, className }) {
   return (
@@ -16,6 +16,6 @@ function Container({ children, className }) {
 Container.propTypes = {
   children: node.isRequired,
   className: string
-}
+};
 
 export { Container };

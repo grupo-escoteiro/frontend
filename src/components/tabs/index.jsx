@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { arrayOf, string, node } from "prop-types";
-import { TabHeader } from "./components/tab-header";
+import { useState } from 'react';
+import { arrayOf, string, node } from 'prop-types';
+import { TabHeader } from './components/tab-header';
 
 function Tabs({ body, titles }) {
-  const [tab, setTab] = useState(0)
+  const [tab, setTab] = useState(0);
 
   function handleChangeTab(selectedTab) {
     const alreadyIsActive = tab === selectedTab;
@@ -29,6 +29,6 @@ function Tabs({ body, titles }) {
 Tabs.propTypes = {
   titles: arrayOf(string).isRequired,
   body: arrayOf(node).isRequired,
-}
+};
 
 export { Tabs };

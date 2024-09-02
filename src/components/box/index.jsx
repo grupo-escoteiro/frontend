@@ -1,4 +1,4 @@
-import { node, string } from "prop-types";
+import { node, string } from 'prop-types';
 
 function Box({ children, className }) {
   return (
@@ -16,6 +16,6 @@ function Box({ children, className }) {
 Box.propTypes = {
   children: node.isRequired,
   className: string
-}
+};
 
 export { Box };

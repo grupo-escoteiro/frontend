@@ -1,4 +1,4 @@
-import { arrayOf, string, func, number } from "prop-types";
+import { arrayOf, string, func, number } from 'prop-types';
 
 function TabHeader({ titles, tab, changeTab }) {
   return (
@@ -26,6 +26,6 @@ TabHeader.propTypes = {
   titles: arrayOf(string).isRequired,
   tab: number.isRequired,
   changeTab: func.isRequired,
-}
+};
 
 export { TabHeader };

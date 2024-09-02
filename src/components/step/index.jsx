@@ -1,5 +1,5 @@
-import { number } from "prop-types";
-import { useCallback } from "react";
+import { number } from 'prop-types';
+import { useCallback } from 'react';
 
 function Step({ steps, active = 1 }) {
 

@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef } from "react";
-import { bool, func, node } from "prop-types";
+import { useCallback, useEffect, useRef } from 'react';
+import { bool, func, node } from 'prop-types';
 
-import { BackdropModal } from "./backdrop-modal";
+import { BackdropModal } from './backdrop-modal';
 
 function Modal({
   children,
@@ -14,17 +14,17 @@ function Modal({
   const handleCloseModal = useCallback(e => {
     const pressedKey = e.key;
     if (pressedKey === 'Escape') onClose();
-  }, [onClose])
+  }, [onClose]);
 
   const focusCatcher = useCallback(e => {
     const { current } = modalRef;
     if (!current?.contains(e.target)) {
       current?.focus();
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    document.addEventListener('keydown', handleCloseModal)
+    document.addEventListener('keydown', handleCloseModal);
     document.addEventListener('focusin', focusCatcher);
 
     modalRef.current?.focus();
@@ -32,8 +32,8 @@ function Modal({
     return () => {
       document.removeEventListener('keydown', handleCloseModal);
       document.removeEventListener('focusin', focusCatcher);
-    }
-  }, [focusCatcher, handleCloseModal])
+    };
+  }, [focusCatcher, handleCloseModal]);
 
   return (
     <BackdropModal onClose={onClose} open={open}>
@@ -58,6 +58,6 @@ Modal.propTypes = {
   open: bool,
   onClose: func,
   children: node,
-}
+};
 
 export { Modal };

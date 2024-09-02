@@ -3,7 +3,12 @@ import { Box } from '../box';
 
 function Dropdown({ visible = false, itemsList }) {
   return (
-    <Box className={`p-4 ${visible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}>
+    <Box
+      className={`
+        p-4 transition-opacity duration-200
+        ${visible ? 'opacity-100' : 'opacity-0'}
+      `}
+    >
       <nav>
         <ul className='flex flex-col gap-y-6'>
           {itemsList && itemsList.map(item => {
@@ -35,6 +40,6 @@ Dropdown.propTypes = {
       component: node.isRequired,
     })
   ).isRequired,
-}
+};
 
-export { Dropdown }
+export { Dropdown };
