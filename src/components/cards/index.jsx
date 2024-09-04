@@ -3,12 +3,12 @@ import { SocialIcon } from 'react-social-icons';
 
 function Cards() {
   return (
-    <div className="relative w-[22rem] h-[28rem] rounded overflow-hidden shadow-default">
-      <div
+    <article className="relative w-[22rem] h-[28rem] rounded overflow-hidden shadow-default">
+      <header
         className="relative flex flex-col items-center cursor-pointer overflow-hidden w-[22rem] h-[28rem] 
                    shadow-lg transition duration-500">
         <div
-          className="absolute inset-0 z-10 transition duration-500 
+          className="absolute inset-0 z-10 transition duration-500
                      transform hover:-translate-y-28">
           <img 
             className="w-full h-full object-cover hover:brightness-50 transition duration-500 ease-in-out" 
@@ -56,8 +56,8 @@ function Cards() {
             Fui o desenvolvedor Full-Stack deste projeto, utilizando <em>React</em>, <em>C#</em> e <em>SQL-Server</em>.
           </p>
         </div>
-      </div>
-    </div>
+      </header>
+    </article>
   );
 }
   
