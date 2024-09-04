@@ -22,6 +22,6 @@ BackdropModal.propTypes = {
   onClose: func,
   open: bool,
   children: node,
-}
+};
 
 export { BackdropModal };

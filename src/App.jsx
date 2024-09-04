@@ -1,11 +1,11 @@
-import { Cards } from "./components/cards"
+import { Cards } from '../src/components/cards';
 
 function App() {
   return (
     <>
       <Cards />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

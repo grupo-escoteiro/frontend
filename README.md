@@ -6,7 +6,8 @@
     - [Instalação do Nodejs](#nodejs-instalation)
     - [Como puxar o repositório para o meu computador?](#how-to-pull)
 2. [Baixando e configurando ESLint](#make-eslint-configurations)
-3. [Boas práticas do trabalho com git](#good-practices)
+3. [Como fazer o deploy](#deploy)
+4. [Boas práticas do trabalho com git](#good-practices)
 
 <a id="environment-configuration"></a>
 
@@ -75,18 +76,51 @@ a versão do Node.js, então siga para os próximos passos. Caso contrário, pul
 
 ### Baixando e configurando o ESLint
 
+#### Observação
+
+Caso não queira instalar manualmente, rodar o projeto com o comando `npm run dev`
+que a extensão será instalada automaticamente e o projeto já será rodado para
+você começar a desenvolver. Caso queira realizar a instalação manual vá para
+a próxima sessão. Após a instalação da extensão, vá para a sessão [Configurações do ESLint](#eslint-configuration)
+
+Caso haja algum problema ao executar o comando `npm run dev`, siga os seguintes passos:
+
+1. Execute `npm run build`. Se nenhum problema acontecer, execute `npm run start`. Caso
+algum erro aconteça, vá para o próximo passo.
+2. Neste momento, você deve ir para a branch main com `git switch main` e executar um
+`git pull origin main`. Após isso, vá novamente para o passo número 1. Se mesmo assim
+o problema persistir, entre em contato com o líder do projeto.
+
+### Instalação manual
+
 1. Inicialmente se faz necessário instalar uma extensão chamada `ESLint`. Para isso, procurem a aba de extensões (ou usem o atalho `ctrl+x`). Daí, pesquisem por `ESLint` e irá aparecer a extensão abaixo. Instale-a e vá para o próximo passo.
 
 ![Imagem da extensão ESLint](./docs/eslint/eslint-extension.png)
 
-2. Agora, com a extensão já instalada, você deve abrir o JSON de configurações do VSCode. Para isso, use o atalho `ctrl+shift+p`. Irá aparecer a seguinte barra de pesquisa:
+<a id="eslint-configuration"></a>
+
+### Configurações do ESLint
+
+1. Agora, com a extensão já instalada, você deve abrir o JSON de configurações do VSCode. Para isso, use o atalho `ctrl+shift+p`. Irá aparecer a seguinte barra de pesquisa:
 
 ![Paleta de comandos do VSCode](./docs/eslint/command-pallete.png)
 
-3. Agora, pesquise `Preferences: Open User Settings (JSON)` e tecle `Enter`.
-4. Dentro do par de {} que irá ter neste arquivo (caso ele não tenha nenhuma configuração previamente preenchida), insira os comandos abaixo
+2. Agora, pesquise `Preferences: Open User Settings (JSON)` e tecle `Enter`.
+3. Dentro do par de {} que irá ter neste arquivo (caso ele não tenha nenhuma configuração previamente preenchida), insira os comandos abaixo
 
 ![Comandos de configuração do ESLint](./docs/eslint/eslint-configurations.png)
+
+<a id="deploy"></a>
+
+## Como fazer o deploy
+
+Para realizar o deploy, basta executar o seguinte comando:
+
+```bash
+npm run deploy
+```
+
+Esse comando irá executar o linting, o build e o deploy. Assim, somente o código mais atualizado irá subir para produção
 
 <a id="good-practices"></a>
 

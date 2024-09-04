@@ -4,18 +4,25 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "run-s install:extensions start",
+    "deploy": "run-s lint build firebase",
     "build": "vite build",
+    "start": "vite",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "firebase": "firebase deploy",
+    "lint:fix": "eslint . --fix",
+    "preview": "vite preview",
+    "install:extensions": "code --install-extension dbaeumer.vscode-eslint"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "firebase": "^10.13.0",
     "firebase-tools": "^13.15.4",
     "lucide-react": "^0.436.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-social-icons": "^6.18.0",
     "sonner": "^1.5.0"
   },
   "devDependencies": {
@@ -29,6 +36,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1"
