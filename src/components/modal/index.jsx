@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { bool, func, node } from 'prop-types';
 
-import { BackdropModal } from './backdrop-modal';
+import { BackdropModal } from './backdrop';
 
 function Modal({
   children,
@@ -13,8 +13,8 @@ function Modal({
 
   const handleCloseModal = useCallback(e => {
     const pressedKey = e.key;
-    if (pressedKey === 'Escape') onClose();
-  }, [onClose]);
+    if (pressedKey === 'Escape' && open) onClose();
+  }, [onClose, open]);
 
   const focusCatcher = useCallback(e => {
     const { current } = modalRef;
@@ -36,7 +36,10 @@ function Modal({
   }, [focusCatcher, handleCloseModal]);
 
   return (
-    <BackdropModal onClose={onClose} open={open}>
+    <BackdropModal
+      onClose={onClose}
+      open={open}
+    >
       <dialog
         onClick={e => e.stopPropagation()}
         aria-label=""
