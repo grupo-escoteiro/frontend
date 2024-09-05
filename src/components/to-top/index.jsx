@@ -23,14 +23,11 @@ function ToTop() {
   }
 
   useEffect(() => {
-    // Adiciona o evento de scroll e resize
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
 
-    // Atualiza a altura da viewport ao montar
     setViewportHeight(window.innerHeight);
 
-    // Remove os eventos ao desmontar o componente
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
