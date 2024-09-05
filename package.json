@@ -15,6 +15,7 @@
     "install:extensions": "code --install-extension dbaeumer.vscode-eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "3.9.0",
     "dotenv": "^16.4.5",
     "firebase": "^10.13.0",
     "firebase-tools": "^13.15.4",
@@ -22,6 +23,8 @@
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "7.53.0",
+    "react-router-dom": "6.26.1",
     "react-social-icons": "^6.18.0",
     "sonner": "^1.5.0"
   },

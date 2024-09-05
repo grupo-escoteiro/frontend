@@ -15,56 +15,43 @@ function Header() {
             src={logo}
             alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
           />
-          <caption className="text-left max-w-44">
+          <figcaption className="text-left max-w-44">
             Grupo
             <strong className="text-social-brand">Escoteiro</strong>
               Terra Da Saudade - 05/SP
-          </caption>
+          </figcaption>
         </figure>
         <nav>
           <ul className="flex gap-4">
             <li>
-              <AnimatedLink text={'Home'} />
+              <AnimatedLink
+                text={'Home'}
+                to="/"
+              />
             </li>
             <li>
-              <a
-                className="no-underline"
-                href="#"
-                target="_self"
-                rel="next noopener noreferrer follow"
-              >
-                Ramos
-              </a>
+              <AnimatedLink
+                to="/ramos"
+                text={'Ramos'}
+              />
             </li>
             <li>
-              <a
-                className="no-underline"
-                href="#"
-                target="_self"
-                rel="next noopener noreferrer follow"
-              >
-                Galeria
-              </a>
+              <AnimatedLink
+                to="/galeria"
+                text={'Galeria'}
+              />
             </li>
             <li>
-              <a
-                className="no-underline"
+              <AnimatedLink
                 href="#"
-                target="_self"
-                rel="next noopener noreferrer follow"
-              >
-                Nossas atividades
-              </a>
+                text={'Nossas atividades'}
+              />
             </li>
             <li>
-              <a
-                className="no-underline"
-                href="#"
-                target="_self"
-                rel="next noopener noreferrer follow"
-              >
-                Login
-              </a>
+              <AnimatedLink
+                to="/autenticacao/login"
+                text={'Login'}
+              />
             </li>
           </ul>
         </nav>

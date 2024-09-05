@@ -18,9 +18,9 @@ function Footer() {
           Lado a lado, desafios viram oportunidades e a esperança se torna ação.
           Somos parte de algo maior, e juntos, fazemos a diferença.
         </p>
-        <caption className="text-2xl pl-20 text-left">
+        <figcaption className="text-2xl pl-20 text-left">
           Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
-        </caption>
+        </figcaption>
       </figure>
       <div className="w-full text-center pt-8">
         <small className="text-social-gray">&copy; Todos direitos reservados</small>
