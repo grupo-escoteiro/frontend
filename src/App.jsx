@@ -1,7 +1,11 @@
-import { DefaultRouters } from './routers';
+import { DefaultRouters } from './routers/index';
 
 function App() {
-  return <DefaultRouters />;
+  return (
+    <>
+      <DefaultRouters />
+    </>
+  );
 }
 
 export default App;

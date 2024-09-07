@@ -43,12 +43,6 @@ function Header() {
             </li>
             <li>
               <AnimatedLink
-                href="#"
-                text={'Nossas atividades'}
-              />
-            </li>
-            <li>
-              <AnimatedLink
                 to="/autenticacao/login"
                 text={'Login'}
               />

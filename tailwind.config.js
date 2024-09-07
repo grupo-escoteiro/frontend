@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         'light-social-brand': '#E2F0E1',
-        'light-social-blue': '#5F9EA0',
+        'light-social-blue': '#bcd6d7',
         'social-brand': '#059A00',
         'social-white': '#FAFAFA',
         'social-red': '#FF6347',
