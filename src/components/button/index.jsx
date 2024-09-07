@@ -2,26 +2,27 @@ import { string } from 'prop-types';
 
 import { Trash2 } from 'lucide-react';
 
-function Button({ variant }) {
+function Button({ variant, content }) {
   return (
     <button
       type="button"
       className={`
-        rounded font-bold text-[16px] uppercase text-social-white py-[10px]
-        px-[75px] inline-flex gap-x-[10px]
+        rounded font-bold text-4 uppercase text-social-white py-[10px]
+        px-[75px] inline-flex items-center justify-center min-w-64 gap-x-[10px] shadow-default
         ${variant === 'green' ? 'bg-social-brand' : 'bg-social-red'}
       `}
     >
       { variant !== 'green' && (
         <Trash2 aria-hidden="true" />
       )}
-            Texto
+      {content}
     </button>
   );
 }
 
 Button.propTypes = {
-  variant: string
+  variant: string,
+  content: string,
 };
 
 export { Button };
