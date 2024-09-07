@@ -27,6 +27,7 @@ function AccessibilityContextProvider({ children }) {
   }
 
   function speak(text) {
+    if(!('speechSynthesis' in window)) return;
     const isValidToSpeak = typeof text === 'string' && readingModeEnabled;
     if(isValidToSpeak) {
       utterance.text = text;
