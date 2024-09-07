@@ -1,7 +1,11 @@
 import imagem from '../../../../public/imagem-1.jpg';
+import ryan from '../../../../public/fotos-ryan.jpg';
+import alemao from '../../../../public/fotos-alemao.jpg';
+import jao from '../../../../public/fotos-jao.jpg';
 import { Cards } from '../../../components/cards';
 import { SectionTitle } from '../../../components/section-title';
 import { Input } from '../../../components/input';
+import { Button } from '../../../components/button';
 
 function Home() {
   function generateImagesBoard() {
@@ -68,30 +72,46 @@ function Home() {
           <SectionTitle content="Nossa equipe"/>
         </div>
         <div className="flex gap-12">
-          <Cards />
-          <Cards />
-          <Cards />
+          <Cards url={ryan} />
+          <Cards url={alemao} />
+          <Cards url={jao} />
         </div>
       </section>
-      <div className="w-full h-[580px] bg-light-social-blue pl-48">
-        <div className="py-16">
-          <SectionTitle content="Contate-nos" />
-        </div>
-        <div className="flex gap-x-12">
-          <div className="w-[525px] flex flex-col gap-6">
+      <section className="bg-light-social-blue py-16">
+        <div className="max-w-[1160px] mx-auto">
+          <SectionTitle 
+            content="Contate-nos"
+            className="mb-9"
+          />
+          <form className="grid grid-cols-2 gap-x-8 gap-y-6 box-content max-w-[1160px]">
             <Input 
               label="Nome"
               placeholder="Digite seu nome completo"
               errorMessage="Seu nome não é valido!"
             />
+            <fieldset className="flex flex-col row-span-2">
+              <label className="font-medium text-[16px] text-social-black">Mensagem</label>
+              <textarea 
+                className="my-2 rounded py-[20px] px-4 h-full
+                         placeholder:font-regular placeholder:text-[16px] placeholder:text-social-gray
+                         resize-none focus:outline-none"
+                placeholder="Digite sua mensagem"
+              >
+              </textarea>
+              <span className="text-social-red font-regular text-[16px]"></span>
+            </fieldset>
             <Input 
               label="E-mail"
               placeholder="Digite seu e-mail"
               errorMessage="Seu e-mail está incorreto!"
             />
+          </form>
+          <div className="flex justify-end w-full gap-x-5 mt-10">
+            <Button />
+            <Button variant="green" />
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
