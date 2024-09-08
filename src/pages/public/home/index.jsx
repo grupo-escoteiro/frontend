@@ -7,11 +7,11 @@ import { Faq } from '../../../components/faq';
 const faqs = [
   {
     question: 'Como posso participar?',
-    answer: 'Answer the frequently asked question in a simple sentence, a longish paragraph, or even in a list.',
+    answer: 'Basta apenas realizar o cadastro e ir pessoalmente conhecer/conversar com os chefes do grupo.',
   },
   {
     question: 'A partir de qual idade posso ser escoteiro?',
-    answer: 'Answer the frequently asked question in a simple sentence, a longish paragraph, or even in a list.',
+    answer: 'Lobinho de 6 anos até 10 anos de idade. Escoteiro de 10 anos até 15 anos de idade.',
   },
   {
     question: 'Onde os escoteiros se reunem?',
