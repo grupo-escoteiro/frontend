@@ -1,7 +1,7 @@
 import { string } from 'prop-types';
 import { SocialIcon } from 'react-social-icons';
 
-function Cards({ url }) {
+function Cards({ url, instagram, linkedin }) {
   return (
     <article className="relative w-[22rem] h-[28rem] rounded overflow-hidden shadow-default">
       <header
@@ -23,12 +23,12 @@ function Cards({ url }) {
                 className="relative grid place-items-center rounded-lg transition duration-500 
                          transform hover:-translate-y-2"
                 href="#"
-                target="_blank"
                 rel="noopener noreferrer external nofollow"
               >
                 <SocialIcon
-                  url="https://instagram.com"
-                  className="transition duration-500 transform hover:rotate-[360deg]" />
+                  url={instagram}
+                  className="transition duration-500 transform hover:rotate-[360deg]"
+                  target="_blank" />
               </a>
             </li>
             <li 
@@ -38,12 +38,12 @@ function Cards({ url }) {
                 className="relative grid place-items-center rounded-lg transition duration-500 
                          transform hover:-translate-y-2"
                 href="#"
-                target="_blank"
                 rel="noopener noreferrer external nofollow"
               >
                 <SocialIcon
-                  url="https://linkedin.com"
-                  className="transition duration-500 transform hover:rotate-[360deg]" />
+                  url={linkedin}
+                  className="transition duration-500 transform hover:rotate-[360deg]" 
+                  target="_blank"/>
               </a>
             </li>
           </ul>
@@ -63,6 +63,8 @@ function Cards({ url }) {
   
 Cards.propTypes = { 
   url: string,
+  instagram: string,
+  linkedin: string,
 };
   
 

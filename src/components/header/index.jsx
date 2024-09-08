@@ -16,9 +16,7 @@ function Header() {
             alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
           />
           <figcaption className="text-left max-w-44">
-            Grupo
-            <strong className="text-social-brand">Escoteiro</strong>
-              Terra Da Saudade - 05/SP
+            Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
           </figcaption>
         </figure>
         <nav>

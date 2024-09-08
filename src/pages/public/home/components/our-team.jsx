@@ -13,9 +13,24 @@ function OurTeam() {
           className="mb-9"
         />
         <div className="flex gap-12">
-          <Cards url={ryan} />
-          <Cards url={alemao} />
-          <Cards url={jao} />
+          <Cards 
+            url={ryan} 
+            instagram="https://www.instagram.com/ryan_carvalho06?igsh=ZnFzYTVrNjN3aG90&utm_source=qr"
+            linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
+            campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          />
+          <Cards 
+            url={alemao} 
+            instagram="https://www.instagram.com/ryan_carvalho06?igsh=ZnFzYTVrNjN3aG90&utm_source=qr"
+            linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
+            campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          />
+          <Cards 
+            url={jao} 
+            instagram="https://www.instagram.com/ryan_carvalho06?igsh=ZnFzYTVrNjN3aG90&utm_source=qr"
+            linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
+            campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          />
         </div>
       </div>
     </section>
