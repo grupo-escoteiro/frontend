@@ -5,7 +5,7 @@ function Container({ children, className }) {
     <div
       className={`
         bg-social-white rounded px-8 py-16 shadow-default max-w-6xl
-        ${className}
+        overflow-hidden ${className}
       `}
     >
       {children}
