@@ -1,35 +1,57 @@
 import { Container } from '../../../../components/container';
 import { Input } from '../../../../components/input';
 import { Flame } from 'lucide-react';
-import boxSideBackground from '../../../../../public/register-flow/box-side-background.png';
+import { Button } from '../../../../components/button';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
     <Container
       className={`
-        grid grid-cols-2 gap-x-7
+        grid grid-cols-2 gap-x-7 w-[1160px]
       `}
     >
-      <div className="text-social-white relative h-full w-full">
-        <img
-          src={boxSideBackground}
-          alt=""
-          aria-hidden={true}
-          className="absolute inset-0"
-        />
-        <div className="">
-          <p>Requisitos para uma senha forte</p>
+      <div
+        className={`
+          text-social-white h-full w-full bg-no-repeat bg-cover
+            bg-[url('../../../../../public/register-flow/box-side-background.png')]
+          `}
+      >
+        <div
+          className={`
+            bg-no-repeat bg-auto bg-[position:16px_180px] w-full h-full
+            justify-evenly flex-col py-16 px-8 flex items-center
+            bg-[url('../../../../../public/register-flow/login-image.svg')]
+          `}
+        >
+          <p className="mb-16 text-xl text-social-white font-semibold">
+            Requisitos para uma senha forte
+          </p>
+          <ul className="flex flex-col gap-y-4 max-w-80">
+            <li className="text-semibold text-[16px]">No mínimo 8 caracteres</li>
+            <li className="text-semibold text-[16px]">No mínimo 1 letra minúscula e 1 letra maiúscula</li>
+            <li className="text-semibold text-[16px]">Pelo menos um caractere especial</li>
+            <li className="text-semibold text-[16px]">No mínimo 1 caracteres numérico</li>
+          </ul>
         </div>
       </div>
-      <div>
+      <div className="py-16 px-8">
         <div className="text-center mb-9">
+          <div className="text-left">
+            <Link
+              to="/"
+              className="text-social-red font-regular"
+            >
+              Voltar
+            </Link>
+          </div>
           <h1 className="text-4xl text-social-brand font-bold mb-3">Login</h1>
-          <strong className="inline-flex items-center text-sm text-social-gray font-regular">
+          <strong className="inline-flex items-center text-sm text-social-gray font-regular gap-x-2">
             <Flame />
             Venha com a gente nesta aventura
           </strong>
         </div>
-        <form>
+        <form className="flex flex-col gap-y-6">
           <Input
             label="E-mail"
             placeholder="Insira o seu e-mail aqui"
@@ -38,6 +60,15 @@ function Login() {
             placeholder="*******"
             label="Senha"
           />
+          <fieldset className="flex justify-end gap-x-5 items-center">
+            <Link
+              to="/autenticacao/cadastrar"
+              className="uppercase font-regular text-social-brand italic underline"
+            >
+              Cadastre-se
+            </Link>
+            <Button variant="green"/>
+          </fieldset>
         </form>
       </div>
     </Container>

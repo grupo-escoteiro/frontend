@@ -4,7 +4,7 @@ function Container({ children, className }) {
   return (
     <div
       className={`
-        bg-social-white rounded px-8 py-16 shadow-default max-w-6xl
+        bg-social-white rounded shadow-default max-w-6xl
         overflow-hidden ${className}
       `}
     >
