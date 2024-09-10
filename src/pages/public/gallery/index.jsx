@@ -3,59 +3,60 @@ import { SectionTitle } from '../../../components/section-title';
 
 function Gallery() {
   return (
-    <div className="pt-12 pb-20">
+    <section className="pt-12 pb-20">
       <div className="max-w-[1160px] mx-auto">
-        <div className="pt-12 pb-14">
-          <SectionTitle content="Galeria" />
-        </div>
-        <div className="grid grid-cols-12 gap-8 items-center">
+        <SectionTitle 
+          className="pt-12 pb-14" 
+          content="Galeria" 
+        />
+        <div className="grid grid-cols-12 gap-8 items-center cursor-pointer">
           <div className="col-span-8 row-span-2">
             <img
               src={img1}
               alt="Imagem 1"
-              className="max-w-full max-h-full object-cover shadow-default"
+              className="max-w-full max-h-full object-cover shadow-default transition duration-500 hover:scale-105"
             />
           </div>
           <div className="col-span-4">
             <img
               src={img1}
               alt="Imagem 2"
-              className="max-w-full max-h-full object-cover shadow-default"
+              className="max-w-full max-h-full object-cover shadow-default transition duration-500 hover:scale-105"
             />
           </div>
           <div className="col-span-4">
             <img
               src={img1}
               alt="Imagem 3"
-              className="max-w-full max-h-full object-cover shadow-default"
+              className="max-w-full max-h-full object-cover shadow-default transition duration-500 hover:scale-105"
             />
           </div>
           <div className="col-span-4">
             <img
               src={img1}
               alt="Imagem 3"
-              className="max-w-full max-h-full object-cover shadow-default"
+              className="max-w-full max-h-full object-cover shadow-default transition duration-500 hover:scale-105"
             />
           </div>
           <div className="col-span-8 row-span-2">
             <img
               src={img1}
               alt="Imagem 5"
-              className="max-w-full max-h-full object-cover shadow-default"
+              className="max-w-full max-h-full object-cover shadow-default transition duration-500 hover:scale-105"
             />
           </div>
           <div className="col-span-4">
             <img
               src={img1}
               alt="Imagem 3"
-              className="max-w-full max-h-full object-cover shadow-default"
+              className="max-w-full max-h-full object-cover shadow-default transition duration-500 hover:scale-105"
             />
           </div>
           <div className="col-span-12">
             <img
               src={img1}
               alt="Imagem 6"
-              className="max-w-full max-h-full object-cover shadow-default"
+              className="max-w-full max-h-full object-cover shadow-default transition duration-500 hover:scale-105"
             />
           </div>
         </div>
@@ -69,7 +70,7 @@ function Gallery() {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
