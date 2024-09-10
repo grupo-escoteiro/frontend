@@ -1,17 +1,20 @@
-import { SocialIcon } from 'react-social-icons';
 import logo from '../../../public/logo.svg';
 import { AnimatedLink } from '../header/components/AnimatedLink';
+import { useState } from 'react';
 
 function Sidebar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   function Openbar() {
+    setIsOpen(!isOpen);
     document.querySelector('.sidebar').classList.toggle('translate-x-full');
   };
   
   return (
-    <div>
+    <aside>
       <div
-        className="sidebar fixed top-0 bottom-0 right-0 p-2 w-44 overflow-y-auto
-                     text-center bg-light-social-brand transition-transform duration-500 translate-x-full">
+        className={`sidebar fixed top-0 bottom-0 right-0 p-2 w-2/3 text-center bg-light-social-brand 
+                    z-10 transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="text-lg">
           <div className="p-2 mt-1 flex justify-center items-center">
             <img
@@ -20,7 +23,7 @@ function Sidebar() {
               alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
             />
           </div>
-          <nav className="flex justify-center">
+          <nav className="flex justify-center items-center">
             <ul className="flex flex-col gap-4 pt-8">
               <li>
                 <AnimatedLink
@@ -50,14 +53,22 @@ function Sidebar() {
           </nav>
         </div>
       </div>
-      <div className="fixed right-2 bottom-8">
+      <div className="fixed left-4 top-10 z-50">
         <span 
-          className="cursor-pointer hover:brightness-90 transition duration-200"
+          className="cursor-pointer transition-all ease-in-out duration-200
+                     text-4xl"
           onClick={Openbar}>
-          <SocialIcon />
+          <i
+            className={`fa-solid fa-xmark absolute transition-all duration-500
+                        ease-in-out transform ${isOpen ? 'opacity-100 scale-100 delay-200' : 
+                        'opacity-0 scale-50'}`}></i>
+          <i
+            className={`fa-solid fa-bars absolute transition-all duration-500 
+                        ease-in-out transform ${isOpen ? 'opacity-0 scale-50' : 
+                        'opacity-100 scale-100 delay-200'}`}></i>
         </span>
       </div>
-    </div>
+    </aside>
   );
 }
   
