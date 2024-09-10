@@ -3,8 +3,25 @@ import { Input } from '../../../../components/input';
 import { Flame } from 'lucide-react';
 import { Button } from '../../../../components/button';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 function Login() {
+  const {
+    // register,
+    handleSubmit
+  } = useForm({
+    resolver: zodResolver,
+    defaultValues: {
+      email: '',
+      password: '',
+    }
+  });
+
+  function handleUserLogin() {
+
+  }
+
   return (
     <Container
       className={`
@@ -28,10 +45,10 @@ function Login() {
             Requisitos para uma senha forte
           </p>
           <ul className="flex flex-col gap-y-4 max-w-80">
-            <li className="text-semibold text-[16px]">No mínimo 8 caracteres</li>
-            <li className="text-semibold text-[16px]">No mínimo 1 letra minúscula e 1 letra maiúscula</li>
-            <li className="text-semibold text-[16px]">Pelo menos um caractere especial</li>
-            <li className="text-semibold text-[16px]">No mínimo 1 caracteres numérico</li>
+            <li className="text-semibold text-lg select-none">No mínimo 8 caracteres</li>
+            <li className="text-semibold text-lg select-none">No mínimo 1 letra minúscula e 1 letra maiúscula</li>
+            <li className="text-semibold text-lg select-none">Pelo menos um caractere especial</li>
+            <li className="text-semibold text-lg select-none">No mínimo 1 caracteres numérico</li>
           </ul>
         </div>
       </div>
@@ -51,14 +68,19 @@ function Login() {
             Venha com a gente nesta aventura
           </strong>
         </div>
-        <form className="flex flex-col gap-y-6">
+        <form
+          onSubmit={handleSubmit(handleUserLogin)}
+          className="flex flex-col gap-y-6"
+        >
           <Input
             label="E-mail"
             placeholder="Insira o seu e-mail aqui"
+            errorMessage=""
           />
           <Input
             placeholder="*******"
             label="Senha"
+            errorMessage=""
           />
           <fieldset className="flex justify-end gap-x-5 items-center">
             <Link
@@ -67,7 +89,10 @@ function Login() {
             >
               Cadastre-se
             </Link>
-            <Button variant="green"/>
+            <Button
+              content="Enviar"
+              variant="green"
+            />
           </fieldset>
         </form>
       </div>

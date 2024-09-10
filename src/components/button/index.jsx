@@ -2,7 +2,7 @@ import { string } from 'prop-types';
 
 import { Trash2 } from 'lucide-react';
 
-function Button({ variant }) {
+function Button({ variant, content }) {
   return (
     <button
       type="button"
@@ -15,13 +15,14 @@ function Button({ variant }) {
       { variant !== 'green' && (
         <Trash2 aria-hidden="true" />
       )}
-            Texto
+      {content}
     </button>
   );
 }
 
 Button.propTypes = {
-  variant: string
+  variant: string,
+  content: string,
 };
 
 export { Button };

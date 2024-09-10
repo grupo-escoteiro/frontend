@@ -3,7 +3,11 @@ import { string } from 'prop-types';
 
 import { Check, X } from 'lucide-react';
 
-function Input({ label, placeholder, errorMessage }) {
+function Input({
+  label,
+  placeholder,
+  errorMessage
+}) {
   const [containsError] = useState(null);
   const inputReference = useRef(null);
 
@@ -12,7 +16,7 @@ function Input({ label, placeholder, errorMessage }) {
   }
 
   return (
-    <div className="flex flex-col w-full">
+    <fieldset className="flex flex-col w-full">
       <label
         htmlFor={label}
         className="font-medium text-[16px] text-social-black"
@@ -59,7 +63,7 @@ function Input({ label, placeholder, errorMessage }) {
       {containsError && (
         <span className="text-social-red font-regular text-[16px]">{errorMessage}</span>
       )}
-    </div>
+    </fieldset>
   );
 }
 
