@@ -11,7 +11,7 @@ function Sidebar() {
   };
   
   return (
-    <aside>
+    <aside className="hidden">
       <div
         className={`sidebar fixed top-0 bottom-0 right-0 p-2 w-2/3 text-center bg-light-social-brand 
                     z-10 transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
@@ -53,7 +53,7 @@ function Sidebar() {
           </nav>
         </div>
       </div>
-      <div className="fixed left-4 top-10 z-50">
+      <div className="absolute left-4 top-16">
         <span 
           className="cursor-pointer transition-all ease-in-out duration-200
                      text-4xl"
