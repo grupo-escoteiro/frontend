@@ -2,10 +2,16 @@ import { string } from 'prop-types';
 
 import { Trash2 } from 'lucide-react';
 
-function Button({ variant, content }) {
+function Button({
+  variant,
+  content,
+  type,
+  ...rest
+}) {
   return (
     <button
-      type="button"
+      {...rest}
+      type={type}
       className={`
         rounded font-bold text-[16px] uppercase text-social-white py-[10px]
         px-[75px] inline-flex gap-x-[10px]
@@ -23,6 +29,7 @@ function Button({ variant, content }) {
 Button.propTypes = {
   variant: string,
   content: string,
+  type: string,
 };
 
 export { Button };

@@ -1,18 +1,21 @@
-import { useRef, useState } from 'react';
-import { string } from 'prop-types';
-
+import { useRef, forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { Check, X } from 'lucide-react';
 
-function Input({
-  label,
-  placeholder,
-  errorMessage
-}) {
-  const [containsError] = useState(null);
+const InputBase = (
+  {
+    label,
+    placeholder,
+    errorMessage,
+    type = 'text',
+    ...rest
+  },
+  ref
+) => {
   const inputReference = useRef(null);
 
   function handleInputClick() {
-    inputReference.current?.focus();
+    ref.current?.focus();
   }
 
   return (
@@ -25,34 +28,38 @@ function Input({
       </label>
       <div
         className={`
-          py-[20px] px-4 my-2 bg-social-white flex items-center justify-between gap-x-4 rounded
-          ${containsError
-            ? 'border-[1px] border-solid border-social-red text-social-red'
-            : 'border-[1px] border-solid border-social-brand text-social-brand'
+          py-5 px-4 my-2 bg-social-white flex items-center justify-between gap-x-4 rounded
+          ${errorMessage === undefined
+            ? 'border border-solid border-social-gray text-social-gray'
+            : errorMessage
+              ? 'border border-solid border-social-red text-social-red'
+              : 'border border-solid border-social-brand text-social-brand'
           }
         `}
         onClick={() => handleInputClick()}
       >
         <input
-          type="text"
+          {...rest}
+          type={type}
           id={label}
           placeholder={placeholder}
           className={`
             outline-none placeholder:text-social-gray bg-social-white
             placeholder:font-regular placeholder:text-[16px] w-full
           `}
-          ref={inputReference}
+          name={rest.name}
+          ref={ref || inputReference}
           onClick={event => event.stopPropagation()}
           aria-label={label}
         />
-        {containsError && (
+        {errorMessage && (
           <X
             className="text-social-red"
             size={23}
             aria-hidden="true"
           />
         )}
-        {!containsError && (
+        {errorMessage !== undefined && !errorMessage && (
           <Check
             className="text-[#059A00]"
             size={23}
@@ -60,17 +67,21 @@ function Input({
           />
         )}
       </div>
-      {containsError && (
+      {errorMessage && (
         <span className="text-social-red font-regular text-[16px]">{errorMessage}</span>
       )}
     </fieldset>
   );
-}
+};
+
+const Input = forwardRef(InputBase);
+Input.displayName = 'Input';
 
 Input.propTypes = {
-  label: string,
-  placeholder: string,
-  errorMessage: string,
+  label: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export { Input };
