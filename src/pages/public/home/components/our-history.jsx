@@ -1,4 +1,4 @@
-import imagem from '/imagem-1.jpg';
+import imagem from '/gallery/imagem-1.jpg';
 import { SectionTitle } from '../../../../components/section-title';
 import { Link } from 'react-router-dom';
 

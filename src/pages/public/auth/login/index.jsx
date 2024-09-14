@@ -8,8 +8,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { loginFormSchema } from '../../../../helpers/login-validations-scheme.js';
 import { PasswordRule } from './components/password-rule.jsx';
 import { ELoginErrorMessages } from '../../../../helpers/enums/login-error-messages.js';
+import { useContext } from 'react';
+import { AuthContext } from '../../../../contexts/auth-context.jsx';
+import { signInWithEmailAndPasswordAsync } from '../../../../services/firebase/auth.js';
+import { toast } from 'sonner';
 
 function Login() {
+  const { userLoggedIn } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
@@ -22,8 +28,12 @@ function Login() {
     }
   });
 
-  function handleUserLogin(data) {
-    console.log(data);
+  async function handleUserLogin(data) {
+    try {
+      await signInWithEmailAndPasswordAsync(data.email, data.password);
+    } catch(error) {
+      toast.error("E-mail e/ou senha inválidos");
+    }
   }
 
   return (

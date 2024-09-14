@@ -6,7 +6,6 @@ import { Register } from '../pages/public/auth/register';
 import { Home } from '../pages/public/home';
 import { Gallery } from '../pages/public/gallery';
 import { Settings } from '../pages/privates/settings';
-import { LoginContextProvider } from '../contexts/login-context';
 import { RegisterContextProvider } from '../contexts/register-context';
 import { Ramos } from '../pages/public/ramos';
 
@@ -22,11 +21,7 @@ function DefaultRouters() {
         <Route path="/autenticacao" element={<AuthLayout />}>
           <Route
             path="login"
-            element={
-              <LoginContextProvider>
-                <Login />
-              </LoginContextProvider>
-            }
+            element={<Login />}
           />
           <Route
             path="cadastrar"
