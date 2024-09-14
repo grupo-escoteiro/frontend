@@ -45,7 +45,7 @@ const InputBase = (
           placeholder={placeholder}
           className={`
             outline-none placeholder:text-social-gray bg-social-white
-            placeholder:font-regular placeholder:text-[16px] w-full
+            placeholder:font-regular placeholder:text-sm w-full text-social-black
           `}
           name={rest.name}
           ref={ref || inputReference}
