@@ -4,7 +4,7 @@ import { AnimatedLink } from './components/AnimatedLink';
 function Header() {
   return (
     <header className="w-full bg-light-social-brand">
-      <div className="px-48 py-7 flex justify-between items-center">
+      <div className="max-w-[1160px] mx-auto py-7 flex justify-between items-center">
         <figure
           className="flex gap-4 items-center cursor-pointer"
           title="Voltar à home"

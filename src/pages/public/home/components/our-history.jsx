@@ -8,6 +8,7 @@ function OurHistory() {
     for(let i = 1; i <= 7; i++) {
       images.push(
         <img
+          key={i}
           className="w-24 h-24 rounded-[80px] cursor-pointer object-cover hover:scale-105 transition duration-500"
           title="01/08/2024"
           src={imagem}
@@ -39,21 +40,21 @@ function OurHistory() {
               <span className="text-social-brand font-semibold text-2xl">Piquinique</span> com as crianças.
             </h1>
             <p className="pl-16 text-justify">
-              is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book. It 
-              has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-              essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
-              Lorem Ipsum passages, and more recently with desktop publishing 
+              is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+              has survived not only five centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+              Lorem Ipsum passages, and more recently with desktop publishing
               software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <div className="flex justify-start items-center gap-4 px-16 pt-16">
-              <p><span className="text-social-brand font-semibold">Venha </span> 
+              <p><span className="text-social-brand font-semibold">Venha </span>
                 fazer parte desta <span className="text-social-brand font-semibold">história:</span>
               </p>
               <button
                 className="flex items-center bg-social-brand text-social-white font-semibold py-1 px-4 rounded-md
-                           shadow-lg hover:text-social-black hover:bg-transparent hover:border-social-brand 
+                           shadow-lg hover:text-social-black hover:bg-transparent hover:border-social-brand
                            border transition-colors"
                 type="button"
               >

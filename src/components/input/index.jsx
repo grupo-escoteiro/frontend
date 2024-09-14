@@ -1,4 +1,4 @@
-import { useRef, forwardRef } from 'react';
+import { useRef, forwardRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Check, X } from 'lucide-react';
 
@@ -68,7 +68,7 @@ const InputBase = (
         )}
       </div>
       {errorMessage && (
-        <span className="text-social-red font-regular text-[16px]">{errorMessage}</span>
+        <span className="text-social-red font-regular text-sm">{errorMessage}</span>
       )}
     </fieldset>
   );
