@@ -49,7 +49,7 @@ function OurContact() {
               className={`
                 my-2 rounded py-5 px-4 h-full
                 placeholder:font-regular placeholder:text-sm placeholder:text-social-gray
-                resize-none focus:outline-none
+                resize-none focus:outline-none text-social-black
                 ${!errors.content?.message
                   ? 'border border-solid border-social-gray text-social-gray'
                   : errors.content?.message
