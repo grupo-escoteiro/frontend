@@ -39,9 +39,9 @@ function Home() {
       <OurContact />
       <section className="pt-12 pb-16">
         <div className="max-w-[1160px] mx-auto">
-          <SectionTitle 
-            content="Perguntas frequentes" 
-            className="pb-14"
+          <SectionTitle
+            content="Perguntas frequentes"
+            className="mb-14"
           />
           <Faq faqs={faqs} />
         </div>
