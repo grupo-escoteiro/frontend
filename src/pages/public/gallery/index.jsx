@@ -1,13 +1,13 @@
-import img1 from '../../../../public/imagem-1.jpg';
+import img1 from '/imagem-1.jpg';
 import { SectionTitle } from '../../../components/section-title';
 
 function Gallery() {
   return (
     <section className="pt-12 pb-20">
       <div className="max-w-[1160px] mx-auto">
-        <SectionTitle 
-          className="pt-12 pb-14" 
-          content="Galeria" 
+        <SectionTitle
+          className="pt-12 pb-14"
+          content="Galeria"
         />
         <div className="grid grid-cols-12 gap-8 items-center cursor-pointer">
           <div className="col-span-8 row-span-2">
@@ -61,8 +61,8 @@ function Gallery() {
           </div>
         </div>
         <div className="flex justify-center items-center pt-14">
-          <button 
-            className="text-social-gray text-3xl transition duration-500 hover:brightness-75 hover:scale-105" 
+          <button
+            className="text-social-gray text-3xl transition duration-500 hover:brightness-75 hover:scale-105"
             id="loadMore"
             type="button"
           >

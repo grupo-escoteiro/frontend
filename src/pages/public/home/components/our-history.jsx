@@ -1,5 +1,6 @@
-import imagem from '../../../../../public/imagem-1.jpg';
+import imagem from '/imagem-1.jpg';
 import { SectionTitle } from '../../../../components/section-title';
+import { Link } from 'react-router-dom';
 
 function OurHistory() {
 
@@ -49,17 +50,23 @@ function OurHistory() {
               software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <div className="flex justify-start items-center gap-4 px-16 pt-16">
-              <p><span className="text-social-brand font-semibold">Venha </span>
-                fazer parte desta <span className="text-social-brand font-semibold">história:</span>
+              <p>
+                <span className="text-social-brand font-semibold">Venha</span>{' '}
+                fazer parte desta
+                <span className="text-social-brand font-semibold">história:</span>
               </p>
-              <button
-                className="flex items-center bg-social-brand text-social-white font-semibold py-1 px-4 rounded-md
-                           shadow-lg hover:text-social-black hover:bg-transparent hover:border-social-brand
-                           border transition-colors"
+              <Link
+                className={`
+                  flex items-center bg-social-brand text-social-white
+                  font-semibold py-1 px-4 rounded-md shadow-lg
+                  hover:text-social-black hover:bg-transparent hover:border-social-brand
+                  border transition-colors cursor-pointer
+                `}
                 type="button"
+                to={'/autenticacao/cadastrar'}
               >
-                  Cadastre-se
-              </button>
+                Cadastre-se
+              </Link>
             </div>
           </div>
         </div>
