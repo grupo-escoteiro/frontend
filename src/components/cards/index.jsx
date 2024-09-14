@@ -1,7 +1,7 @@
-import ryan from '../../../public/fotos-ryan.jpg';
+import { string } from 'prop-types';
 import { SocialIcon } from 'react-social-icons';
 
-function Cards() {
+function Cards({ url, instagram, linkedin }) {
   return (
     <article className="relative w-[22rem] h-[28rem] rounded overflow-hidden shadow-default">
       <header
@@ -12,7 +12,7 @@ function Cards() {
                      transform hover:-translate-y-28">
           <img 
             className="w-full h-full object-cover hover:brightness-50 transition duration-500 ease-in-out" 
-            src={ryan} 
+            src={url} 
             alt="Pessoa sorrindo, cabelo preto e utilizando uma camisa preta" 
           />
           <ul className="absolute flex left-1/2 -translate-x-1/2 gap-8 bottom-6 z-10">
@@ -23,12 +23,12 @@ function Cards() {
                 className="relative grid place-items-center rounded-lg transition duration-500 
                          transform hover:-translate-y-2"
                 href="#"
-                target="_blank"
                 rel="noopener noreferrer external nofollow"
               >
                 <SocialIcon
-                  url="https://instagram.com"
-                  className="transition duration-500 transform hover:rotate-[360deg]" />
+                  url={instagram}
+                  className="transition duration-500 transform hover:rotate-[360deg]"
+                  target="_blank" />
               </a>
             </li>
             <li 
@@ -38,12 +38,12 @@ function Cards() {
                 className="relative grid place-items-center rounded-lg transition duration-500 
                          transform hover:-translate-y-2"
                 href="#"
-                target="_blank"
                 rel="noopener noreferrer external nofollow"
               >
                 <SocialIcon
-                  url="https://linkedin.com"
-                  className="transition duration-500 transform hover:rotate-[360deg]" />
+                  url={linkedin}
+                  className="transition duration-500 transform hover:rotate-[360deg]" 
+                  target="_blank"/>
               </a>
             </li>
           </ul>
@@ -61,7 +61,11 @@ function Cards() {
   );
 }
   
-  
+Cards.propTypes = { 
+  url: string,
+  instagram: string,
+  linkedin: string,
+};
   
 
 export { Cards };

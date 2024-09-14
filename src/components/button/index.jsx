@@ -13,8 +13,8 @@ function Button({
       {...rest}
       type={type}
       className={`
-        rounded font-bold text-[16px] uppercase text-social-white py-[10px]
-        px-[75px] inline-flex gap-x-[10px]
+        rounded font-bold text-4 uppercase text-social-white py-[10px]
+        px-[75px] inline-flex items-center justify-center min-w-64 gap-x-[10px] shadow-default
         ${variant === 'green' ? 'bg-social-brand' : 'bg-social-red'}
       `}
     >
