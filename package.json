@@ -9,7 +9,7 @@
     "build": "vite build",
     "start": "vite",
     "lint": "eslint .",
-    "firebase": "firebase deploy --token $FIREBASE_TOKEN",
+    "firebase": "firebase deploy",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "install:extensions": "code --install-extension dbaeumer.vscode-eslint"
