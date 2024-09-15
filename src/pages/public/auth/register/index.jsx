@@ -1,7 +1,7 @@
 function Register() {
   return (
     <>
-      <h1>Register - Verificando deploy automático...</h1>
+      <h1>Register - Verificando deploy...</h1>
     </>
   );
 }
