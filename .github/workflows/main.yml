@@ -25,9 +25,7 @@ jobs:
       - name: Make build
         run: npm run build
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.FIREBASE_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT}}
-          channelId: live
-          projectId: inclusao-social-ec3b0
+      - name: make deploy
+        run: npm run deploy
+        env: 
+          FIREBASE_TOKEN: 1//0huhL9RQ-idYfCgYIARAAGBESNwF-L9IrNSZeGlVNsCzHAZvOImqBh0kayGTdap29uYiwjMCZzRjshVL-6nv_T4tm6TnW0qhRO9o
