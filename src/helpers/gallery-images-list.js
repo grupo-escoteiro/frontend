@@ -10,102 +10,102 @@ const imagesList = [
   {
     id: 1,
     url: image1,
-    alt: ""
+    alt: ''
   },
   {
     id: 2,
     url: image2,
-    alt: ""
+    alt: ''
   },
   {
     id: 3,
     url: image3,
-    alt: ""
+    alt: ''
   },
   {
     id: 4,
     url: image4,
-    alt: ""
+    alt: ''
   },
   {
     id: 5,
     url: image5,
-    alt: ""
+    alt: ''
   },
   {
     id: 6,
     url: image6,
-    alt: ""
+    alt: ''
   },
   {
     id: 7,
     url: image7,
-    alt: ""
+    alt: ''
   },
   {
     id: 8,
     url: image1,
-    alt: ""
+    alt: ''
   },
   {
     id: 9,
     url: image2,
-    alt: ""
+    alt: ''
   },
   {
     id: 10,
     url: image3,
-    alt: ""
+    alt: ''
   },
   {
     id: 11,
     url: image4,
-    alt: ""
+    alt: ''
   },
   {
     id: 12,
     url: image5,
-    alt: ""
+    alt: ''
   },
   {
     id: 13,
     url: image6,
-    alt: ""
+    alt: ''
   },
   {
     id: 14,
     url: image7,
-    alt: ""
+    alt: ''
   },
   {
     id: 15,
     url: image1,
-    alt: ""
+    alt: ''
   },
   {
     id: 16,
     url: image2,
-    alt: ""
+    alt: ''
   },
   {
     id: 17,
     url: image3,
-    alt: ""
+    alt: ''
   },
   {
     id: 18,
     url: image4,
-    alt: ""
+    alt: ''
   },
   {
     id: 19,
     url: image5,
-    alt: ""
+    alt: ''
   },
   {
     id: 20,
     url: image6,
-    alt: ""
+    alt: ''
   },
 ];
 

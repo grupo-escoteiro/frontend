@@ -13,6 +13,6 @@ const EContactUsErrorMessages = {
     invalidMinLength: 'O conteúdo deve ter pelo menos 10 caracteres',
     invalidMaxLength: 'O conteúdo deve ter no máximo 2500 caracteres'
   }
-}
+};
 
 export { EContactUsErrorMessages };

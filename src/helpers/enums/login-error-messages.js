@@ -12,6 +12,6 @@ const ELoginErrorMessages = {
     shouldContainerAtLeastOneNumber: 'Senha deve ter pelo menos um número',
     shouldContainAtLeastOneSpecialCharacter: 'Senha deve ter pelo menos um caractere especial'
   }
-}
+};
 
 export { ELoginErrorMessages };

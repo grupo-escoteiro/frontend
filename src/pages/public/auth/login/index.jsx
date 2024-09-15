@@ -8,13 +8,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { loginFormSchema } from '../../../../helpers/login-validations-scheme.js';
 import { PasswordRule } from './components/password-rule.jsx';
 import { ELoginErrorMessages } from '../../../../helpers/enums/login-error-messages.js';
-import { useContext } from 'react';
-import { AuthContext } from '../../../../contexts/auth-context.jsx';
+//import { useContext } from 'react';
+//import { AuthContext } from '../../../../contexts/auth-context.jsx';
 import { signInWithEmailAndPasswordAsync } from '../../../../services/firebase/auth.js';
 import { toast } from 'sonner';
 
 function Login() {
-  const { userLoggedIn } = useContext(AuthContext);
+  //const { userLoggedIn } = useContext(AuthContext);
 
   const {
     register,
@@ -31,14 +31,16 @@ function Login() {
   async function handleUserLogin(data) {
     try {
       await signInWithEmailAndPasswordAsync(data.email, data.password);
-    } catch(error) {
-      toast.error("E-mail e/ou senha inválidos");
+    } catch {
+      toast.error('E-mail e/ou senha inválidos');
     }
   }
 
   return (
     <Container className="grid grid-cols-2 gap-x-7 w-[1160px]">
-      <div className="text-social-white h-full w-full bg-no-repeat bg-cover bg-[url('/register-flow/box-side-background.png')]">
+      <div
+        className="text-social-white h-full w-full bg-no-repeat 
+                     bg-cover bg-[url('/register-flow/box-side-background.png')]">
         <div
           className={`
             bg-no-repeat bg-[position:25px_225px] w-full h-full justify-evenly
@@ -59,7 +61,8 @@ function Login() {
             />
             <PasswordRule
               content="Pelo menos um caractere especial"
-              hasError={errors.password?.message === ELoginErrorMessages.password.shouldContainAtLeastOneSpecialCharacter}
+              hasError={errors.password?.message === 
+                        ELoginErrorMessages.password.shouldContainAtLeastOneSpecialCharacter}
             />
             <PasswordRule
               content="No mínimo 1 caracteres numérico"
@@ -96,7 +99,12 @@ function Login() {
             name="password"
           />
           <fieldset className="flex justify-end gap-x-5 items-center">
-            <Link to="/autenticacao/cadastrar" className="uppercase font-regular text-social-brand italic underline">Cadastre-se</Link>
+            <Link
+              to="/autenticacao/cadastrar"
+              className="uppercase font-regular 
+                       text-social-brand italic underline">
+              Cadastre-se
+            </Link>
             <Button content="Enviar" variant="green" type="submit" form="login-form" />
           </fieldset>
         </form>

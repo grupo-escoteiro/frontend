@@ -3,7 +3,7 @@ import logo from '/logo.svg';
 function Footer() {
   return (
     <footer className="w-full py-4 bg-light-social-brand">
-      <div className="max-w-[1660px] mx-auto ">
+      <div className="max-w-[1160px] mx-auto ">
         <figure
           className="flex gap-12 items-center cursor-pointer px-48 pt-8"
           title="Voltar à home"

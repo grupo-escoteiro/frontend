@@ -17,7 +17,7 @@ function OurContact() {
       name: '',
       content: ''
     }
-  })
+  });
 
   function handleContactSubmit(data) {
     console.log(data);

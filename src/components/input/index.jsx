@@ -1,5 +1,6 @@
-import { useRef, forwardRef, useState } from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
+import { useRef, forwardRef } from 'react';
+import { string } from 'prop-types';
 import { Check, X } from 'lucide-react';
 
 const InputBase = (
@@ -78,10 +79,10 @@ const Input = forwardRef(InputBase);
 Input.displayName = 'Input';
 
 Input.propTypes = {
-  label: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  errorMessage: PropTypes.string,
-  type: PropTypes.string,
+  label: string.isRequired,
+  placeholder: string.isRequired,
+  errorMessage: string,
+  type: string,
 };
 
 export { Input };

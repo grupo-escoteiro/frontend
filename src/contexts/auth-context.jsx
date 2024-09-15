@@ -1,7 +1,7 @@
 import { node } from 'prop-types';
 import { createContext, useState, useEffect } from 'react';
-import { auth } from "../services/firebase/index.js";
-import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../services/firebase/index.js';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export const AuthContext = createContext({});
 
@@ -21,7 +21,7 @@ function AuthContextProvider({ children }) {
       setCurrentUser({ ...user });
 
       const isEmail = user.providerData.some(
-        (provider) => provider.providerId === "password"
+        (provider) => provider.providerId === 'password'
       );
 
       setIsEmailUser(isEmail);
@@ -37,12 +37,13 @@ function AuthContextProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{
-      userLoggedIn,
-      isEmailUser,
-      currentUser,
-      setCurrentUser
-    }}>
+    <AuthContext.Provider
+      value={{
+        userLoggedIn,
+        isEmailUser,
+        currentUser,
+        setCurrentUser
+      }}>
       {!loading && children}
     </AuthContext.Provider>
   );

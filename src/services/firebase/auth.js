@@ -1,11 +1,11 @@
-import { auth } from "./index.js";
+import { auth } from './index.js';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   sendEmailVerification,
   updatePassword,
-} from "firebase/auth";
+} from 'firebase/auth';
 
 async function createUserWithEmailAndPasswordAsync (email, password) {
   return await createUserWithEmailAndPassword(auth, email, password);

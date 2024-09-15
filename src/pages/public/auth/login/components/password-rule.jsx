@@ -1,4 +1,4 @@
-import { bool, string, any } from "prop-types";
+import { bool, string } from 'prop-types';
 
 function PasswordRule({ content, hasError }) {
   return (
