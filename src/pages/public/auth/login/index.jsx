@@ -74,7 +74,13 @@ function Login() {
       <div className="py-16 px-8">
         <div className="text-center mb-9">
           <div className="text-left">
-            <Link to="/" className="text-social-red font-regular">Voltar</Link>
+            <Link
+              to="/"
+              className="text-social-red font-regular transition duration-500 
+                           hover:brightness-50"
+            >
+              Voltar
+            </Link>
           </div>
           <h1 className="text-4xl text-social-brand font-bold mb-3">Login</h1>
           <strong className="inline-flex items-center text-sm text-social-gray font-regular gap-x-2">
@@ -102,7 +108,9 @@ function Login() {
             <Link
               to="/autenticacao/cadastrar"
               className="uppercase font-regular 
-                       text-social-brand italic underline">
+                       text-social-brand italic underline transition 
+                       duration-500 hover:brightness-50"
+            >
               Cadastre-se
             </Link>
             <Button content="Enviar" variant="green" type="submit" form="login-form" />
