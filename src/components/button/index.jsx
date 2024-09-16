@@ -14,7 +14,8 @@ function Button({
       type={type}
       className={`
         rounded font-bold text-4 uppercase text-social-white py-[10px]
-        px-[75px] inline-flex items-center justify-center min-w-64 gap-x-[10px] shadow-default
+        px-[75px] inline-flex items-center justify-center min-w-64 gap-x-[10px]
+        transition duration-500 hover:brightness-90 shadow-default
         ${variant === 'green' ? 'bg-social-brand' : 'bg-social-red'}
       `}
     >
