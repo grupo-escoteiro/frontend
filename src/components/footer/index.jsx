@@ -5,7 +5,7 @@ function Footer() {
     <footer className="w-full py-4 bg-light-social-brand">
       <div className="max-w-[1160px] mx-auto ">
         <figure
-          className="flex gap-12 items-center cursor-pointer px-48 pt-8"
+          className="flex gap-12 items-center cursor-pointer pt-8"
           title="Voltar à home"
           aria-label="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
         >
