@@ -20,7 +20,7 @@ const InputBase = (
   }
 
   return (
-    <fieldset className="flex flex-col w-full">
+    <fieldset className="flex flex-col">
       <label
         htmlFor={label}
         className="font-medium text-[16px] text-social-black"
