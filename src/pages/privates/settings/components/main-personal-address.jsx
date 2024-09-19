@@ -2,7 +2,7 @@ import { Input } from '../../../../components/input';
 import { Button } from '../../../../components/button';
 import { Link } from 'react-router-dom';
 
-function MainPersonalIndex() {
+function MainPersonalAddress() {
   return (
     <>
       <form className="flex flex-wrap gap-x-6 gap-y-14">
@@ -41,7 +41,6 @@ function MainPersonalIndex() {
           placeholder="Digite um Complemento"
           errorMessage="Qualquer mensagem"
         />
-
       </form>
       <div className="flex justify-end items-center gap-x-5">
         <Link className="text-social-red transition duration-500 hover:brightness-50">
@@ -57,4 +56,4 @@ function MainPersonalIndex() {
   );
 }
 
-export { MainPersonalIndex };
+export { MainPersonalAddress };

@@ -2,11 +2,18 @@ import { Container } from '../../../components/container';
 import { Header } from '../../../components/header';
 import { SectionTitle } from '../../../components/section-title';
 import { Tabs } from '../../../components/tabs';
-import { MainPersonalIndex } from './components/main-personal-index';
+import { MainPersonalAddress } from './components/main-personal-address';
 import { MainPersonalInformations } from './components/main-personal-informations';
 import { MainPersonalImage } from './components/main-personal-image';
 
 function Settings() {
+
+  const tabs = [
+    <MainPersonalInformations key="1" />,
+    <MainPersonalAddress key="2" />,
+    <MainPersonalImage key="3"/>
+  ];
+
   return (
     <>
       <Header />
@@ -46,17 +53,7 @@ function Settings() {
             <div className="border-l border-social-gray w-full">
               <Tabs
                 titles={['Principal', 'Endereço', 'Imagens']}
-                body={
-                  [
-
-                    <MainPersonalInformations key="1" />,
-                    <MainPersonalIndex key="2" />,
-                    <MainPersonalImage key="3"/>
-                  
-
-
-                  ]
-                }
+                body={ tabs }
               />
             </div>
           </Container>
