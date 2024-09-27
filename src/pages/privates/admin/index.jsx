@@ -79,7 +79,10 @@ function Admin() {
             </thead>
             <tbody>
               {currentUsers.map((user, index) => (
-                <tr key={index} className={user.status === 'Ativo' ? 'bg-green-50' : 'bg-white'}>
+                <tr 
+                  key={index} 
+                  className={user.status === 'Ativo' ? 'bg-green-50' : 'bg-white'}
+                >
                   <td className="p-3">
                     <span title={user.name}>{truncateName(user.name)}</span>
                   </td>
