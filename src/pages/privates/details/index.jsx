@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ChevronDownIcon } from 'lucide-react';
 import { SectionTitle } from '../../../components/section-title';
+import { Button } from '../../../components/button';
+import { Link } from 'react-router-dom';
 
 export default function DetailsUser() {
   const [isVolunteer, setIsVolunteer] = useState(false);
@@ -8,22 +10,16 @@ export default function DetailsUser() {
   return (
     <section className="pt-12 pb-20">
       <div className="max-w-[1160px] mx-auto">
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-between">
           <SectionTitle
             className="pt-12 pb-14 whitespace-nowrap "
             content="Dados Detalhados"
           />
-          <button
-            type="submit"
-            className="ml-[740px] rounded font-bold text-4 uppercase text-social-white py-[10px]
-      px-[75px] inline-flex items-center justify-center gap-x-[10px]
-      transition duration-500 hover:brightness-90 shadow-default
-      bg-social-brand
-    ">
-            Ativo
-          </button>
+          <Button  
+            variant="green"
+            content="Ativo"
+          />
         </div>
-
         <div className="max-w-full mx-auto p-10 bg-white shadow-lg rounded-lg">
           <div className="space-y-20 px-20">
             <section>
@@ -35,7 +31,7 @@ export default function DetailsUser() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Data de nascimento</label>
-                  <input type="text" className="mt-1 block w-full px-10 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="10/11/1980" />
+                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="10/11/1980" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700">CPF</label>
@@ -80,24 +76,35 @@ export default function DetailsUser() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Número da residência</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="300" />
+                  <input 
+                    type="number" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray text-social-black font-semibold rounded-md" 
+                    disabled="true" 
+                    defaultValue="300" 
+                  />
                 </div>
               </div>
               <div className="mt-4">
-                <label className="inline-flex items-center">
-                  <input type="checkbox" className="form-checkbox h-5 w-5 text-green-600" checked={isVolunteer} onChange={(e) => setIsVolunteer(e.target.checked)} />
-                  <span className="ml-2 text-gray-700">Voluntário</span>
-                </label>
-              </div>
+              <label className="inline-flex items-center">
+                <input 
+                  type="checkbox" 
+                  className="h-5 w-5 rounded text-[#059A00] border-gray-300 focus:ring-[#059A00]" 
+                  checked={isVolunteer} 
+                  onChange={(e) => setIsVolunteer(e.target.checked)} 
+                />
+                <span className="ml-2 text-gray-700">Voluntário</span>
+              </label>
+            </div>
+            {isVolunteer && (
               <div className="mt-4">
                 <label className="block text-sm font-medium text-gray-700">Ramo</label>
                 <div className="mt-1 relative">
-                  <select className="block  px-3 py-2 bg-gray-100 border border-gray-300 rounded-md appearance-none">
+                  <select className="block px-3 py-2 bg-social-white border border-social-gray rounded-md appearance-none">
                     <option>LOBINHO</option>
                   </select>
-
                 </div>
               </div>
+            )}
             </section>
 
             <section className='py-16'>
@@ -167,16 +174,14 @@ export default function DetailsUser() {
                 </div>
               </div>
             </section>
-
-            <div className="flex justify-end space-x-4">
-              <a className="text-social-red transition duration-500 hover:brightness-50" href="/admin">Voltar</a>
-              <button
-                type="submit"
-                className=" rounded font-bold text-4 uppercase text-social-white py-[10px]
-      px-[75px] inline-flex items-center justify-center gap-x-[10px]
-      transition duration-500 hover:brightness-90 shadow-default
-      bg-social-brand
-    ">Ativo</button>
+            <div className="flex justify-end items-center gap-x-4">
+            <Link className="text-social-red transition duration-500 hover:brightness-50">
+              Voltar
+            </Link>
+              <Button 
+                variant="green"
+                content="Atualizar"
+              />
             </div>
           </div>
         </div>
