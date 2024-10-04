@@ -1,190 +1,428 @@
+'use client';
+
 import { useState } from 'react';
-import { ChevronDownIcon } from 'lucide-react';
 import { SectionTitle } from '../../../components/section-title';
 import { Button } from '../../../components/button';
 import { Link } from 'react-router-dom';
+import { Container } from '../../../components/container';
 
 export default function DetailsUser() {
+  const [isActive, setIsActive] = useState(true);
   const [isVolunteer, setIsVolunteer] = useState(false);
+
+  const toggleStatus = () => {
+    setIsActive(!isActive);
+    if (isActive) {
+      setIsVolunteer(false);
+    }
+  };
+
+  const ramos = [
+    { id: 1, nome: 'Lobinho' },
+    { id: 2, nome: 'Junior' }
+  ];
+  
+  const estados = [
+    { sigla: 'AC', nome: 'Acre' },
+    { sigla: 'AL', nome: 'Alagoas' },
+    { sigla: 'AP', nome: 'Amapá' },
+    { sigla: 'AM', nome: 'Amazonas' },
+    { sigla: 'BA', nome: 'Bahia' },
+    { sigla: 'CE', nome: 'Ceará' },
+    { sigla: 'DF', nome: 'Distrito Federal' },
+    { sigla: 'ES', nome: 'Espírito Santo' },
+    { sigla: 'GO', nome: 'Goiás' },
+    { sigla: 'MA', nome: 'Maranhão' },
+    { sigla: 'MT', nome: 'Mato Grosso' },
+    { sigla: 'MS', nome: 'Mato Grosso do Sul' },
+    { sigla: 'MG', nome: 'Minas Gerais' },
+    { sigla: 'PA', nome: 'Pará' },
+    { sigla: 'PB', nome: 'Paraíba' },
+    { sigla: 'PR', nome: 'Paraná' },
+    { sigla: 'PE', nome: 'Pernambuco' },
+    { sigla: 'PI', nome: 'Piauí' },
+    { sigla: 'RJ', nome: 'Rio de Janeiro' },
+    { sigla: 'RN', nome: 'Rio Grande do Norte' },
+    { sigla: 'RS', nome: 'Rio Grande do Sul' },
+    { sigla: 'RO', nome: 'Rondônia' },
+    { sigla: 'RR', nome: 'Roraima' },
+    { sigla: 'SC', nome: 'Santa Catarina' },
+    { sigla: 'SP', nome: 'São Paulo' },
+    { sigla: 'SE', nome: 'Sergipe' },
+    { sigla: 'TO', nome: 'Tocantins' },
+  ];
+
+  const [ramoSelecionado, setRamoSelecionado] = useState('');
+  const [estadoSelecionado, setEstadoSelecionado] = useState('');
+
+  const handleSelectChangeRamo = (eventRamo) => {
+    setRamoSelecionado(eventRamo.target.value);
+  };
+
+  const handleSelectChange = (event) => {
+    setEstadoSelecionado(event.target.value);
+  };
 
   return (
     <section className="pt-12 pb-20">
       <div className="max-w-[1160px] mx-auto">
         <div className="flex items-center justify-between">
           <SectionTitle
-            className="pt-12 pb-14 whitespace-nowrap "
+            className="pt-12 pb-14 whitespace-nowrap"
             content="Dados Detalhados"
           />
           <Button  
-            variant="green"
-            content="Ativo"
+            variant={isActive ? 'green' : 'red'}
+            content={isActive ? 'Ativo' : 'Inativo'}
+            onClick={toggleStatus}
           />
         </div>
-        <div className="max-w-full mx-auto p-10 bg-white shadow-lg rounded-lg">
-          <div className="space-y-20 px-20">
+        <Container>
+          <div className="py-20 px-16">
             <section>
-              <h2 className="text-lg font-semibold mb-4 ">Informações pessoais</h2>
+              <h2 className="text-lg font-semibold mb-4">Informações pessoais</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Nome completo</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="LOURDES FRANCISCA" />
+                  <label className="block text-sm font-medium text-social-black">Nome completo</label>
+                  <input 
+                    type="text"
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="Lourdes Francisca" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Data de nascimento</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="10/11/1980" />
+                  <label className="block text-sm font-medium text-social-black">Data de nascimento</label>
+                  <input 
+                    type="date" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">CPF</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="111.000.222-17" />
+                  <label className="block text-sm font-medium text-social-black">CPF</label>
+                  <input 
+                    type="number" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="11100022217" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Sexo</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="MASCULINO" />
+                  <label className="block text-sm font-medium text-social-black">Sexo</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="Masculino" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Telefone</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="(16) 99884-9800" />
+                  <label className="block text-sm font-medium text-social-black">Telefone</label>
+                  <input 
+                    type="number" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
+                               font-semibold brightness-105 rounded-md"
+                    disabled
+                    defaultValue="16996289494" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">E-mail</label>
-                  <input type="email" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="LOUR@GMAIL.COM" />
+                  <label className="block text-sm font-medium text-social-black">E-mail</label>
+                  <input 
+                    type="email" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="lourdes@gmail.com" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">CEP</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="15980-000" />
+                  <label className="block text-sm font-medium text-social-black">CEP</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled
+                    defaultValue="15980-000" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Rua</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="MATHILDE BERNARDO" />
+                  <label className="block text-sm font-medium text-social-black">Rua</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled
+                    defaultValue="Mathilde Bernardo"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Bairro</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="DOBRADA" />
+                  <label className="block text-sm font-medium text-social-black">Bairro</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="São Pedro" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Cidade</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="TIOZINHO SAN" />
+                  <label className="block text-sm font-medium text-social-black">Cidade</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled
+                    defaultValue="Tiozinho San" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Estado</label>
+                  <label className="block text-sm font-medium text-social-black">Estado</label>
                   <div className="mt-1 relative">
-                    <select className="block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md appearance-none">
-                      <option>SP</option>
+                    <select
+                      className="block w-full px-3 py-2 bg-gray-100 
+                                 border border-gray-300 rounded-md appearance-none"
+                      id="estados"
+                      value={estadoSelecionado}
+                      disabled
+                      onChange={handleSelectChange}
+                    >
+                      {estados.map((estado) => 
+                        <option 
+                          key={estado.sigla} 
+                          value={estado.sigla}
+                        >
+                          {estado.nome}
+                        </option>
+                      )}
                     </select>
-                    <ChevronDownIcon className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Número da residência</label>
+                  <label className="block text-sm font-medium text-social-black">Número da residência</label>
                   <input 
                     type="number" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray text-social-black font-semibold rounded-md" 
-                    disabled="true" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
                     defaultValue="300" 
                   />
                 </div>
               </div>
               <div className="mt-4">
-              <label className="inline-flex items-center">
-                <input 
-                  type="checkbox" 
-                  className="h-5 w-5 rounded text-[#059A00] border-gray-300 focus:ring-[#059A00]" 
-                  checked={isVolunteer} 
-                  onChange={(e) => setIsVolunteer(e.target.checked)} 
-                />
-                <span className="ml-2 text-gray-700">Voluntário</span>
-              </label>
-            </div>
-            {isVolunteer && (
-              <div className="mt-4">
-                <label className="block text-sm font-medium text-gray-700">Ramo</label>
-                <div className="mt-1 relative">
-                  <select className="block px-3 py-2 bg-social-white border border-social-gray rounded-md appearance-none">
-                    <option>LOBINHO</option>
-                  </select>
-                </div>
+                <label className="inline-flex items-center">
+                  <input 
+                    type="checkbox" 
+                    className="h-5 w-5 rounded text-[#059A00] border-gray-300 focus:ring-[#059A00]" 
+                    checked={isVolunteer} 
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive}
+                  />
+                  <span className="ml-2 text-gray-700">Voluntário</span>
+                </label>
               </div>
-            )}
+              {isVolunteer && (
+                <div className="mt-4">
+                  <label className="block text-sm font-medium text-social-black">Ramo</label>
+                  <div className="mt-1 relative">
+                    <select
+                      className="block w-60 px-3 py-2 bg-gray-100 
+                                 border border-gray-300 rounded-md"
+                      id="ramos"
+                      value={ramoSelecionado}
+                      onChange={handleSelectChangeRamo}
+                      disabled={!isActive}
+                    >
+                      {ramos.map((ramo) => 
+                        <option 
+                          key={ramo.id} 
+                          value={ramo.id}
+                        >
+                          {ramo.nome}
+                        </option>
+                      )}
+                    </select>
+                  </div>
+                </div>
+              )}
             </section>
-
             <section className='py-16'>
               <h2 className="text-lg font-semibold mb-4">Informações do escoteiro</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Nome completo</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="LOURDES FRANCISCA" />
+                  <label className="block text-sm font-medium text-social-black">Nome completo</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="Lourdes Francisca" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Data de nascimento</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="10/11/1980" />
+                  <label className="block text-sm font-medium text-social-black">Data de nascimento</label>
+                  <input 
+                    type="date" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">CPF</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="111.000.222-17" />
+                  <label className="block text-sm font-medium text-social-black">CPF</label>
+                  <input 
+                    type="number" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="11100022217" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Sexo</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="MASCULINO" />
+                  <label className="block text-sm font-medium text-social-black">Sexo</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="Masculino" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Telefone</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="(16) 99884-9800" />
+                  <label className="block text-sm font-medium text-social-black">E-mail</label>
+                  <input 
+                    type="email" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="lourdes@gmail.com" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">E-mail</label>
-                  <input type="email" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="LOUR@GMAIL.COM" />
+                  <label className="block text-sm font-medium text-social-black">CEP</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled
+                    defaultValue="15980-000" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">CEP</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="15980-000" />
+                  <label className="block text-sm font-medium text-social-black">Rua</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled
+                    defaultValue="Mathilde Bernardo"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Rua</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="MATHILDE BERNARDO" />
+                  <label className="block text-sm font-medium text-social-black">Bairro</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="São Pedro" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Bairro</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="DOBRADA" />
+                  <label className="block text-sm font-medium text-social-black">Cidade</label>
+                  <input 
+                    type="text" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md"
+                    disabled
+                    defaultValue="Tiozinho San" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Cidade</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="TIOZINHO SAN" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Estado</label>
+                  <label className="block text-sm font-medium text-social-black">Estado</label>
                   <div className="mt-1 relative">
-                    <select className="block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md appearance-none">
-                      <option>SP</option>
+                    <select
+                      className="block w-full px-3 py-2 bg-gray-100 
+                                 border border-gray-300 rounded-md appearance-none"
+                      id="estados"
+                      value={estadoSelecionado}
+                      disabled
+                      onChange={handleSelectChange}
+                    >
+                      {estados.map((estado) => 
+                        <option 
+                          key={estado.sigla} 
+                          value={estado.sigla}
+                        >
+                          {estado.nome}
+                        </option>
+                      )}
                     </select>
-                    <ChevronDownIcon className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Número da residência</label>
-                  <input type="text" className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md" defaultValue="300" />
+                  <label className="block text-sm font-medium text-social-black">Número da residência</label>
+                  <input 
+                    type="number" 
+                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                               font-semibold brightness-105 rounded-md" 
+                    disabled
+                    defaultValue="300" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-social-black">Status</label>
+                  <button
+                    type="button"
+                    className={`mt-1 flex justify-center items-center w-full px-3 py-2 
+                      font-semibold transition duration-500 hover:brightness-95 rounded-md ${
+                      isActive ? 'bg-social-brand text-social-white' : 'bg-social-red text-social-white'
+                    }`}
+                    disabled
+                  >
+                    {isActive ? 'Ativo' : 'Inativo'}
+                  </button>
                 </div>
               </div>
               <div className="mt-4">
-                <label className="block text-sm font-medium text-gray-700">Ramo</label>
+                <label className="block text-sm font-medium text-social-black">Ramo</label>
                 <div className="mt-1 relative">
-                  <select className="block  px-3 py-2 bg-gray-100 border border-gray-300 rounded-md appearance-none">
-                    <option>LOBINHO</option>
+                  <select
+                    className="block w-60 px-3 py-2 bg-gray-100 
+                               border border-gray-300 rounded-md"
+                    id="ramos"
+                    value={ramoSelecionado}
+                    onChange={handleSelectChangeRamo}
+                    disabled={!isActive}
+                  >
+                    {ramos.map((ramo) => 
+                      <option 
+                        key={ramo.id} 
+                        value={ramo.id}
+                      >
+                        {ramo.nome}
+                      </option>
+                    )}
                   </select>
-
                 </div>
               </div>
             </section>
             <div className="flex justify-end items-center gap-x-4">
-            <Link className="text-social-red transition duration-500 hover:brightness-50">
-              Voltar
-            </Link>
+              <Link className="text-social-red transition duration-500 hover:brightness-50">
+                Voltar
+              </Link>
               <Button 
                 variant="green"
                 content="Atualizar"
               />
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );
