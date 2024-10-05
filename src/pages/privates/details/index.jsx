@@ -202,12 +202,12 @@ export default function DetailsUser() {
                 <label className="inline-flex items-center">
                   <input 
                     type="checkbox" 
-                    className="h-5 w-5 rounded text-[#059A00] border-gray-300 focus:ring-[#059A00]" 
+                    className="h-5 w-5 rounded text-social-brand border-social-gray focus:ring-social-brand" 
                     checked={isVolunteer} 
                     onChange={(e) => setIsVolunteer(e.target.checked)}
                     disabled={!isActive}
                   />
-                  <span className="ml-2 text-gray-700">Voluntário</span>
+                  <span className="ml-2 text-social-black">Voluntário</span>
                 </label>
               </div>
               <AnimatePresence>
@@ -218,9 +218,9 @@ export default function DetailsUser() {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Ramo</label>
+                    <label className="block text-sm font-medium text-social-black mb-1">Ramo</label>
                     <select
-                      className="block px-20 py-2 bg-white border border-gray-300 rounded-md shadow-sm 
+                      className="block px-20 py-2 bg-white border border-social-gray rounded-md shadow-sm 
                                  focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       value={ramoSelecionado}
                       onChange={handleSelectChangeRamo}
