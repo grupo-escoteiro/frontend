@@ -1,10 +1,9 @@
-'use client';
-
 import { useState } from 'react';
 import { SectionTitle } from '../../../components/section-title';
 import { Button } from '../../../components/button';
 import { Link } from 'react-router-dom';
 import { Container } from '../../../components/container';
+import { Sexo } from './components/sexo';
 
 export default function DetailsUser() {
   const [isActive, setIsActive] = useState(true);
@@ -89,7 +88,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="Lourdes Francisca" 
                   />
                 </div>
                 <div>
@@ -108,18 +106,10 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="11100022217" 
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-social-black">Sexo</label>
-                  <input 
-                    type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
-                    disabled
-                    defaultValue="Masculino" 
-                  />
+                  <Sexo />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Telefone</label>
@@ -128,7 +118,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
                                font-semibold brightness-105 rounded-md"
                     disabled
-                    defaultValue="16996289494" 
                   />
                 </div>
                 <div>
@@ -138,7 +127,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="lourdes@gmail.com" 
                   />
                 </div>
                 <div>
@@ -148,7 +136,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md"
                     disabled
-                    defaultValue="15980-000" 
                   />
                 </div>
                 <div>
@@ -158,7 +145,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md"
                     disabled
-                    defaultValue="Mathilde Bernardo"
                   />
                 </div>
                 <div>
@@ -168,7 +154,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="São Pedro" 
                   />
                 </div>
                 <div>
@@ -178,7 +163,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md"
                     disabled
-                    defaultValue="Tiozinho San" 
                   />
                 </div>
                 <div>
@@ -210,7 +194,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="300" 
                   />
                 </div>
               </div>
@@ -261,7 +244,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="Lourdes Francisca" 
                   />
                 </div>
                 <div>
@@ -280,18 +262,10 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="11100022217" 
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-social-black">Sexo</label>
-                  <input 
-                    type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
-                    disabled
-                    defaultValue="Masculino" 
-                  />
+                  <Sexo />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">E-mail</label>
@@ -300,7 +274,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="lourdes@gmail.com" 
                   />
                 </div>
                 <div>
@@ -310,7 +283,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md"
                     disabled
-                    defaultValue="15980-000" 
                   />
                 </div>
                 <div>
@@ -320,7 +292,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md"
                     disabled
-                    defaultValue="Mathilde Bernardo"
                   />
                 </div>
                 <div>
@@ -330,7 +301,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="São Pedro" 
                   />
                 </div>
                 <div>
@@ -340,7 +310,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md"
                     disabled
-                    defaultValue="Tiozinho San" 
                   />
                 </div>
                 <div>
@@ -372,7 +341,6 @@ export default function DetailsUser() {
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
                                font-semibold brightness-105 rounded-md" 
                     disabled
-                    defaultValue="300" 
                   />
                 </div>
                 <div>
