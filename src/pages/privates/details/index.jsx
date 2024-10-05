@@ -4,6 +4,7 @@ import { Button } from '../../../components/button';
 import { Link } from 'react-router-dom';
 import { Container } from '../../../components/container';
 import { Sexo } from './components/sexo';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function DetailsUser() {
   const [isActive, setIsActive] = useState(true);
@@ -209,30 +210,30 @@ export default function DetailsUser() {
                   <span className="ml-2 text-gray-700">Voluntário</span>
                 </label>
               </div>
-              {isVolunteer && (
-                <div className="mt-4">
-                  <label className="block text-sm font-medium text-social-black">Ramo</label>
-                  <div className="mt-1 relative">
+              <AnimatePresence>
+                {isVolunteer && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Ramo</label>
                     <select
-                      className="block w-60 px-3 py-2 bg-gray-100 
-                                 border border-gray-300 rounded-md"
-                      id="ramos"
+                      className="block px-20 py-2 bg-white border border-gray-300 rounded-md shadow-sm 
+                                 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       value={ramoSelecionado}
                       onChange={handleSelectChangeRamo}
-                      disabled={!isActive}
                     >
-                      {ramos.map((ramo) => 
-                        <option 
-                          key={ramo.id} 
-                          value={ramo.id}
-                        >
+                      {ramos.map((ramo) => (
+                        <option key={ramo.id} value={ramo.id}>
                           {ramo.nome}
                         </option>
-                      )}
+                      ))}
                     </select>
-                  </div>
-                </div>
-              )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </section>
             <section className='py-16'>
               <h2 className="text-lg font-semibold mb-4">Informações do escoteiro</h2>
