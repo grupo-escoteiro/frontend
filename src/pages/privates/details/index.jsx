@@ -6,15 +6,21 @@ import { Container } from '../../../components/container';
 import { Sexo } from './components/sexo';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function DetailsUser() {
+function DetailsUser() {
   const [isActive, setIsActive] = useState(true);
   const [isVolunteer, setIsVolunteer] = useState(false);
+  const [isScoutActive, setIsScoutActive] = useState(true);
 
   const toggleStatus = () => {
     setIsActive(!isActive);
+    setIsScoutActive(!isActive);
     if (isActive) {
       setIsVolunteer(false);
     }
+  };
+
+  const toggleScoutStatus = () => {
+    setIsScoutActive(!isScoutActive);
   };
 
   const ramos = [
@@ -52,15 +58,26 @@ export default function DetailsUser() {
     { sigla: 'TO', nome: 'Tocantins' },
   ];
 
-  const [ramoSelecionado, setRamoSelecionado] = useState('');
-  const [estadoSelecionado, setEstadoSelecionado] = useState('');
+  const [ramoSelecionadoAdulto, setRamoSelecionadoAdulto] = useState('');
+  const [ramoSelecionadoEscoteiro, setRamoSelecionadoEscoteiro] = useState('');
+  const [estadoSelecionadoAdulto, setEstadoSelecionadoAdulto] = useState('');
+  const [estadoSelecionadoEscoteiro, setEstadoSelecionadoEscoteiro] = useState('');
 
-  const handleSelectChangeRamo = (eventRamo) => {
-    setRamoSelecionado(eventRamo.target.value);
+
+  const handleSelectChangeRamoAdulto = (eventRamo) => {
+    setRamoSelecionadoAdulto(eventRamo.target.value);
   };
 
-  const handleSelectChange = (event) => {
-    setEstadoSelecionado(event.target.value);
+  const handleSelectChangeRamoEscoteiro = (eventRamo) => {
+    setRamoSelecionadoEscoteiro(eventRamo.target.value);
+  };
+
+  const handleSelectChangeAdulto = (event) => {
+    setEstadoSelecionadoAdulto(event.target.value);
+  };
+
+  const handleSelectChangeEscoteiro = (event) => {
+    setEstadoSelecionadoEscoteiro(event.target.value);
   };
 
   return (
@@ -87,7 +104,7 @@ export default function DetailsUser() {
                   <input 
                     type="text"
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -96,7 +113,7 @@ export default function DetailsUser() {
                   <input 
                     type="date" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled 
                   />
                 </div>
@@ -105,7 +122,7 @@ export default function DetailsUser() {
                   <input 
                     type="number" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -117,7 +134,7 @@ export default function DetailsUser() {
                   <input 
                     type="number" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled
                   />
                 </div>
@@ -126,7 +143,7 @@ export default function DetailsUser() {
                   <input 
                     type="email" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -135,7 +152,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled
                   />
                 </div>
@@ -144,7 +161,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled
                   />
                 </div>
@@ -153,7 +170,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -162,7 +179,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled
                   />
                 </div>
@@ -173,9 +190,9 @@ export default function DetailsUser() {
                       className="block w-full px-3 py-2 bg-gray-100 
                                  border border-gray-300 rounded-md appearance-none"
                       id="estados"
-                      value={estadoSelecionado}
+                      value={estadoSelecionadoAdulto}
                       disabled
-                      onChange={handleSelectChange}
+                      onChange={handleSelectChangeAdulto}
                     >
                       {estados.map((estado) => 
                         <option 
@@ -193,7 +210,7 @@ export default function DetailsUser() {
                   <input 
                     type="number" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -222,8 +239,8 @@ export default function DetailsUser() {
                     <select
                       className="block px-20 py-2 bg-white border border-social-gray rounded-md shadow-sm 
                                  focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      value={ramoSelecionado}
-                      onChange={handleSelectChangeRamo}
+                      value={ramoSelecionadoAdulto}
+                      onChange={handleSelectChangeRamoAdulto}
                     >
                       {ramos.map((ramo) => (
                         <option key={ramo.id} value={ramo.id}>
@@ -243,7 +260,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -252,7 +269,7 @@ export default function DetailsUser() {
                   <input 
                     type="date" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled 
                   />
                 </div>
@@ -261,7 +278,7 @@ export default function DetailsUser() {
                   <input 
                     type="number" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -273,7 +290,7 @@ export default function DetailsUser() {
                   <input 
                     type="email" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -282,7 +299,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled
                   />
                 </div>
@@ -291,7 +308,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled
                   />
                 </div>
@@ -300,7 +317,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -309,7 +326,7 @@ export default function DetailsUser() {
                   <input 
                     type="text" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md"
+                               font-semibold brightness-125 rounded-md"
                     disabled
                   />
                 </div>
@@ -320,9 +337,9 @@ export default function DetailsUser() {
                       className="block w-full px-3 py-2 bg-gray-100 
                                  border border-gray-300 rounded-md appearance-none"
                       id="estados"
-                      value={estadoSelecionado}
+                      value={estadoSelecionadoEscoteiro}
                       disabled
-                      onChange={handleSelectChange}
+                      onChange={handleSelectChangeEscoteiro}
                     >
                       {estados.map((estado) => 
                         <option 
@@ -340,7 +357,7 @@ export default function DetailsUser() {
                   <input 
                     type="number" 
                     className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-105 rounded-md" 
+                               font-semibold brightness-125 rounded-md" 
                     disabled
                   />
                 </div>
@@ -349,12 +366,13 @@ export default function DetailsUser() {
                   <button
                     type="button"
                     className={`mt-1 flex justify-center items-center w-full px-3 py-2 
-                      font-semibold transition duration-500 hover:brightness-95 rounded-md ${
-                      isActive ? 'bg-social-brand text-social-white' : 'bg-social-red text-social-white'
-                    }`}
-                    disabled
+                    font-semibold transition duration-500 hover:brightness-95 rounded-md ${
+                    isScoutActive ? 'bg-social-brand text-social-white' : 'bg-social-red text-social-white'
+                  }`}
+                    onClick={toggleScoutStatus}
+                    disabled={!isActive}
                   >
-                    {isActive ? 'Ativo' : 'Inativo'}
+                    {isScoutActive ? 'Ativo' : 'Inativo'}
                   </button>
                 </div>
               </div>
@@ -365,9 +383,9 @@ export default function DetailsUser() {
                     className="block w-60 px-3 py-2 bg-gray-100 
                                border border-gray-300 rounded-md"
                     id="ramos"
-                    value={ramoSelecionado}
-                    onChange={handleSelectChangeRamo}
-                    disabled={!isActive}
+                    value={ramoSelecionadoEscoteiro}
+                    onChange={handleSelectChangeRamoEscoteiro}
+                    disabled={!isActive || !isScoutActive}
                   >
                     {ramos.map((ramo) => 
                       <option 

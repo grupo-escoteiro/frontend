@@ -9,7 +9,7 @@ import { Settings } from '../pages/privates/settings';
 import { RegisterContextProvider } from '../contexts/register-context';
 import { Ramos } from '../pages/public/ramos';
 import { Admin } from '../pages/privates/admin';
-import DetailsUser from '../pages/privates/details';
+import { DetailsUser } from '../pages/privates/details';
 
 function DefaultRouters() {
   return (
