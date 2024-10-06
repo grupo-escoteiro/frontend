@@ -3,7 +3,6 @@ import { OurTeam } from './components/our-team';
 import { OurContact } from './components/our-contact';
 import { SectionTitle } from '../../../components/section-title';
 import { Faq } from '../../../components/faq';
-import { Sidebar } from '../../../components/sidebar';
 
 const faqs = [
   {
@@ -50,7 +49,6 @@ function Home() {
           <Faq faqs={faqs} />
         </div>
       </section>
-      <Sidebar />
     </>
   );
 }
