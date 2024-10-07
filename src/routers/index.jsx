@@ -9,6 +9,7 @@ import { Settings } from '../pages/privates/settings';
 import { RegisterContextProvider } from '../contexts/register-context';
 import { Ramos } from '../pages/public/ramos';
 import { Admin } from '../pages/privates/admin';
+import { DetailsUser } from '../pages/privates/details';
 
 function DefaultRouters() {
   return (
@@ -19,6 +20,7 @@ function DefaultRouters() {
           <Route path="galeria" element={<Gallery />} />
           <Route path="ramos" element={<Ramos />} />
           <Route path="admin" element={<Admin />} />
+          <Route path="details" element={<DetailsUser />} />
         </Route>
         <Route path="/autenticacao" element={<AuthLayout />}>
           <Route
