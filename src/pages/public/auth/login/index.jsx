@@ -12,6 +12,7 @@ import { ELoginErrorMessages } from '../../../../helpers/enums/login-error-messa
 //import { AuthContext } from '../../../../contexts/auth-context.jsx';
 import { signInWithEmailAndPasswordAsync } from '../../../../services/firebase/auth.js';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   //const { userLoggedIn } = useContext(AuthContext);
@@ -28,9 +29,13 @@ function Login() {
     }
   });
 
+  const navigate = useNavigate();
+
   async function handleUserLogin(data) {
     try {
       await signInWithEmailAndPasswordAsync(data.email, data.password);
+      toast.success('Usuário logado com sucesso!');
+      navigate('/');
     } catch {
       toast.error('E-mail e/ou senha inválidos');
     }

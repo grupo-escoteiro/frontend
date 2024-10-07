@@ -1,24 +1,24 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth } from 'firebase/auth';
-import { ReCaptchaV3Provider, initializeAppCheck } from 'firebase/app-check';
+//import { ReCaptchaV3Provider, initializeAppCheck } from 'firebase/app-check';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_IR,
-  appId: import.meta.env.VITE_API_ID,
-  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+  apiKey: 'AIzaSyDd7dkLNZS-4r2jtXWQfWzTNIRAJvOmnmA',
+  authDomain: 'inclusao-social-ec3b0.firebaseapp.com',
+  projectId: 'inclusao-social-ec3b0',
+  storageBucket: 'inclusao-social-ec3b0.appspot.com',
+  messagingSenderId: '699586735512',
+  appId: '1:699586735512:web:89f266fdf35afc3df70fed',
+  measurementId: 'G-3SLRHWZSL7'
 };
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
-const appCheck = initializeAppCheck(app, {
+/*const appCheck = initializeAppCheck(app, {
   provider: new ReCaptchaV3Provider('AIzaSyDd7dkLNZS-4r2jtXWQfWzTNIRAJvOmnmA'),
   isTokenAutoRefreshEnabled: true
-});
+});*/
 
-export { appCheck, app, analytics, auth };
+export { app, analytics, auth };

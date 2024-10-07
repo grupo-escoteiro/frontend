@@ -5,12 +5,12 @@ function Dropdown({ visible = false, itemsList }) {
   return (
     <Box
       className={`
-        p-4 transition-opacity duration-200
+        p-4 transition-opacity duration-200 z-20
         ${visible ? 'opacity-100' : 'opacity-0'}
       `}
     >
       <nav>
-        <ul className='flex flex-col gap-y-6'>
+        <ul className='flex flex-col gap-y-6 items-start'>
           {itemsList && itemsList.map(item => {
             return (
               <li
