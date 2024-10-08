@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SectionTitle } from '../../../../components/section-title';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function OurHistory() {
 
@@ -107,9 +108,7 @@ function OurHistory() {
 
   ];
 
-
   const [selectedImage, setSelectedImage] = useState(imagesData[0]);
-
 
   const handleImageClick = (imageData) => {
     setSelectedImage(imageData);
@@ -136,19 +135,43 @@ function OurHistory() {
           {generateImagesBoard()}
         </div>
         <div className="flex pt-12">
-          <img
-            className="w-[580px] h-[420px] rounded-md cursor-pointer object-cover shadow-lg"
-            title={selectedImage.title}
-            src={selectedImage.src}
-            alt={selectedImage.title}
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={selectedImage.src}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-[580px] h-[420px] rounded-md cursor-pointer object-cover shadow-lg"
+              title={selectedImage.title}
+              src={selectedImage.src}
+              alt={selectedImage.title}
+            />
+          </AnimatePresence>
           <div className="text-center w-full">
-            <h1 className="py-6 text-2xl font-semibold">
-              <span className="text-social-brand font-semibold text-2xl">{selectedImage.title}</span>
-            </h1>
-            <p>
-              {selectedImage.text}
-            </p>
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={selectedImage.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="py-6 text-2xl font-semibold"
+              >
+                <span className="text-social-brand font-semibold text-2xl">{selectedImage.title}</span>
+              </motion.h1>
+            </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedImage.src}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {selectedImage.text}
+              </motion.div>
+            </AnimatePresence>
             <div className="flex justify-start items-center gap-4 px-16 pt-16">
               <p>
                 <span className="text-social-brand font-semibold">Venha</span>{' '}
