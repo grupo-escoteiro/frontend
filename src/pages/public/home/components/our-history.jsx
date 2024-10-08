@@ -23,7 +23,7 @@ function OurHistory() {
     },
     {
       src: '/gallery/imagem-2.jpg',
-      title: ' Escoteiros em atividade',
+      title: 'Eu não sei de nada',
       text: (
         <p className="pl-16 text-justify">
           is simply dummy text of the printing and typesetting industry.
@@ -38,45 +38,6 @@ function OurHistory() {
     },
     {
       src: '/gallery/imagem-3.jpg',
-      title: ' Escoteiros em atividade',
-      text: <p className="pl-16 text-justify">
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
-    },
-    {
-      src: '/gallery/imagem-4.jpg',
-      title: ' Escoteiros em atividade',
-      text: <p className="pl-16 text-justify">
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
-    },
-    {
-      src: '/gallery/imagem-5.jpg',
-      title: ' Escoteiros em atividade',
-      text: <p className="pl-16 text-justify">
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
-    },
-    {
-      src: '/gallery/imagem-6.jpg',
       title: 'Escoteiros em atividade',
       text: <p className="pl-16 text-justify">
         is simply dummy text of the printing and typesetting industry.
@@ -89,8 +50,47 @@ function OurHistory() {
       </p>
     },
     {
+      src: '/gallery/imagem-4.jpg',
+      title: 'Culpa do Alemão',
+      text: <p className="pl-16 text-justify">
+        is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+        has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    },
+    {
+      src: '/gallery/imagem-5.jpg',
+      title: 'Texto Ryan Bolado',
+      text: <p className="pl-16 text-justify">
+        is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+        has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    },
+    {
+      src: '/gallery/imagem-6.jpg',
+      title: 'Texto teste',
+      text: <p className="pl-16 text-justify">
+        is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+        has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    },
+    {
       src: '/gallery/imagem-7.jpg',
-      title: ' Escoteiros em atividade',
+      title: 'Texto 4',
       text: (
         <p className="pl-16 text-justify">
           is simply dummy text of the printing and typesetting industry.
@@ -103,25 +103,22 @@ function OurHistory() {
         </p>
       )
     },
-
-
-
   ];
 
   const [selectedImage, setSelectedImage] = useState(imagesData[0]);
 
-  const handleImageClick = (imageData) => {
+  function handleImageClick(imageData) {
     setSelectedImage(imageData);
   };
 
   function generateImagesBoard() {
-    return imagesData.map((imageData, index) => (
+    return imagesData.map((imageData, mainImage) => (
       <img
-        key={index}
-        className="w-24 h-24 rounded-[80px] cursor-pointer object-cover hover:scale-105 transition duration-500"
+        key={mainImage}
+        className="w-24 h-24 rounded-full cursor-pointer object-cover hover:scale-105 transition duration-500"
         title={imageData.title}
         src={imageData.src}
-        alt={`Imagem ${index + 1}`}
+        alt={`Imagem ${mainImage + 1}`}
         onClick={() => handleImageClick(imageData)}
       />
     ));
@@ -199,5 +196,3 @@ function OurHistory() {
 }
 
 export { OurHistory };
-
-
