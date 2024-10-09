@@ -5,7 +5,7 @@ function AuthLayout() {
     <main
       className={`
         grid place-items-center h-screen w-screen
-        bg-[url('../../public/register-flow/background-auth-flow.png')]
+        bg-[url('/register-flow/background-auth-flow.png')]
         bg-no-repeat bg-cover mix-blend-multiply
       `}>
       <Outlet />

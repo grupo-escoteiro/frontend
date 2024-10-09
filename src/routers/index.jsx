@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { AuthLayout } from '../layouts/auth-layout';
 import { DefaultLayout } from '../layouts/default-layout';
 import { Login } from '../pages/public/auth/login';
@@ -10,11 +10,16 @@ import { RegisterContextProvider } from '../contexts/register-context';
 import { Ramos } from '../pages/public/ramos';
 import { Admin } from '../pages/privates/admin';
 import { DetailsUser } from '../pages/privates/details';
+import { AnimatePresence } from 'framer-motion';
 
 function DefaultRouters() {
+  const location = useLocation();
   return (
-    <BrowserRouter>
-      <Routes>
+    <AnimatePresence mode="wait">
+      <Routes
+        location={location}
+        key={location.key}
+      >
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
           <Route path="galeria" element={<Gallery />} />
@@ -39,7 +44,7 @@ function DefaultRouters() {
         <Route path="/configuracao" element={<Settings />} />
         <Route path="/admin" element={<DefaultLayout />}></Route>
       </Routes>
-    </BrowserRouter>
+    </AnimatePresence>
   );
 }
 

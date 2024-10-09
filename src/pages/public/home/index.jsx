@@ -3,6 +3,7 @@ import { OurTeam } from './components/our-team';
 import { OurContact } from './components/our-contact';
 import { SectionTitle } from '../../../components/section-title';
 import { Faq } from '../../../components/faq';
+import { PageTransition } from '../../../components/page-transition';
 
 const faqs = [
   {
@@ -21,7 +22,7 @@ const faqs = [
   },
   {
     question: 'Terão responsáveis por perto?',
-    answer: `Todas as seções tem os chefes como responsáveis pelas crianças e também podem contar com o apoio dos 
+    answer: `Todas as seções tem os chefes como responsáveis pelas crianças e também podem contar com o apoio dos
              pais.`,
   },
   {
@@ -38,7 +39,7 @@ const faqs = [
 
 function Home() {
   return (
-    <>
+    <PageTransition>
       <OurHistory />
       <OurTeam />
       <OurContact />
@@ -51,7 +52,7 @@ function Home() {
           <Faq faqs={faqs} />
         </div>
       </section>
-    </>
+    </PageTransition>
   );
 }
 
