@@ -1,7 +1,7 @@
 import lobinho from '/lobinho.svg';
 import { SectionTitle } from '../../../components/section-title';
 import flordeliz from '/flor-de-liz.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal } from '../../../components/modal';
 import { PageTransition } from '../../../components/page-transition';
 
@@ -17,6 +17,17 @@ function Ramos() {
   const handleModalOpenJunior = () => {
     setOpenJunior(state => !state);
   };
+
+  useEffect(() => {
+    const hasAnyOpenedModal = openJunior || openLobinho;
+    if (hasAnyOpenedModal) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    return () => document.body.classList.remove('overflow-hidden');
+  }, [openJunior, openLobinho]);
 
   return (
     <PageTransition>
