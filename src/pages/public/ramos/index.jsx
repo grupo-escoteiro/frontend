@@ -31,7 +31,6 @@ function Ramos() {
 
   return (
     <PageTransition>
-
       <section className="pt-12 pb-20">
         <div className="max-w-[1160px] mx-auto">
           <SectionTitle

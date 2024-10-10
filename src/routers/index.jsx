@@ -10,6 +10,7 @@ import { RegisterContextProvider } from '../contexts/register-context';
 import { Ramos } from '../pages/public/ramos';
 import { Admin } from '../pages/privates/admin';
 import { DetailsUser } from '../pages/privates/details';
+import { NotFound } from '../pages/NotFound';
 import { AnimatePresence } from 'framer-motion';
 
 function DefaultRouters() {
@@ -20,14 +21,35 @@ function DefaultRouters() {
         location={location}
         key={location.key}
       >
-        <Route path="/" element={<DefaultLayout />}>
-          <Route path="" element={<Home />} />
-          <Route path="galeria" element={<Gallery />} />
-          <Route path="ramos" element={<Ramos />} />
-          <Route path="admin" element={<Admin />} />
-          <Route path="details" element={<DetailsUser />} />
+        <Route
+          path="/"
+          element={<DefaultLayout />}
+        >
+          <Route
+            path=""
+            element={<Home />}
+          />
+          <Route
+            path="galeria"
+            element={<Gallery />}
+          />
+          <Route
+            path="ramos"
+            element={<Ramos />}
+          />
+          <Route
+            path="admin"
+            element={<Admin />}
+          />
+          <Route
+            path="details"
+            element={<DetailsUser />}
+          />
         </Route>
-        <Route path="/autenticacao" element={<AuthLayout />}>
+        <Route
+          path="/autenticacao"
+          element={<AuthLayout />}
+        >
           <Route
             path="login"
             element={<Login />}
@@ -41,8 +63,18 @@ function DefaultRouters() {
             }
           />
         </Route>
-        <Route path="/configuracao" element={<Settings />} />
-        <Route path="/admin" element={<DefaultLayout />}></Route>
+        <Route
+          path="/configuracao"
+          element={<Settings />}
+        />
+        <Route
+          path="/admin"
+          element={<DefaultLayout />}
+        />
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
     </AnimatePresence>
   );

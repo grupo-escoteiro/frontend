@@ -1,12 +1,17 @@
-import { arrayOf, func, number, node, shape, bool } from 'prop-types';
+import { arrayOf, func, number, node, shape, bool, string } from 'prop-types';
 import { Box } from '../box';
 
-function Dropdown({ visible = false, itemsList }) {
+function Dropdown({
+  visible = false,
+  itemsList,
+  className = ''
+}) {
   return (
     <Box
       className={`
         p-4 transition-opacity duration-200 z-20
         ${visible ? 'opacity-100' : 'opacity-0'}
+        ${className}
       `}
     >
       <nav>
@@ -40,6 +45,7 @@ Dropdown.propTypes = {
       component: node.isRequired,
     })
   ).isRequired,
+  className: string
 };
 
 export { Dropdown };

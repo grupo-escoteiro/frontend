@@ -8,16 +8,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { loginFormSchema } from '../../../../helpers/login-validations-scheme.js';
 import { PasswordRule } from './components/password-rule.jsx';
 import { ELoginErrorMessages } from '../../../../helpers/enums/login-error-messages.js';
-//import { useContext } from 'react';
-//import { AuthContext } from '../../../../contexts/auth-context.jsx';
 import { signInWithEmailAndPasswordAsync } from '../../../../services/firebase/auth.js';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 import { PageTransition } from '../../../../components/page-transition/index.jsx';
 
 function Login() {
-  //const { userLoggedIn } = useContext(AuthContext);
-
   const {
     register,
     handleSubmit,
