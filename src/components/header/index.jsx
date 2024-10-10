@@ -6,7 +6,7 @@ import { getAuth } from 'firebase/auth';
 import { DropdownItem } from './components/dropdownItem';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FilePenLine, LogOut, Settings, ShieldAlert } from 'lucide-react';
+import { LogOut, Settings, ShieldAlert } from 'lucide-react';
 import { signOutAsync } from '../../services/firebase/auth';
 import { toast } from 'sonner';
 
@@ -86,15 +86,6 @@ function Header() {
                             text="Configurações" 
                             edit="border-b border-social-gray pb-2"
                             icon={<Settings />}
-                          />
-                        },
-                        {
-                          id: 2,
-                          trigger: () => navigate('/galeria'),
-                          component: <DropdownItem 
-                            text="Meus Dados" 
-                            edit=""
-                            icon={<FilePenLine />}
                           />
                         },
                         {
