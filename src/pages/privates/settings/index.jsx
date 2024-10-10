@@ -41,13 +41,6 @@ function Settings() {
                     Segurança
                   </button>
                 </li>
-                <li
-                  className="font-semibold transition duration-500 p-2 
-                  hover:bg-social-brand hover:text-social-white rounded">
-                  <button>
-                    Conta
-                  </button>
-                </li>
               </ul>
             </menu>
             <div className="border-l border-social-gray w-full">
