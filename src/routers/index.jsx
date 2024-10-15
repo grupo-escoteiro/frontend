@@ -10,6 +10,7 @@ import { RegisterContextProvider } from '../contexts/register-context';
 import { Ramos } from '../pages/public/ramos';
 import { Admin } from '../pages/privates/admin';
 import { DetailsUser } from '../pages/privates/details';
+import { Privacy } from '../pages/privates/privacy';
 import { NotFound } from '../pages/NotFound';
 import { AnimatePresence } from 'framer-motion';
 
@@ -44,6 +45,10 @@ function DefaultRouters() {
           <Route
             path="details"
             element={<DetailsUser />}
+          />
+          <Route
+            path="privacy"
+            element={<Privacy /> }
           />
         </Route>
         <Route
