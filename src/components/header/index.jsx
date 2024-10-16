@@ -89,7 +89,7 @@ function Header() {
                       },
                       {
                         id: 3,
-                        trigger: () => navigate('/ramos'),
+                        trigger: () => navigate('/privacy'),
                         component: <DropdownItem
                           text="Privacidade"
                           edit=""
