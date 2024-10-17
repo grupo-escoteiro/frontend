@@ -15,7 +15,9 @@
     "install:extensions": "code --install-extension dbaeumer.vscode-eslint"
   },
   "dependencies": {
+    "@google/generative-ai": "0.21.0",
     "@hookform/resolvers": "3.9.0",
+    "brazilian-values": "0.13.0",
     "dotenv": "16.4.5",
     "firebase": "10.13.0",
     "firebase-tools": "13.15.4",

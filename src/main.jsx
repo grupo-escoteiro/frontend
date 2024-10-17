@@ -1,3 +1,6 @@
+import './index.css';
+import './services/gemini/index.js';
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -10,7 +13,6 @@ import { AccessibilityContextProvider } from './contexts/accessibility-context.j
 import { Toaster } from 'sonner';
 
 import App from './App.jsx';
-import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <>
