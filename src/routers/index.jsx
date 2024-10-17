@@ -13,6 +13,7 @@ import { DetailsUser } from '../pages/privates/details';
 import { Privacy } from '../pages/privates/privacy';
 import { NotFound } from '../pages/NotFound';
 import { AnimatePresence } from 'framer-motion';
+import { ChatGemini } from '../pages/privates/chat';
 
 function DefaultRouters() {
   const location = useLocation();
@@ -49,6 +50,10 @@ function DefaultRouters() {
           <Route
             path="privacy"
             element={<Privacy /> }
+          />
+          <Route
+            path="/chat"
+            element={<ChatGemini />}
           />
         </Route>
         <Route

@@ -6,12 +6,11 @@ import { getAuth } from 'firebase/auth';
 import { DropdownItem } from './components/dropdownItem';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Settings, ShieldAlert } from 'lucide-react';
+import { LogOut, Settings, ShieldAlert, Star } from 'lucide-react';
 import { signOutAsync } from '../../services/firebase/auth';
 import { toast } from 'sonner';
 
 function Header() {
-
   const { currentUser } = getAuth();
   const [ isOpen, setIsOpen ] = useState(false);
 
@@ -98,6 +97,15 @@ function Header() {
                       },
                       {
                         id: 4,
+                        trigger: async () => navigate('/chat'),
+                        component: <DropdownItem
+                          text="Chat"
+                          edit=""
+                          icon={<Star />}
+                        />
+                      },
+                      {
+                        id: 5,
                         trigger: async () => await logout(),
                         component: <DropdownItem
                           text="Logout"
