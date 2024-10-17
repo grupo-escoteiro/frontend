@@ -11,7 +11,6 @@ import { signOutAsync } from '../../services/firebase/auth';
 import { toast } from 'sonner';
 
 function Header() {
-
   const { currentUser } = getAuth();
   const [ isOpen, setIsOpen ] = useState(false);
 
