@@ -1,10 +1,8 @@
-import { PageTransition } from '../../../../components/page-transition';
+import { FirstStep } from './components/first-step';
 
 function Register() {
   return (
-    <PageTransition>
-      <h1>Register - Verificando deploy...</h1>
-    </PageTransition>
+    <FirstStep />
   );
 }
 
