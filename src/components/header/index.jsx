@@ -1,10 +1,34 @@
-import logo from '../../../public/logo.svg';
+import logo from '/logo.svg';
+import avatar from '/avatar.png';
 import { AnimatedLink } from './components/AnimatedLink';
+import { Dropdown } from '../dropdown';
+import { getAuth } from 'firebase/auth';
+import { DropdownItem } from './components/dropdownItem';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { LogOut, Settings, ShieldAlert, Star } from 'lucide-react';
+import { signOutAsync } from '../../services/firebase/auth';
+import { toast } from 'sonner';
 
 function Header() {
+  const { currentUser } = getAuth();
+  const [ isOpen, setIsOpen ] = useState(false);
+
+  const navigate = useNavigate();
+
+  async function logout() {
+    try {
+      await signOutAsync();
+      toast.success('Usuário deslogado com sucesso!');
+      navigate('/');
+    } catch {
+      toast.error('Erro ao deslogar o usuário!');
+    }
+  }
+
   return (
     <header className="w-full bg-light-social-brand">
-      <div className="px-48 py-7 flex justify-between items-center">
+      <div className="max-w-[1160px] mx-auto py-7 flex justify-between items-center">
         <figure
           className="flex gap-4 items-center cursor-pointer"
           title="Voltar à home"
@@ -20,7 +44,7 @@ function Header() {
           </figcaption>
         </figure>
         <nav>
-          <ul className="flex gap-4">
+          <ul className="flex items-center gap-4">
             <li>
               <AnimatedLink
                 text={'Home'}
@@ -39,11 +63,67 @@ function Header() {
                 text={'Galeria'}
               />
             </li>
-            <li>
-              <AnimatedLink
-                to="/autenticacao/login"
-                text={'Login'}
-              />
+            <li className="relative">
+              {currentUser ? (
+                <>
+                  <div className="flex justify-center">
+                    <img
+                      className="w-12 h-12 rounded-full object-cover cursor-pointer transition
+                                 duration-500 hover:brightness-150"
+                      src={avatar}
+                      alt="Profile"
+                      onClick={() => setIsOpen(prev => !prev)}
+                    />
+                  </div>
+                  <Dropdown
+                    itemsList={[
+                      {
+                        id: 1,
+                        trigger: () => navigate('/configuracao'),
+                        component: <DropdownItem
+                          text="Configurações"
+                          edit="border-b border-social-gray pb-2"
+                          icon={<Settings />}
+                        />
+                      },
+                      {
+                        id: 3,
+                        trigger: () => navigate('/privacy'),
+                        component: <DropdownItem
+                          text="Privacidade"
+                          edit=""
+                          icon={<ShieldAlert />}
+                        />
+                      },
+                      {
+                        id: 4,
+                        trigger: async () => navigate('/chat'),
+                        component: <DropdownItem
+                          text="Chat"
+                          edit=""
+                          icon={<Star />}
+                        />
+                      },
+                      {
+                        id: 5,
+                        trigger: async () => await logout(),
+                        component: <DropdownItem
+                          text="Logout"
+                          edit="text-social-red transition duration-500 hover:text-social-brand"
+                          icon={<LogOut />}
+                        />
+                      },
+                    ]}
+                    visible={isOpen}
+                    className="absolute right-0 transform mt-2"
+                  />
+                </>
+              ) : (
+                <AnimatedLink
+                  to="/autenticacao/login"
+                  text="Login"
+                />
+              )}
             </li>
           </ul>
         </nav>

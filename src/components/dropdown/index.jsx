@@ -1,16 +1,21 @@
-import { arrayOf, func, number, node, shape, bool } from 'prop-types';
+import { arrayOf, func, number, node, shape, bool, string } from 'prop-types';
 import { Box } from '../box';
 
-function Dropdown({ visible = false, itemsList }) {
+function Dropdown({
+  visible = false,
+  itemsList,
+  className = ''
+}) {
   return (
     <Box
       className={`
-        p-4 transition-opacity duration-200
+        p-4 transition-opacity duration-200 z-20
         ${visible ? 'opacity-100' : 'opacity-0'}
+        ${className}
       `}
     >
       <nav>
-        <ul className='flex flex-col gap-y-6'>
+        <ul className='flex flex-col gap-y-6 items-start'>
           {itemsList && itemsList.map(item => {
             return (
               <li
@@ -40,6 +45,7 @@ Dropdown.propTypes = {
       component: node.isRequired,
     })
   ).isRequired,
+  className: string
 };
 
 export { Dropdown };

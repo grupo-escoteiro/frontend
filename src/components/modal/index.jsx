@@ -45,7 +45,7 @@ function Modal({
         aria-label=""
         open={open}
         className={`
-          bg-social-white p-4 w-4/5 rounded max-w-sm overflow-x-scroll
+          bg-social-white p-4 w-4/5 rounded max-w-[1160px] overflow-x-hidden
           ${rest.className}
         `}
         ref={modalRef}

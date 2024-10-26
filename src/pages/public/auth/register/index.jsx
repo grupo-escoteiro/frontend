@@ -1,8 +1,8 @@
+import { FirstStep } from './components/first-step';
+
 function Register() {
   return (
-    <>
-      <h1>Register</h1>
-    </>
+    <FirstStep />
   );
 }
 
