@@ -97,7 +97,7 @@ function FirstStep() {
                 </label>
               </div>
             </fieldset>
-            <fieldset className="flex  items-center self-end gap-x-6">
+            <fieldset className="flex items-center self-end gap-x-6">
               <Link
                 to="/"
                 className="text-social-red font-regular transition duration-500

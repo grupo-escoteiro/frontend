@@ -1,8 +1,8 @@
-import { FirstStep } from './components/first-step';
+import { SecondStep } from './components/second-step';
 
 function Register() {
   return (
-    <FirstStep />
+    <SecondStep />
   );
 }
 
