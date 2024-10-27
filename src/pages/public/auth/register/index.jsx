@@ -1,8 +1,8 @@
-import { SecondStep } from './components/second-step';
+import { SixthChildStep } from './components/sixth-child-step';
 
 function Register() {
   return (
-    <SecondStep />
+    <SixthChildStep />
   );
 }
 
