@@ -1,8 +1,18 @@
-import { SixthChildStep } from './components/sixth-child-step';
+import { useContext } from 'react';
+import { registerContext } from '../../../../contexts/register-context';
+import { getNextStep } from '../../../../helpers/get-next-step';
+import { PageTransition } from '../../../../components/page-transition';
+import { AnimatePresence } from 'framer-motion';
 
 function Register() {
+  const { currentStep } = useContext(registerContext);
+
   return (
-    <SixthChildStep />
+    <AnimatePresence mode="wait">
+      <PageTransition key={currentStep}>
+        {getNextStep(currentStep)}
+      </PageTransition>
+    </AnimatePresence>
   );
 }
 
