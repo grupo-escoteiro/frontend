@@ -63,7 +63,6 @@ function DetailsUser() {
   const [estadoSelecionadoAdulto, setEstadoSelecionadoAdulto] = useState('');
   const [estadoSelecionadoEscoteiro, setEstadoSelecionadoEscoteiro] = useState('');
 
-
   const handleSelectChangeRamoAdulto = (eventRamo) => {
     setRamoSelecionadoAdulto(eventRamo.target.value);
   };
@@ -151,48 +150,56 @@ function DetailsUser() {
                   <label className="block text-sm font-medium text-social-black">CEP</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray
                                font-semibold brightness-125 rounded-md"
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Rua</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray
                                font-semibold brightness-125 rounded-md"
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Bairro</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray 
                                font-semibold brightness-125 rounded-md" 
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Cidade</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray 
                                font-semibold brightness-125 rounded-md"
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Estado</label>
                   <div className="mt-1 relative">
                     <select
-                      className="block w-full px-3 py-2 bg-gray-100 
-                                 border border-gray-300 rounded-md appearance-none"
+                      className="block w-full px-3 py-2 
+                                 border border-social-gray rounded-md appearance-none"
                       id="estados"
                       value={estadoSelecionadoAdulto}
-                      disabled
                       onChange={handleSelectChangeAdulto}
+                      disabled={!isActive}
                     >
                       {estados.map((estado) => 
                         <option 
@@ -209,9 +216,11 @@ function DetailsUser() {
                   <label className="block text-sm font-medium text-social-black">Número da residência</label>
                   <input 
                     type="number" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                               font-semibold brightness-125 rounded-md" 
-                    disabled
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray 
+                               font-semibold brightness-125 rounded-md appearance-none" 
                   />
                 </div>
               </div>
@@ -298,48 +307,56 @@ function DetailsUser() {
                   <label className="block text-sm font-medium text-social-black">CEP</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive || !isScoutActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray 
                                font-semibold brightness-125 rounded-md"
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Rua</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive || !isScoutActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray
                                font-semibold brightness-125 rounded-md"
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Bairro</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive || !isScoutActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray
                                font-semibold brightness-125 rounded-md" 
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Cidade</label>
                   <input 
                     type="text" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive || !isScoutActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray
                                font-semibold brightness-125 rounded-md"
-                    disabled
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-social-black">Estado</label>
                   <div className="mt-1 relative">
                     <select
-                      className="block w-full px-3 py-2 bg-gray-100 
-                                 border border-gray-300 rounded-md appearance-none"
+                      className="block w-full px-3 py-2 
+                                 border border-social-gray rounded-md appearance-none"
                       id="estados"
                       value={estadoSelecionadoEscoteiro}
-                      disabled
                       onChange={handleSelectChangeEscoteiro}
+                      disabled={!isActive || !isScoutActive}
                     >
                       {estados.map((estado) => 
                         <option 
@@ -356,9 +373,11 @@ function DetailsUser() {
                   <label className="block text-sm font-medium text-social-black">Número da residência</label>
                   <input 
                     type="number" 
-                    className="mt-1 block w-full px-3 py-2 bg-social-gray 
+                    checked={isVolunteer}
+                    onChange={(e) => setIsVolunteer(e.target.checked)}
+                    disabled={!isActive || !isScoutActive}
+                    className="mt-1 block w-full px-3 py-2 border border-social-gray
                                font-semibold brightness-125 rounded-md" 
-                    disabled
                   />
                 </div>
                 <div>
