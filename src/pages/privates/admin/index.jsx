@@ -5,6 +5,7 @@ import { dadosPorPagina, maskEmail, truncateName } from '../../../helpers/admin-
 import { IconVolunteers } from './components/cube-icon-volunteers';
 import { IconChildren } from './components/cube-icon-children';
 import { IconResponsible } from './components/cube-icon-reponsible';
+import { Link } from 'react-router-dom';
 
 const users = [
   { name: 'Matheus Natieli', ramo: 'Lobinho', status: 'Inativo', 
@@ -102,24 +103,24 @@ function Admin() {
                   <td className="p-3">{maskEmail(user.email)}</td>
                   <td className="p-3 flex justify-center">
                     <div className="flex space-x-2">
-                      <button 
-                        type="button"
+                      <Link 
+                        to=""
                         className="text-blue-600 transition duration-500 hover:brightness-50"
                       >
                         <Pencil size={20} />
-                      </button>
-                      <button 
-                        type="button"
+                      </Link>
+                      <Link 
+                        to=""
                         className="text-red-600 transition duration-500 hover:brightness-50"
                       >
                         <Trash2 size={20} />
-                      </button>
-                      <button 
-                        type="button"
+                      </Link>
+                      <Link
+                        to="/details"
                         className="text-green-600 transition duration-500 hover:brightness-50"
                       >
                         <BookUser size={20} />
-                      </button>
+                      </Link>
                     </div>
                   </td>
                 </tr>

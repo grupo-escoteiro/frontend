@@ -6,7 +6,7 @@ import { getAuth } from 'firebase/auth';
 import { DropdownItem } from './components/dropdownItem';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Settings, ShieldAlert, Star } from 'lucide-react';
+import { LogOut, Settings, ShieldAlert, Star, LockKeyhole } from 'lucide-react';
 import { signOutAsync } from '../../services/firebase/auth';
 import { toast } from 'sonner';
 
@@ -102,6 +102,15 @@ function Header() {
                           text="Chat"
                           edit=""
                           icon={<Star />}
+                        />
+                      },
+                      {
+                        id: 4,
+                        trigger: async () => navigate('/admin'),
+                        component: <DropdownItem
+                          text="Admin"
+                          edit=""
+                          icon={<LockKeyhole />}
                         />
                       },
                       {
