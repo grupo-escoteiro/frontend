@@ -17,14 +17,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js application
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          version: latest
-          cache: npm
+          node-version: 'lts/*'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Make build
         run: npm run build
@@ -43,15 +43,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install ESLint
-        run: |
-          npm install eslint@latest
-          npm install @microsoft/eslint-formatter-sarif@2.1.7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Run ESLint
         run: |
           npx eslint . \
           --config eslint.config.js \
+          --ext .js,.jsx,.ts,.tsx \
           --format @microsoft/eslint-formatter-sarif \
           --output-file eslint-results.sarif
         continue-on-error: true
