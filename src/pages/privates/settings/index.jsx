@@ -5,6 +5,7 @@ import { Tabs } from '../../../components/tabs';
 import { MainPersonalAddress } from './components/main-personal-address';
 import { MainPersonalInformations } from './components/main-personal-informations';
 import { MainPersonalImage } from './components/main-personal-image';
+import { PageTransition } from '../../../components/page-transition';
 
 function Settings() {
 
@@ -15,7 +16,7 @@ function Settings() {
   ];
 
   return (
-    <>
+    <PageTransition>
       <Header />
       <section className="pt-12 pb-16">
         <div className="max-w-[1160px] mx-auto">
@@ -52,7 +53,7 @@ function Settings() {
           </Container>
         </div >
       </section >
-    </>
+    </PageTransition>
   );
 }
 
