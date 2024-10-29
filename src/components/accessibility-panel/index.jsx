@@ -20,7 +20,7 @@ function AccessibilityPanel() {
       aria-label="Ativar painel de acessibilidade"
       className={`
         fixed right-[10px] rounded-md top-1/2 translate-y-8 bg-social-brand p-2
-        cursor-pointer hover:brightness-90 transition-all
+        cursor-pointer hover:brightness-90 z-50 transition-all
       `}
       onClick={changeReadMode}
     >

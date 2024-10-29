@@ -2,28 +2,36 @@ import logo from '/logo.svg';
 
 function Footer() {
   return (
-    <footer className="w-full py-4 bg-light-social-brand">
-      <div className="max-w-[1160px] mx-auto ">
+    <footer className="lg:w-full lg:py-4 bg-light-social-brand">
+      <div className="lg:max-w-[1160px] lg:mx-auto ">
         <figure
-          className="flex gap-12 items-center cursor-pointer pt-8"
+          className="lg:flex lg:gap-0 lg:items-center lg:cursor-pointer lg:pt-8 lg:pb-0 lg:px-0
+                     flex justify-between items-center cursor-pointer pt-8 px-4 pb-4"
           title="Voltar à home"
           aria-label="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
         >
           <img
-            className="w-24 h-24"
+            className="lg:w-24 lg:h-24
+                       w-20 h-20"
             src={logo}
             alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
           />
-          <p className="max-w-[580px] text-base">
+          <p
+            className="lg:max-w-[580px] lg:text-base lg:block
+                       hidden">
             Juntos construímos um mundo melhor. Cada gesto transforma sonhos em realidade.
             Lado a lado, desafios viram oportunidades e a esperança se torna ação.
             Somos parte de algo maior, e juntos, fazemos a diferença.
           </p>
-          <figcaption className="text-2xl pl-20 text-left">
+          <figcaption
+            className="lg:text-2xl lg:pl-20 lg:text-left
+                       text-lg max-w-52">
             Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
           </figcaption>
         </figure>
-        <div className="w-full text-center pt-4">
+        <div
+          className="lg:w-full lg:text-center lg:pt-4 lg:pb-0
+                     w-full text-center pb-12">
           <small className="text-social-gray">&copy; Todos direitos reservados</small>
         </div>
       </div>
