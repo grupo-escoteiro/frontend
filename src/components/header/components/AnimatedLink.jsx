@@ -1,15 +1,13 @@
-import { any, string } from 'prop-types';
-import { Link, useLocation } from 'react-router-dom';
+import { any, string, bool } from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function AnimatedLink({
   to = '#',
   text,
   className = '',
+  isActive = false,
   ...rest
 }) {
-  const location = useLocation();
-  const isActive = location.pathname === to;
-
   return (
     <Link
       {...rest}
@@ -34,6 +32,7 @@ AnimatedLink.propTypes = {
   to: string,
   text: string,
   className: string,
+  isActive: bool,
   rest: any
 };
 
