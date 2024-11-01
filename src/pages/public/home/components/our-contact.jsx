@@ -25,14 +25,18 @@ function OurContact() {
 
   return (
     <section className="bg-light-social-blue py-16">
-      <div className="max-w-[1160px] mx-auto">
+      <div
+        className="lg:max-w-[1160px] lg:mx-auto
+                   max-w-[1160px] mx-auto">
         <SectionTitle
           content="Contate-nos"
-          className="mb-9"
+          className="lg:mb-9 lg:text-left
+                     mb-9 text-center"
         />
         <form
           id="contact-form"
-          className="grid grid-cols-2 gap-x-8 gap-y-6 box-content max-w-[1160px]"
+          className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-6 lg:px-0 lg:box-content lg:max-w-[1160px]
+                     grid grid-cols-1 px-8 gap-y-6 box-content max-w-[1160px]"
           onSubmit={handleSubmit(handleContactSubmit)}
         >
           <Input
@@ -42,7 +46,18 @@ function OurContact() {
             errorMessage={errors.name?.message}
             name="name"
           />
-          <fieldset className="flex flex-col row-span-2">
+          <div className="lg:hidden inline-block">
+            <Input
+              {...register('email')}
+              label="E-mail"
+              placeholder="Digite seu e-mail"
+              errorMessage={errors.email?.message}
+              name="email"
+            />
+          </div>
+          <fieldset
+            className="lg:flex lg:flex-col lg:row-span-2
+                       flex flex-col row-span-2">
             <label className="font-medium text-[16px] text-social-black">Mensagem</label>
             <textarea
               {...register('content')}
@@ -65,15 +80,20 @@ function OurContact() {
               </span>
             )}
           </fieldset>
-          <Input
-            {...register('email')}
-            label="E-mail"
-            placeholder="Digite seu e-mail"
-            errorMessage={errors.email?.message}
-            name="email"
-          />
+          <div className="lg:inline-block hidden">
+            <Input
+              {...register('email')}
+              label="E-mail"
+              placeholder="Digite seu e-mail"
+              errorMessage={errors.email?.message}
+              name="email"
+            />
+          </div>
         </form>
-        <div className="flex justify-end w-full gap-x-5 mt-10">
+        <div
+          className="lg:flex lg:flex-row lg:justify-end lg:w-full lg:gap-x-5 lg:mt-10
+                     lg:px-0
+                     flex flex-col px-8 w-full gap-y-5 mt-10">
           <Button
             form="contact-form"
             type="reset"

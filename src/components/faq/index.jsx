@@ -10,16 +10,22 @@ function Faq({ faqs }) {
   };
 
   return (
-    <div className="max-w-[1160px] mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start">
+    <div className="lg:max-w-[1160px] lg:mx-auto lg:px-0 px-8">
+      <div
+        className="lg:grid lg:gap-4 lg:place-items-start 
+                   grid-cols-1 md:grid-cols-2 gap-4 place-items-start">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border w-full border-social-gray bg-social-white rounded"
+            className="lg:border lg:w-full lg:border-social-gray lg:bg-social-white lg:rounded lg:my-0 
+                       border w-full border-social-gray bg-social-white rounded my-4"
           >
             <button
               onClick={() => toggleFaq(index)}
-              className="w-full flex justify-between items-center px-4 py-3 text-social-black font-medium"
+              className="lg:w-full lg:flex lg:justify-between lg:items-center 
+                         lg:px-4 lg:py-3 lg:text-social-black lg:font-medium
+                         w-full flex justify-between items-center px-4 py-3 text-social-black
+                         font-medium text-left"
             >
               {faq.question}
               <ChevronDown
@@ -35,7 +41,9 @@ function Faq({ faqs }) {
                 ${openIndex === index ? 'max-h-40' : 'max-h-0'}
               `}
             >
-              <div className="px-4 py-3 text-social-black">
+              <div
+                className="lg:px-4 lg:py-3 lg:text-social-black
+                           px-4 py-3 text-left text-social-black">
                 {faq.answer}
               </div>
             </div>

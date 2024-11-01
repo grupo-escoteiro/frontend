@@ -10,7 +10,7 @@ function Dropdown({
     <Box
       className={`
         p-4 transition-opacity duration-200 z-20
-        ${visible ? 'opacity-100' : 'opacity-0'}
+        ${visible ? 'block' : 'hidden'}
         ${className}
       `}
     >

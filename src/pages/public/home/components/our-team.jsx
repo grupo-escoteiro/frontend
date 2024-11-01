@@ -6,13 +6,20 @@ import jao from '/fotos-jao.jpg';
 
 function OurTeam() {
   return (
-    <section className="pt-12 pb-20">
-      <div className="max-w-[1160px] mx-auto">
+    <section
+      className="lg:pt-12 lg:pb-20
+                 pt-12 pb-20">
+      <div
+        className="lg:max-w-[1160px] lg:mx-auto
+                   max-w-[1160px] mx-auto">
         <SectionTitle
           content="Nossa equipe"
-          className="mb-9"
+          className="lg:mb-9 lg:text-left
+                     mb-9 text-center"
         />
-        <div className="flex gap-12">
+        <div
+          className="lg:flex lg:flex-row lg:gap-12
+                     flex flex-col justify-center items-center gap-12">
           <Cards
             url={ryan}
             instagram="https://www.instagram.com/ryan_carvalho06?igsh=ZnFzYTVrNjN3aG90&utm_source=qr"

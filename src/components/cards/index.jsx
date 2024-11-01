@@ -3,12 +3,18 @@ import { SocialIcon } from 'react-social-icons';
 
 function Cards({ url, instagram, linkedin }) {
   return (
-    <article className="relative w-[22rem] h-[28rem] rounded overflow-hidden shadow-default">
+    <article
+      className="lg:relative lg:w-[22rem] lg:h-[28rem] lg:rounded lg:overflow-hidden lg:shadow-default
+                 relative w-[20rem] h-[26rem] rounded overflow-hidden shadow-default">
       <header
-        className="relative flex flex-col items-center cursor-pointer overflow-hidden w-[22rem] h-[28rem]
+        className="lg:relative lg:flex lg:flex-col lg:items-center lg:cursor-pointer 
+                   lg:overflow-hidden lg:w-[22rem] lg:h-[28rem] lg:shadow-lg lg:transition lg:duration-500
+                   relative flex flex-col items-center cursor-pointer overflow-hidden w-[20rem] h-[26rem]
                    shadow-lg transition duration-500">
         <div
-          className="absolute inset-0 z-10 transition duration-500
+          className="lg:absolute lg:inset-0 lg:z-10 lg:transition lg:duration-500
+                     lg:transform lg:hover:-translate-y-28
+                     absolute inset-0 z-10 transition duration-500
                      transform hover:-translate-y-28">
           <img
             className="w-full h-full object-cover hover:brightness-50 transition duration-500 ease-in-out"
@@ -45,7 +51,9 @@ function Cards({ url, instagram, linkedin }) {
           </ul>
         </div>
         <div
-          className="absolute bottom-0 left-0 z-[4] w-full h-[6.5rem] p-[0.75rem_0.875rem] bg-white text-left
+          className="lg:absolute lg:bottom-0 lg:left-0 lg:z-[4] lg:w-full lg:h-[6.5rem] 
+                     lg:p-[0.75rem_0.875rem] lg:bg-white lg:text-left lg:text-[#333] lg:transition lg:duration-500
+                     absolute bottom-0 left-0 z-[4] py-3 px-3 bg-white text-left
                     text-[#333] transition duration-500">
           <h2 className="mb-[0.5rem] font-bold">Richard Ryan</h2>
           <p className="opacity-90">
