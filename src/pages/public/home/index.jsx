@@ -43,11 +43,19 @@ function Home() {
       <OurHistory />
       <OurTeam />
       <OurContact />
-      <section className="lg:pt-12 lg:pb-16 pt-12 pb-16">
-        <div className="lg:max-w-[1160px] lg:mx-auto">
+      <section
+        className="lg:pt-12 lg:pb-16 
+                   md:pt-12 md:pb-16
+                   pt-12 pb-16">
+        <div
+          className="lg:max-w-[1024px] lg:mx-auto
+                     md:max-w-[620px] md:mx-auto
+                     max-w-[320px] mx-auto">
           <SectionTitle
             content="Perguntas frequentes"
-            className="lg:mb-14 lg:text-left mb-10 text-center"
+            className="lg:mb-14 lg:text-left 
+                       md:mb-14 md:text-left
+                       mb-10 text-left"
           />
           <Faq faqs={faqs} />
         </div>

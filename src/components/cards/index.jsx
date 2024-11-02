@@ -51,8 +51,9 @@ function Cards({ url, instagram, linkedin }) {
           </ul>
         </div>
         <div
-          className="lg:absolute lg:bottom-0 lg:left-0 lg:z-[4] lg:w-full lg:h-[6.5rem] 
-                     lg:p-[0.75rem_0.875rem] lg:bg-white lg:text-left lg:text-[#333] lg:transition lg:duration-500
+          className="lg:absolute lg:bottom-2 lg:left-0 lg:z-[4] lg:w-full lg:h-[6.5rem] 
+                     lg:p-[0.60rem_2rem] lg:bg-white lg:text-left lg:text-[#333] lg:transition lg:duration-500
+                     lg:px-8 lg:py-1
                      absolute bottom-0 left-0 z-[4] py-3 px-3 bg-white text-left
                     text-[#333] transition duration-500">
           <h2 className="mb-[0.5rem] font-bold">Richard Ryan</h2>

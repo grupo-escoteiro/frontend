@@ -29,15 +29,18 @@ function Header() {
 
   return (
     <header
-      className="lg:w-full lg:bg-light-social-brand
+      className="lg:w-full lg:bg-light-social-brand 
+                 md:w-full md:bg-light-social-brand
                bg-light-social-brand">
       <div
-        className="lg:max-w-[1160px] lg:mx-auto lg:py-7 lg:flex lg:justify-between lg:items-center"
+        className="lg:max-w-[1024px] lg:mx-auto lg:py-7 lg:px-0 lg:flex lg:justify-between lg:items-center
+                   md:max-w-[620px] md:mx-auto md:py-7 md:px-0 md:flex md:justify-between md:items-center
+                   max-w-[320px] mx-auto"
       >
         <figure
-          className="lg:flex lg:gap-2 lg:items-center lg:cursor-pointer
-                     lg:p-0 px-4 py-7 flex justify-between items-center 
-                     cursor-pointer"
+          className="lg:flex lg:gap-2 lg:items-center lg:cursor-pointer lg:p-0 
+                     md:flex md:gap-2 md:items-center md:cursor-pointer md:p-0
+                     px-4 py-7 flex justify-between items-center cursor-pointer"
           title="Voltar à home"
           aria-label="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
         >
@@ -48,15 +51,16 @@ function Header() {
             alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
           />
           <nav className="flex items-center gap-x-5">
-            <ul className="lg:hidden">
+            <ul className="lg:hidden md:hidden">
               <li
-                className="block">
+                className="inline-block">
                 {currentUser ? (
                   <>
                     <div className="lg:flex lg:justify-center">
                       <img
                         className="lg:w-12 lg:h-12 lg:rounded-full lg:object-cover lg:cursor-pointer lg:transition
-                                 lg:duration-500 lg:hover:brightness-150"
+                                 lg:duration-500 lg:hover:brightness-150
+                                 w-12 h-12"
                         src={avatar}
                         alt="Profile"
                         onClick={() => setIsOpen(prev => !prev)}
@@ -115,17 +119,26 @@ function Header() {
             </ul>
             <Sidebar/>
           </nav>
-          <figcaption className="lg:text-left lg:max-w-44 lg:block hidden">
+          <figcaption
+            className="lg:text-left lg:max-w-48 lg:inline-block 
+                       md:text-left md:max-w-48 md:inline-block 
+                       hidden">
             Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
           </figcaption>
         </figure>
         <figcaption
-          className="lg:text-left lg:max-w-44 lg:hidden 
+          className="lg:text-left lg:max-w-44 lg:hidden md:text-left md:max-w-44 md:hidden
                      text-center">
             Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
         </figcaption>
-        <nav className="hidden lg:block">
-          <ul className="lg:flex lg:items-center lg:gap-4">
+        <nav
+          className="lg:inline-block 
+                     md:inline-block
+                     hidden "
+        >
+          <ul
+            className="lg:flex lg:items-center lg:gap-4
+                       md:flex md:items-center md:gap-4">
             <li>
               <AnimatedLink
                 text={'Home'}

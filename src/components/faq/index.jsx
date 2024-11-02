@@ -10,10 +10,14 @@ function Faq({ faqs }) {
   };
 
   return (
-    <div className="lg:max-w-[1160px] lg:mx-auto lg:px-0 px-8">
+    <div
+      className="lg:max-w-[1024px] lg:mx-auto
+                 md:max-w-[620px] md:mx-auto
+                 max-w-[320px] mx-auto">
       <div
-        className="lg:grid lg:gap-4 lg:place-items-start 
-                   grid-cols-1 md:grid-cols-2 gap-4 place-items-start">
+        className="lg:grid lg:grid-cols-2 lg:gap-4 lg:place-items-start
+                   md:grid md:grid-cols-1 md:gap-0 md:place-items-start 
+                   grid-cols-1 gap-4 place-items-start">
         {faqs.map((faq, index) => (
           <div
             key={index}

@@ -11,7 +11,7 @@ const imagesData = [
     text: (
       <p
         className="lg:pl-16 lg:text-justify lg:px-0
-                   px-8 text-justify"
+                   md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the standard dummy text ever since the 1500s,
@@ -30,7 +30,7 @@ const imagesData = [
     text: (
       <p
         className="lg:pl-16 lg:text-justify lg:px-0
-                   px-8 text-justify"
+                   md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the standard dummy text ever since the 1500s,
@@ -49,7 +49,7 @@ const imagesData = [
     text: (
       <p
         className="lg:pl-16 lg:text-justify lg:px-0
-                   px-8 text-justify"
+                   md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the standard dummy text ever since the 1500s,
@@ -68,7 +68,7 @@ const imagesData = [
     text: (
       <p
         className="lg:pl-16 lg:text-justify lg:px-0
-                   px-8 text-justify"
+                   md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the standard dummy text ever since the 1500s,
@@ -87,7 +87,7 @@ const imagesData = [
     text: (
       <p
         className="lg:pl-16 lg:text-justify lg:px-0
-                   px-8 text-justify"
+                   md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the standard dummy text ever since the 1500s,
@@ -106,7 +106,7 @@ const imagesData = [
     text: (
       <p
         className="lg:pl-16 lg:text-justify lg:px-0
-                   px-8 text-justify"
+                   md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the standard dummy text ever since the 1500s,
@@ -125,7 +125,7 @@ const imagesData = [
     text: (
       <p
         className="lg:pl-10 lg:text-justify lg:px-0
-                   px-8 text-justify"
+                   md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the standard dummy text ever since the 1500s,
@@ -174,18 +174,21 @@ function OurHistory() {
   function generateImagesBoard() {
     return (
       <div
-        className="lg:flex lg:gap-20 lg:px-4 lg:py-1
-        -mx-4 flex gap-8 overflow-x-auto px-8 py-4 
-        snap-x snap-mandatory scroll-smooth"
+        className="lg:flex lg:h-24 lg:gap-11 lg:overflow-x-visible
+                   md:flex md:gap-8 md:overflow-x-visible
+                   md:items-center md:justify-center
+                   flex gap-8 overflow-x-visible items-center justify-center h-24
+                   snap-x snap-mandatory scroll-smooth" 
       >
         {imagesData.map((imageData, index) => (
           <img
             key={`${index}-${imageData.text}-${imageData.title}-${imageData.src}`}
             className={`
-              h-20 w-20 shrink-0 snap-center rounded-full object-cover 
-              touch-pan-x select-none
               lg:w-24 lg:h-24 lg:cursor-pointer lg:hover:scale-105
               lg:transition lg:duration-500
+              md:h-20 md:w-20 md:mx-2
+              h-20 w-20 shrink-0 snap-center rounded-full object-cover
+              touch-pan-x select-none
               ${index === 0 && 'outline outline-social-brand outline-[2px] scale-105'}
             `}
             title={imageData.date}
@@ -204,21 +207,29 @@ function OurHistory() {
   return (
     <section
       className="lg:bg-light-social-brand lg:pt-12 lg:pb-28
+                   md:bg-light-social-brand md:pt-12 md:pb-28
                    bg-light-social-brand pt-12 pb-16"
     >
-      <div className="lg:max-w-[1160px] lg:mx-auto">
+      <div
+        className="lg:max-w-[1024px] lg:mx-auto
+                   md:max-w-[620px] md:mx-auto
+                   max-w-[320px] mx-auto">
         <SectionTitle 
           content="Nossa História" 
-          className="lg:text-left text-center"
+          className="lg:text-left
+                     md:text-left
+                     text-left"
         />
         <div className="pt-12 flex gap-20">
           {generateImagesBoard()}
         </div>
         <div
-          className="flex flex-col pt-12"
+          className="lg:flex lg:flex-col lg:pt-12
+                     md:flex md:flex-col md:pt-12
+                     flex flex-col pt-12"
         >
           <div className="lg:flex lg:pt-0">
-            <div className="lg:px-0 flex justify-center">
+            <div className="lg:px-0 flex">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={selectedImage.src}
@@ -226,8 +237,10 @@ function OurHistory() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="lg:w-[1160px] lg:h-[420px] lg:rounded-md lg:cursor-pointer lg:object-cover lg:shadow-lg
-                         w-[320px] h-[200px] rounded-md cursor-pointer object-cover shadow-lg"
+                  className="lg:w-[3800px] lg:h-[420px] lg:rounded-md lg:cursor-pointer 
+                             lg:object-cover lg:shadow-lg
+                             md:w-full md:h-[320px]
+                             w-full h-[200px] rounded-md cursor-pointer object-cover shadow-lg"
                   title={selectedImage.date}
                   src={selectedImage.src}
                   alt={selectedImage.title}
@@ -236,7 +249,10 @@ function OurHistory() {
                 />
               </AnimatePresence>
             </div>
-            <div className="text-center w-full">
+            <div
+              className="lg:text-left
+                         md:text-left
+                         text-left">
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={selectedImage.title}
@@ -244,9 +260,16 @@ function OurHistory() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="py-6 text-2xl font-semibold"
+                  className="lg:py-6 lg:text-2xl lg:font-semibold lg:pl-16
+                             md:py-6 md:text-2xl md:font-semibold
+                             py-6 text-2xl font-semibold"
                 >
-                  <span className="text-social-brand font-semibold text-2xl">{selectedImage.title}</span>
+                  <span
+                    className="lg:text-social-brand lg:font-semibold lg:text-2xl
+                               md:text-social-brand md:font-semibold md:text-2xl
+                               text-social-brand font-semibold text-2xl">
+                    {selectedImage.title}
+                  </span>
                 </motion.h1>
               </AnimatePresence>
               <AnimatePresence mode="wait">
@@ -261,8 +284,9 @@ function OurHistory() {
                 </motion.div>
               </AnimatePresence>
               <div
-                className="lg:flex-row lg:justify-start lg:px-16 lg:gap-x-4 lg:pt-16
-                           flex flex-col justify-center items-center pt-10 gap-y-4"
+                className="lg:flex-row lg:justify-start lg:items-center lg:px-16 lg:gap-x-4 lg:pt-16
+                           md:flex-row md:justify-start md:items-center md:gap-x-4
+                           flex flex-col justify-left items-start pt-10 gap-y-4"
               >
                 <p>
                   <span className="text-social-brand font-semibold">Venha</span>{' '}

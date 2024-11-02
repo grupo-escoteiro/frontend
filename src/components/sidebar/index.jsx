@@ -17,7 +17,7 @@ export function Sidebar() {
   }, []);
   
   return (
-    <aside className="lg:hidden">
+    <aside className="lg:hidden md:hidden">
       <button
         className="z-50 relative cursor-pointer transition-all ease-in-out duration-200
                    text-4xl bg-transparent border-none p-0"
