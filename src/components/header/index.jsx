@@ -1,3 +1,4 @@
+// Header.js
 import logo from '/logo.svg';
 import avatar from '/avatar.png';
 import { AnimatedLink } from './components/AnimatedLink';
