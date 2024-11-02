@@ -175,10 +175,10 @@ function OurHistory() {
     return (
       <div
         className="lg:flex lg:h-24 lg:gap-11 lg:overflow-x-visible
-                   md:flex md:gap-8 md:overflow-x-visible
+                   md:flex md:gap-8
                    md:items-center md:justify-center
-                   flex gap-8 overflow-x-visible items-center justify-center h-24
-                   snap-x snap-mandatory scroll-smooth" 
+                   flex gap-8 overflow-x-scroll items-center justify-center h-24
+                   snap-x snap-mandatory scroll-smooth invisible-scrollbar"
       >
         {imagesData.map((imageData, index) => (
           <img
@@ -214,8 +214,8 @@ function OurHistory() {
         className="lg:max-w-[1024px] lg:mx-auto
                    md:max-w-[620px] md:mx-auto
                    max-w-[320px] mx-auto">
-        <SectionTitle 
-          content="Nossa História" 
+        <SectionTitle
+          content="Nossa História"
           className="lg:text-left
                      md:text-left
                      text-left"
@@ -237,7 +237,7 @@ function OurHistory() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="lg:w-[3800px] lg:h-[420px] lg:rounded-md lg:cursor-pointer 
+                  className="lg:w-[3800px] lg:h-[420px] lg:rounded-md lg:cursor-pointer
                              lg:object-cover lg:shadow-lg
                              md:w-full md:h-[320px]
                              w-full h-[200px] rounded-md cursor-pointer object-cover shadow-lg"

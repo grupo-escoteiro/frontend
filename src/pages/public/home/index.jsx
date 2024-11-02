@@ -44,16 +44,16 @@ function Home() {
       <OurTeam />
       <OurContact />
       <section
-        className="lg:pt-12 lg:pb-16 
+        className="lg:pt-12 lg:pb-16
                    md:pt-12 md:pb-16
-                   pt-12 pb-16">
+                   pt-12 pb-16 bg-social-white">
         <div
           className="lg:max-w-[1024px] lg:mx-auto
                      md:max-w-[620px] md:mx-auto
                      max-w-[320px] mx-auto">
           <SectionTitle
             content="Perguntas frequentes"
-            className="lg:mb-14 lg:text-left 
+            className="lg:mb-14 lg:text-left
                        md:mb-14 md:text-left
                        mb-10 text-left"
           />
