@@ -46,7 +46,7 @@ function Home() {
       <section
         className="lg:pt-12 lg:pb-16
                    md:pt-12 md:pb-16
-                   pt-12 pb-16 bg-social-white">
+                   pt-12 pb-16">
         <div
           className="lg:max-w-[1024px] lg:mx-auto
                      md:max-w-[620px] md:mx-auto
