@@ -4,13 +4,16 @@ import { imagesList } from '../../../helpers/gallery-images-list.js';
 import { PageTransition } from '../../../components/page-transition/index.jsx';
 
 const layoutClasses = [
-  'col-span-8 row-span-2',
-  'col-span-4',
-  'col-span-4',
-  'col-span-4',
-  'col-span-8 row-span-2',
-  'col-span-4',
-  'col-span-12'
+  'lg:col-span-8 lg:row-span-2 md:col-span-6',
+  'lg:col-span-4 md:col-span-3',
+  'lg:col-span-4 md:col-span-3',
+  'lg:col-span-4 md:col-span-6',
+  'lg:col-span-4 md:col-span-3',
+  'lg:col-span-4 md:col-span-3',
+  'lg:col-span-8 lg:row-span-2 md:col-span-6',
+  'lg:col-span-4 md:col-span-3',
+  'lg:col-span-4 md:col-span-3',
+  'lg:col-span-12 md:col-span-6'
 ];
 
 function Gallery() {
@@ -21,19 +24,25 @@ function Gallery() {
   return (
     <PageTransition>
       <section className="pt-12 pb-20">
-        <div className="max-w-[1160px] mx-auto">
+        <div
+          className="lg:max-w-[1024px] lg:mx-auto
+                     md:max-w-[620px] md:mx-auto
+                     max-w-[320px] mx-auto"
+        >
           <SectionTitle
-            className="pt-12 pb-14"
+            className="lg:pt-12 lg:pb-14
+                       md:pt-0 md:pb-14
+                       pt-0 pb-14"
             content="Galeria"
           />
-          <div className="grid grid-cols-12 gap-8 items-center">
+          <div
+            className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center
+                       md:grid md:grid-cols-6 md:gap-8 md:items-center
+                       grid grid-cols-1 gap-8 items-center">
             {partialImagesList.map((image, index) => (
               <div
                 key={image.id}
-                className={`
-                  ${layoutClasses[index % layoutClasses.length]}
-                  cursor-pointer w-full h-full
-                `}
+                className={`${layoutClasses[index % layoutClasses.length]} cursor-pointer w-full h-full`}
               >
                 <a
                   href={image.url}

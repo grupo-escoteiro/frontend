@@ -32,16 +32,33 @@ function Ramos() {
   return (
     <PageTransition>
       <section className="pt-12 pb-20">
-        <div className="max-w-[1160px] mx-auto">
+        <div
+          className="lg:max-w-[1024px] lg:mx-auto
+                     md:max-w-[620px] md:mx-auto
+                     max-w-[320px] mx-auto">
           <SectionTitle
-            className="pt-12 pb-14"
+            className="lg:pt-12 lg:pb-14 lg:text-left
+                       md:pt-12 md:pb-14 md:text-left
+                       pt-4 pb-8 text-left"
             content="Ramos"
           />
-          <div className="flex margin-auto gap-x-32">
-            <img
-              className="w-[278px] h-[225px] rounded-full object-cover shadow-default"
-              src={lobinho}
-            />
+          <div
+            className="lg:flex lg:flex-row lg:gap-x-16
+                       md:flex md:gap-x-32
+                       flex flex-col text-left gap-y-10"
+          >
+            <div
+              className="lg:flex lg:justify-start
+                         md:flex md:justify-center
+                         flex justify-center"
+            >
+              <img
+                className="lg:w-[4000px] lg:h-[240px] lg:rounded-full lg:object-cover lg:shadow-default
+                           md:w-[240px] md:h-[240px] md:rounded-full md:object-cover md:shadow-default
+                           w-[180px] h-[180px] rounded-full object-cover shadow-default"
+                src={lobinho}
+              />
+            </div>
             <p className="text-2xl">
               <span className="text-social-brand pr-2">
                 Lobinho:
@@ -67,7 +84,23 @@ function Ramos() {
               </button>
             </p>
           </div>
-          <div className="flex margin-auto pt-44 gap-x-28">
+          <div
+            className="lg:flex lg:flex-row lg:gap-x-16
+                       md:flex md:gap-x-32
+                       flex flex-col text-left gap-y-10"
+          >
+            <div
+              className="lg:hidden
+                         md:flex md:justify-center
+                         flex justify-center"
+            >
+              <img
+                className="lg:w-[1800px] lg:h-[260px] lg:rounded-full lg:object-cover lg:shadow-default
+                         md:w-[240px] md:h-[240px] md:rounded-full md:object-cover md:shadow-default
+                         w-[180px] h-[180px] rounded-full object-cover shadow-default"
+                src={flordeliz}
+              />
+            </div>
             <p className="text-2xl">
               <span className="text-social-brand pr-2">
                 Junior:
@@ -86,13 +119,20 @@ function Ramos() {
                 Ver mais
               </button>
             </p>
-            <img
-              className="w-[309px] h-[246px] rounded-full object-cover shadow-default"
-              src={flordeliz}
-            />
+            <div
+              className="lg:flex lg:justify-start
+                         md:hidden
+                         hidden"
+            >
+              <img
+                className="lg:w-[1800px] lg:h-[260px] lg:rounded-full lg:object-cover lg:shadow-default
+                         md:w-[240px] md:h-[240px] md:rounded-full md:object-cover md:shadow-default
+                         w-[180px] h-[180px] rounded-full object-cover shadow-default"
+                src={flordeliz}
+              />
+            </div>
           </div>
         </div >
-
         <Modal
           open={openLobinho}
           onClose={handleModalOpenLobinho}
@@ -104,7 +144,23 @@ function Ramos() {
             />
             <h2 className="text-xl font-bold text-social-brand">Lobinho</h2>
           </div>
-          <p>
+          <p
+            className="lg:hidden
+                       md:hidden
+                       inline-block"
+          >
+            Deveres com Deus: tratando de forma indissociável dos demais pilares,
+            abaixo descritos, o escoteiro é estimulado a procurar em Deus seu referencial,
+            praticando sua crença e respeitando os demais.
+            Deveres para com a Pátria: transcendendo o dever de sua comunidade o escoteiro é
+            estimulado através do seu conhecimento cívico e social, a compreender,
+            aprimorar e multiplicar os valores do cidadão Brasileiro.
+          </p>
+          <p
+            className="lg:inline-block
+                       md:inline-block
+                       hidden"
+          >
             Deveres com Deus: tratando de forma indissociável dos demais pilares,
             abaixo descritos, o escoteiro é estimulado a procurar em Deus seu referencial,
             praticando sua crença e respeitando os demais.
@@ -134,7 +190,6 @@ function Ramos() {
             </button>
           </div>
         </Modal>
-
         <Modal
           open={openJunior}
           onClose={handleModalOpenJunior}
@@ -146,7 +201,25 @@ function Ramos() {
             />
             <h2 className="text-xl font-bold text-social-brand">Junior</h2>
           </div>
-          <p>
+          <p
+            className="lg:hidden
+                       md:hidden
+                       inline-block"
+          >
+            Prometo pela minha honra fazer o melhor possível para:
+            Cumprir meus deveres para com Deus e minha Pátria;
+            Ajudar o próximo em toda e qualquer ocasião;
+            Obedecer à Lei Escoteira.
+            A Lei Escoteira seguida pelos juniores é:
+            O Escoteiro tem uma só palavra, sua honra vale mais que a própria vida;
+            O Escoteiro está Sempre Alerta para ajudar o Próximo e pratica diariamente uma boa ação;
+            O Lema do Escoteiro Júnior é Sempre Alerta.
+          </p>
+          <p
+            className="lg:inline-block
+                       md:inline-block
+                       hidden"
+          >
             Prometo pela minha honra fazer o melhor possível para:
             Cumprir meus deveres para com Deus e minha Pátria;
             Ajudar o próximo em toda e qualquer ocasião;

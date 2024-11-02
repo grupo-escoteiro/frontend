@@ -12,7 +12,10 @@ function NotFound() {
           bg-light-social-brand
         `}
       >
-        <div className="max-w-[1160px] mx-auto">
+        <div
+          className="lg:max-w-[1024px] lg:mx-auto
+                     md:max-w-[620px] md:mx-auto
+                     max-w-[320px] mx-auto">
           <div className="text-social-black">
             <h1 className="text-social-brand font-bold text-5xl mb-4">
               Ops!! Parece que você foi explorar além dos limites permitidos!!
