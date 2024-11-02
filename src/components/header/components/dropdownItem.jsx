@@ -1,20 +1,18 @@
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { node, string } from 'prop-types';
 
-function DropdownItem({ to, text, icon, edit = '' }) {
+function DropdownItem({ text, edit, icon }) {
   return (
-    <Link to={to} className={`flex items-center gap-2 px-4 py-2 ${edit}`}>
-      {icon}
-      <span>{text}</span>
-    </Link>
+    <p className={`inline-flex items-center gap-x-4 ${edit}`}>
+      <span>{icon}</span>
+      {text}
+    </p>
   );
 }
 
 DropdownItem.propTypes = {
-  to: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  icon: PropTypes.node.isRequired,
-  edit: PropTypes.string
+  text: string,
+  edit: string,
+  icon: node
 };
 
 export { DropdownItem };
