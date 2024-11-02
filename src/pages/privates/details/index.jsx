@@ -156,7 +156,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray
-                               font-semibold brightness-125 rounded-md"
+                                 font-semibold brightness-125 rounded-md"
                     />
                   </div>
                   <div>
@@ -178,7 +178,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray 
-                               font-semibold brightness-125 rounded-md" 
+                                 font-semibold brightness-125 rounded-md" 
                     />
                   </div>
                   <div>
@@ -189,7 +189,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray 
-                               font-semibold brightness-125 rounded-md"
+                                 font-semibold brightness-125 rounded-md"
                     />
                   </div>
                   <div>
@@ -222,7 +222,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray 
-                               font-semibold brightness-125 rounded-md appearance-none" 
+                               font-semibold brightness-125 rounded-md appearance-none"
                     />
                   </div>
                 </div>
@@ -324,7 +324,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive || !isScoutActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray
-                               font-semibold brightness-125 rounded-md"
+                                 font-semibold brightness-125 rounded-md"
                     />
                   </div>
                   <div>
@@ -335,7 +335,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive || !isScoutActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray
-                               font-semibold brightness-125 rounded-md" 
+                               font-semibold brightness-125 rounded-md"
                     />
                   </div>
                   <div>
@@ -346,7 +346,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive || !isScoutActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray
-                               font-semibold brightness-125 rounded-md"
+                                 font-semibold brightness-125 rounded-md"
                     />
                   </div>
                   <div>
@@ -379,7 +379,7 @@ function DetailsUser() {
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive || !isScoutActive}
                       className="mt-1 block w-full px-3 py-2 border border-social-gray
-                               font-semibold brightness-125 rounded-md" 
+                                 font-semibold brightness-125 rounded-md"
                     />
                   </div>
                   <div>
@@ -401,8 +401,8 @@ function DetailsUser() {
                   <label className="block text-sm font-medium text-social-black">Ramo</label>
                   <div className="mt-1 relative">
                     <select
-                      className="block w-60 px-3 py-2 bg-gray-100 
-                               border border-gray-300 rounded-md"
+                      className="block w-60 px-3 py-2 bg-social-white 
+                               border border-social-gray rounded-md"
                       id="ramos"
                       value={ramoSelecionadoEscoteiro}
                       onChange={handleSelectChangeRamoEscoteiro}
