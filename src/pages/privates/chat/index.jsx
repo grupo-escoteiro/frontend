@@ -119,8 +119,15 @@ function ChatGemini() {
 
   return (
     <PageTransition className="h-full">
-      <section className="pt-12 min-h-full flex">
-        <div className="max-w-[1160px] mx-auto flex-1">
+      <section
+        className="lg:pt-12 lg:pb-20 lg:min-h-full lg:flex
+                   md:pt-12 md:pb-20 md:min-h-full md:flex
+                   pt-12 pb-20 min-h-full flex"
+      >
+        <div
+          className="lg:max-w-[1024px] lg:mx-auto lg:flex-1
+                     md:max-w-[620px] md:mx-auto md:flex-1
+                     max-w-[320px] mx-auto flex-1">
           <div className="flex items-center justify-between">
             <SectionTitle content="Chat" />
             <button
@@ -135,7 +142,10 @@ function ChatGemini() {
               Limpar histórico
             </button>
           </div>
-          <div className="grid grid-cols-2 gap-x-4 py-4 h-full">
+          <div
+            className="lg:grid lg:grid-cols-2 lg:gap-x-4 lg:py-4 lg:h-full
+                       md:grid md:grid-cols-1 md:gap-y-8 md:py-4 md:h-full
+                       grid grid-cols-1 gap-y-8 py-4 h-full">
             <Container className="p-4 flex flex-col gap-y-4">
               <div
                 className={`

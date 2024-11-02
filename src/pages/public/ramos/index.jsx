@@ -59,7 +59,11 @@ function Ramos() {
                 src={lobinho}
               />
             </div>
-            <p className="text-2xl">
+            <p
+              className="lg:text-2xl
+                         md:text-xl
+                         text-lg"
+            >
               <span className="text-social-brand pr-2">
                 Lobinho:
               </span>
@@ -101,7 +105,11 @@ function Ramos() {
                 src={flordeliz}
               />
             </div>
-            <p className="text-2xl">
+            <p
+              className="lg:text-2xl
+                         md:text-xl
+                         text-lg"
+            >
               <span className="text-social-brand pr-2">
                 Junior:
               </span>
@@ -147,18 +155,15 @@ function Ramos() {
           <p
             className="lg:hidden
                        md:hidden
-                       inline-block"
+                       inline-block text-lg"
           >
             Deveres com Deus: tratando de forma indissociável dos demais pilares,
             abaixo descritos, o escoteiro é estimulado a procurar em Deus seu referencial,
             praticando sua crença e respeitando os demais.
-            Deveres para com a Pátria: transcendendo o dever de sua comunidade o escoteiro é
-            estimulado através do seu conhecimento cívico e social, a compreender,
-            aprimorar e multiplicar os valores do cidadão Brasileiro.
           </p>
           <p
-            className="lg:inline-block
-                       md:inline-block
+            className="lg:inline-block lg:text-2xl
+                       md:inline-block md:text-xl
                        hidden"
           >
             Deveres com Deus: tratando de forma indissociável dos demais pilares,
@@ -174,12 +179,6 @@ function Ramos() {
             Aceitação da Lei e Promessa: O escoteiro é estimulado através das experiências a assumir voluntariamente
             um código de conduta que o leva a um conjunto de valores, e estes são representados pela Lei e
             Promessa.
-            Sistema de Patrulhas: Vivendo em pequenas equipes cooperativas eles desenvolvem valores e
-            habilidades.
-            A patrulha é a unidade para todo o trabalho desenvolvido no movimento escoteiro.
-            Desenvolvimento individual meritocrático: Cada jovem experimenta a sua maneira e cresce dentro do seu ritmo,
-            orientado por chefes e pelo sistema de etapas e conquistas, vai individualmente superando desafios e
-            adquirindo habilidades, e quando atinge um padrão mínimo, lhe é reconhecido com um distintivo de conquista.
           </p>
           <div className="text-end py-6 px-12">
             <button
@@ -204,7 +203,7 @@ function Ramos() {
           <p
             className="lg:hidden
                        md:hidden
-                       inline-block"
+                       inline-block text-lg"
           >
             Prometo pela minha honra fazer o melhor possível para:
             Cumprir meus deveres para com Deus e minha Pátria;
@@ -212,12 +211,11 @@ function Ramos() {
             Obedecer à Lei Escoteira.
             A Lei Escoteira seguida pelos juniores é:
             O Escoteiro tem uma só palavra, sua honra vale mais que a própria vida;
-            O Escoteiro está Sempre Alerta para ajudar o Próximo e pratica diariamente uma boa ação;
             O Lema do Escoteiro Júnior é Sempre Alerta.
           </p>
           <p
-            className="lg:inline-block
-                       md:inline-block
+            className="lg:inline-block lg:text-2xl
+                       md:inline-block md:text-xl
                        hidden"
           >
             Prometo pela minha honra fazer o melhor possível para:

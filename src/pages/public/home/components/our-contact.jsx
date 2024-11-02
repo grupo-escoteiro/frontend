@@ -49,7 +49,10 @@ function OurContact() {
             errorMessage={errors.name?.message}
             name="name"
           />
-          <div className="lg:hidden inline-block">
+          <div
+            className="lg:hidden 
+                       inline-block"
+          >
             <Input
               {...register('email')}
               label="E-mail"

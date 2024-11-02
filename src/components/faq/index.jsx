@@ -21,8 +21,8 @@ function Faq({ faqs }) {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="lg:border lg:w-full lg:border-social-gray lg:bg-social-white lg:rounded lg:my-0 
-                       border w-full border-social-gray bg-social-white rounded my-4"
+            className="lg:border lg:w-full border-social-gray bg-social-white lg:rounded lg:my-0 
+                       border w-full rounded my-4"
           >
             <button
               onClick={() => toggleFaq(index)}
