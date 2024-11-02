@@ -34,31 +34,10 @@ function Header() {
   }
 
   const dropdownItems = [
-    { 
-      id: 1, 
-      to: '/configuracao', 
-      text: 'Configurações', 
-      icon: <Settings />, 
-      edit: 'border-b border-social-gray pb-2' 
-    },
-    { 
-      id: 3, 
-      to: '/privacy', 
-      text: 'Privacidade', 
-      icon: <ShieldAlert />
-    },
-    { 
-      id: 4, 
-      to: '/chat', 
-      text: 'Chat', 
-      icon: <Star /> 
-    },
-    { 
-      id: 5, 
-      to: '/admin', 
-      text: 'Admin', 
-      icon: <LockKeyhole /> 
-    },
+    { id: 1, to: '/configuracao', text: 'Configurações', icon: <Settings />, edit: 'border-b border-social-gray pb-2' },
+    { id: 3, to: '/privacy', text: 'Privacidade', icon: <ShieldAlert /> },
+    { id: 4, to: '/chat', text: 'Chat', icon: <Star /> },
+    { id: 5, to: '/admin', text: 'Admin', icon: <LockKeyhole /> },
     {
       id: 6,
       to: '/logout',
@@ -120,8 +99,7 @@ function Header() {
                 <>
                   <div className="flex justify-center">
                     <img
-                      className={`w-12 h-12 rounded-full object-cover cursor-pointer 
-                                  transition duration-500
+                      className={`w-12 h-12 rounded-full object-cover cursor-pointer transition duration-500 
                           ${(isOpen || dropdownRoutes.includes(activeRoute)) ? 
                           'brightness-150 border-2 border-green-600' : 'hover:brightness-150'}
                       `}
@@ -138,12 +116,7 @@ function Header() {
                         if (trigger) trigger();
                         else handleNavigate(to);
                       },
-                      component: <DropdownItem 
-                        to={to} 
-                        text={text} 
-                        icon={icon} 
-                        edit={edit} 
-                      />
+                      component: <DropdownItem to={to} text={text} icon={icon} edit={edit} />
                     }))}
                     visible={isOpen}
                     className="absolute right-0 transform mt-2"
