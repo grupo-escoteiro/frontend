@@ -33,8 +33,9 @@ function Settings() {
           >
             <menu>
               <ul
-                className="lg:flex lg:flex-col lg:gap-y-6
-                           md:flex md:flex-col md:py-4 max-w-48"
+                className="lg:flex lg:flex-col lg:gap-y-6 lg:py-0
+                           md:flex md:flex-row md:gap-x-0 md:py-4 md:max-w-48
+                           flex flex-col gap-y-2 max-w-44 py-4"
               >
                 <li
                   className="text-nowrap font-semibold text-social-brand
