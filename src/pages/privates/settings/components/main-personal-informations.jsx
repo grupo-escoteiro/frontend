@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 function MainPersonalInformations() {
   return (
     <>
-      <form className="flex flex-wrap gap-x-6 gap-y-14">
+      <form
+        className="lg:flex lg:flex-wrap lg:gap-x-6 lg:gap-y-14
+                   md:flex md:flex-wrap md:justify-between md:gap-x-6 md:gap-y-14"
+      >
         <Input 
           label="Nome completo" 
           placeholder="Digite seu nome completo"
@@ -26,14 +29,17 @@ function MainPersonalInformations() {
           placeholder="Digite seu telefone principal"
           errorMessage="Qualquer mensagem"
         />
+        
         <Input 
           label="Telefone de Emergência"
           placeholder="Digite seu telefone de Emergência"
           errorMessage="Qualquer mensagem"
         />
-      
       </form>
-      <div className="flex justify-end items-center gap-x-5">
+      <div
+        className="lg:flex lg:justify-end lg:items-center lg:gap-x-5
+                   md:flex md:justify-end md:items-center md:gap-x-5 md:py-16"
+      >
         <Link className="text-social-red transition duration-500 hover:brightness-50">
             Voltar
         </Link>

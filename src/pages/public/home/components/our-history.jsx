@@ -176,8 +176,8 @@ function OurHistory() {
       <div
         className="lg:flex lg:h-24 lg:gap-11 lg:overflow-x-visible
                    md:flex md:gap-8
-                   md:items-center md:justify-center
-                   flex gap-8 overflow-x-scroll items-center justify-center h-24
+                   md:items-center md:justify-start
+                   flex gap-8 overflow-x-scroll items-center justify-start h-24
                    snap-x snap-mandatory scroll-smooth invisible-scrollbar"
       >
         {imagesData.map((imageData, index) => (

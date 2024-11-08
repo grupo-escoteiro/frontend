@@ -18,14 +18,24 @@ function Settings() {
     <>
       <Header />
       <section className="pt-12 pb-16">
-        <div className="max-w-[1160px] mx-auto">
+        <div
+          className="lg:max-w-[1024px] lg:mx-auto
+                     md:max-w-[620px] md:mx-auto
+                     max-w-[320px] mx-auto"
+        >
           <SectionTitle
             content="Configurações"
             className="mb-5"
           />
-          <Container className="flex py-16 px-8 gap-x-9">
+          <Container
+            className="lg:flex lg:flex-row lg:py-16 lg:px-8 lg:gap-x-9
+                       md:flex md:flex-col md:px-8 md:gap-x-9"
+          >
             <menu>
-              <ul className="flex flex-col gap-6">
+              <ul
+                className="lg:flex lg:flex-col lg:gap-y-6
+                           md:flex md:flex-col md:py-4 max-w-48"
+              >
                 <li
                   className="text-nowrap font-semibold text-social-brand
                               transition duration-500 p-2 hover:bg-social-brand hover:text-social-white
@@ -43,7 +53,7 @@ function Settings() {
                 </li>
               </ul>
             </menu>
-            <div className="border-l border-social-gray w-full">
+            <div className="lg:border-l lg:border-social-gray lg:w-full">
               <Tabs
                 titles={['Principal', 'Endereço', 'Imagens']}
                 body={ tabs }

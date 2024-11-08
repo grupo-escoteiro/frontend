@@ -46,7 +46,8 @@ function Footer() {
         <div
           className="lg:w-full lg:text-center lg:pb-8
                      md:w-full md:text-center md:pb-12
-                     w-full text-center pt-4 pb-12">
+                     w-full text-center pt-4 pb-12"
+        >
           <small className="text-social-gray">&copy; Todos direitos reservados</small>
         </div>
       </div>
