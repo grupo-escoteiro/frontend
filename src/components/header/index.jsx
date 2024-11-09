@@ -40,7 +40,7 @@ function Header() {
         <figure
           className="lg:flex lg:gap-2 lg:items-center lg:cursor-pointer lg:p-0 
                      md:flex md:gap-2 md:items-center md:cursor-pointer md:p-0
-                     px-4 py-7 flex justify-between items-center cursor-pointer"
+                     px-0 py-7 flex justify-between items-center cursor-pointer"
           title="Voltar à home"
           aria-label="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
         >
@@ -56,11 +56,12 @@ function Header() {
                 className="inline-block">
                 {currentUser ? (
                   <>
-                    <div className="lg:flex lg:justify-center">
+                    <div className="lg:flex lg:justify-center lg:items-center">
                       <img
-                        className="lg:w-12 lg:h-12 lg:rounded-full lg:object-cover lg:cursor-pointer lg:transition
-                                 lg:duration-500 lg:hover:brightness-150
-                                 w-12 h-12"
+                        className="lg:w-12 lg:h-12 rounded-full object-cover cursor-pointer transition
+                                   duration-500 hover:brightness-150
+                                   md:w-12 md:h-12
+                                   w-12 h-12"
                         src={avatar}
                         alt="Profile"
                         onClick={() => setIsOpen(prev => !prev)}
@@ -134,7 +135,7 @@ function Header() {
         <nav
           className="lg:inline-block 
                      md:inline-block
-                     hidden "
+                     hidden"
         >
           <ul
             className="lg:flex lg:items-center lg:gap-4
@@ -162,8 +163,9 @@ function Header() {
                 <>
                   <div className="lg:flex lg:justify-center">
                     <img
-                      className="lg:w-12 lg:h-12 lg:rounded-full lg:object-cover lg:cursor-pointer lg:transition
-                                 lg:duration-500 lg:hover:brightness-150"
+                      className="lg:w-12 lg:h-12 rounded-full object-cover cursor-pointer transition
+                                 duration-500 hover:brightness-150
+                                 md:w-12 md:h-12"
                       src={avatar}
                       alt="Profile"
                       onClick={() => setIsOpen(prev => !prev)}

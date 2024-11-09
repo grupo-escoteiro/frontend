@@ -40,10 +40,17 @@ function Login() {
 
   return (
     <PageTransition>
-      <Container className="grid grid-cols-2 gap-x-7 w-[1160px]">
+      <Container
+        className="lg:grid lg:grid-cols-2 lg:gap-x-7 lg:max-w-[1024px]
+                   md:grid md:grid-cols-1 md:gap-x-7 md:max-w-[620px]
+                   grid grid-cols-1 gap-x-7 max-w-[320px]"
+      >
         <div
-          className="text-social-white h-full w-full bg-no-repeat
-                      bg-cover bg-[url('/register-flow/box-side-background.png')]">
+          className="lg:inline-block lg:text-social-white lg:h-full lg:w-full lg:bg-no-repeat
+                      lg:bg-cover lg:bg-[url('/register-flow/box-side-background.png')]
+                      md:hidden
+                      hidden"
+        >
           <div
             className={`
               bg-no-repeat bg-[position:25px_225px] w-full h-full justify-evenly
@@ -76,7 +83,11 @@ function Login() {
             </ul>
           </div>
         </div>
-        <div className="py-16 px-8">
+        <div
+          className="lg:py-16 lg:px-8
+                     md:py-16 md:px-8
+                     py-6 px-8"
+        >
           <div className="text-center mb-9">
             <div className="text-left">
               <Link
@@ -109,7 +120,26 @@ function Login() {
               type="password"
               name="password"
             />
-            <fieldset className="flex justify-end gap-x-5 items-center">
+            <fieldset
+              className="lg:flex lg:justify-end lg:gap-x-5 lg:items-center
+                         md:flex md:justify-end md:gap-x-5 md:items-center
+                         hidden"
+            >
+              <Link
+                to="/autenticacao/cadastrar"
+                className="uppercase font-regular
+                        text-social-brand italic underline transition
+                        duration-500 hover:brightness-50"
+              >
+                Cadastre-se
+              </Link>
+              <Button content="Enviar" variant="green" type="submit" form="login-form" />
+            </fieldset>
+            <fieldset
+              className="lg:hidden
+                         md:hidden
+                         flex flex-col-reverse gap-y-4 justify-center items-center"
+            >
               <Link
                 to="/autenticacao/cadastrar"
                 className="uppercase font-regular
