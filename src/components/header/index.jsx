@@ -3,6 +3,7 @@ import avatar from '/avatar.png';
 import { AnimatedLink } from './components/AnimatedLink';
 import { Dropdown } from '../dropdown';
 import { getAuth } from 'firebase/auth';
+import { Sidebar } from '../sidebar';
 import { DropdownItem } from './components/dropdownItem';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -27,24 +28,118 @@ function Header() {
   }
 
   return (
-    <header className="w-full bg-light-social-brand">
-      <div className="max-w-[1160px] mx-auto py-7 flex justify-between items-center">
+    <header
+      className="lg:w-full lg:bg-light-social-brand lg:pb-0
+                 md:w-full md:bg-light-social-brand md:pb-0
+               bg-light-social-brand pb-8">
+      <div
+        className="lg:max-w-[1024px] lg:mx-auto lg:py-7 lg:px-0 lg:flex lg:justify-between lg:items-center
+                   md:max-w-[620px] md:mx-auto md:py-7 md:px-0 md:flex md:justify-between md:items-center
+                   max-w-[320px] mx-auto"
+      >
         <figure
-          className="flex gap-4 items-center cursor-pointer"
+          className="lg:flex lg:gap-2 lg:items-center lg:cursor-pointer lg:p-0 
+                     md:flex md:gap-2 md:items-center md:cursor-pointer md:p-0
+                     px-0 py-7 flex justify-between items-center cursor-pointer"
           title="Voltar à home"
           aria-label="Voltar à página inicial do Grupo Escoteiro Terra Da Saudade"
         >
           <img
-            className="w-24 h-24"
+            className="lg:w-24 lg:h-24
+                       w-20 h-20"
             src={logo}
             alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
           />
-          <figcaption className="text-left max-w-44">
+          <nav className="flex items-center gap-x-5">
+            <ul className="lg:hidden md:hidden">
+              <li
+                className="inline-block">
+                {currentUser ? (
+                  <>
+                    <div className="lg:flex lg:justify-center lg:items-center">
+                      <img
+                        className="lg:w-12 lg:h-12 rounded-full object-cover cursor-pointer transition
+                                   duration-500 hover:brightness-150
+                                   md:w-12 md:h-12
+                                   w-12 h-12"
+                        src={avatar}
+                        alt="Profile"
+                        onClick={() => setIsOpen(prev => !prev)}
+                      />
+                    </div>
+                    <Dropdown
+                      itemsList={[
+                        {
+                          id: 1,
+                          trigger: () => navigate('/configuracao'),
+                          component: <DropdownItem
+                            text="Configurações"
+                            edit="border-b border-social-gray pb-2"
+                            icon={<Settings />}
+                          />
+                        },
+                        {
+                          id: 3,
+                          trigger: () => navigate('/privacy'),
+                          component: <DropdownItem
+                            text="Privacidade"
+                            edit=""
+                            icon={<ShieldAlert />}
+                          />
+                        },
+                        {
+                          id: 4,
+                          trigger: async () => navigate('/chat'),
+                          component: <DropdownItem
+                            text="Chat"
+                            edit=""
+                            icon={<Star />}
+                          />
+                        },
+                        {
+                          id: 5,
+                          trigger: async () => await logout(),
+                          component: <DropdownItem
+                            text="Logout"
+                            edit="text-social-red transition duration-500 hover:text-social-brand"
+                            icon={<LogOut />}
+                          />
+                        },
+                      ]}
+                      visible={isOpen}
+                      className="absolute right-0 transform mt-2"
+                    />
+                  </>
+                ) : (
+                  <AnimatedLink
+                    to="/autenticacao/login"
+                    text="Login"
+                  />
+                )}
+              </li>
+            </ul>
+            <Sidebar/>
+          </nav>
+          <figcaption
+            className="lg:text-left lg:max-w-48 lg:inline-block 
+                       md:text-left md:max-w-48 md:inline-block 
+                       hidden">
             Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
           </figcaption>
         </figure>
-        <nav>
-          <ul className="flex items-center gap-4">
+        <figcaption
+          className="lg:text-left lg:max-w-44 lg:hidden md:text-left md:max-w-44 md:hidden
+                     text-center">
+            Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
+        </figcaption>
+        <nav
+          className="lg:inline-block 
+                     md:inline-block
+                     hidden"
+        >
+          <ul
+            className="lg:flex lg:items-center lg:gap-4
+                       md:flex md:items-center md:gap-4">
             <li>
               <AnimatedLink
                 text={'Home'}
@@ -63,13 +158,14 @@ function Header() {
                 text={'Galeria'}
               />
             </li>
-            <li className="relative">
+            <li className="lg:relative">
               {currentUser ? (
                 <>
-                  <div className="flex justify-center">
+                  <div className="lg:flex lg:justify-center">
                     <img
-                      className="w-12 h-12 rounded-full object-cover cursor-pointer transition
-                                 duration-500 hover:brightness-150"
+                      className="lg:w-12 lg:h-12 rounded-full object-cover cursor-pointer transition
+                                 duration-500 hover:brightness-150
+                                 md:w-12 md:h-12"
                       src={avatar}
                       alt="Profile"
                       onClick={() => setIsOpen(prev => !prev)}

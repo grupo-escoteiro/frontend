@@ -19,7 +19,10 @@ function Tabs({ body, titles }) {
         titles={titles}
         changeTab={handleChangeTab}
       />
-      <div className="w-full pl-6 pt-8">
+      <div
+        className="lg:w-full lg:pl-6 lg:pt-8
+                   md:w-full md:pt-8"
+      >
         {body[tab]}
       </div>
     </div>

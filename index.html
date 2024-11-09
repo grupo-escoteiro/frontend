@@ -10,15 +10,23 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#e2f0e1">
+    <meta name="theme-color" content="#e2f0e1">
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <title>GETS | Grupo Escoteiro Terra da Saudade</title>
   </head>
-  <body class="w-screen h-screen overflow-x-hidden bg-social-white">
-    <div id="root"></div>
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
+  <body class="max-w-full min-h-fit overflow-x-hidden">
+    <div
+      class="overflow-hidden min-h-full"
+      id="root"
+    ></div>
+    <div class="hidden md:inline-block">
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
       </div>
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
