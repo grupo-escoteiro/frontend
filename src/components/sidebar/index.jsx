@@ -1,4 +1,4 @@
-import logo from '../../../public/logo.svg';
+import logo from '/logo.svg';
 import { AnimatedLink } from '../header/components/AnimatedLink';
 import { useState, useCallback } from 'react';
 
