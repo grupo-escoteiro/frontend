@@ -17,10 +17,16 @@ function FourthStep() {
   } = useContext(registerContext);
 
   return (
-    <Container className="grid grid-cols-[1fr_3fr] gap-x-7 w-[1160px]">
+    <Container
+      className="lg:grid lg:grid-cols-[1fr_3fr] lg:gap-x-7 lg:max-w-[1024px]
+                 md:grid md:grid-cols-1 md:gap-x-7 md:max-w-[620px]
+                 grid grid-cols-1 gap-x-7 max-w-[320px]"
+    >
       <div
-        className="text-social-white w-full h-full bg-no-repeat
-                       bg-cover bg-[url('/register-flow/box-side-background.png')]"
+        className="lg:inline-block lg:text-social-white lg:w-full lg:h-full lg:bg-no-repeat
+                     lg:bg-cover lg:bg-[url('/register-flow/box-side-background.png')]
+                     md:hidden
+                     hidden"
       >
         <div
           className={`
@@ -59,7 +65,11 @@ function FourthStep() {
               />
             </div>
           </fieldset>
-          <fieldset className="grid grid-cols-2 gap-x-6 gap-y-6 pb-8">
+          <fieldset
+            className="grid lg:grid-cols-2 gap-x-6 gap-y-6 pb-8
+                       md:grid-cols-2
+                       grid-cols-1"
+          >
             <div className="flex flex-col gap-y-2">
               <label
                 htmlFor="senha"
@@ -91,7 +101,30 @@ function FourthStep() {
               />
             </div>
           </fieldset>
-          <fieldset className="flex justify-end items-center gap-x-6 mt-5">
+          <fieldset
+            className="lg:flex lg:justify-end lg:items-center lg:gap-x-6 lg:mt-5
+                       md:flex md:justify-end md:items-center md:gap-x-6 md:mt-5
+                       hidden"
+          >
+            <Link
+              to="/"
+              className="text-social-red font-regular transition duration-500
+                            hover:brightness-50"
+            >
+                Voltar
+            </Link>
+            <Button
+              variant="green"
+              type={journey === EJourney.voluntary ? 'submit' : 'button'}
+              content={journey === EJourney.voluntary ? 'Cadastrar' : 'Próximo'}
+              onClick={journey === EJourney.voluntary ? null : changeRegisterStep}
+            />
+          </fieldset>
+          <fieldset
+            className="lg:hidden
+                       md:hidden
+                       flex flex-col-reverse items-center justify-center gap-y-6"
+          >
             <Link
               to="/"
               className="text-social-red font-regular transition duration-500
