@@ -51,8 +51,9 @@ function FirstStep() {
         />
         <div className="w-full">
           <h2
-            className="text-3xl text-social-brand font-semibold
-                      mb-3"
+            className="lg:text-3xl text-social-brand font-semibold mb-3
+                       md:text-3xl
+                       text-2xl"
           >
             Aqui você irá decidir o rumo da sua jornada!
           </h2>
@@ -124,8 +125,8 @@ function FirstStep() {
             </div>
           </fieldset>
           <fieldset
-            className="lg:flex lg:items-center lg:self-end lg:gap-x-6
-                       md:flex md:items-center md:self-end md:gap-x-6
+            className="lg:flex lg:items-center lg:justify-end lg:gap-x-6
+                       md:flex md:items-center md:justify-end md:gap-x-6
                        hidden"
           >
             <Link
@@ -145,7 +146,7 @@ function FirstStep() {
           <fieldset
             className="lg:hidden
                        md:hidden
-                       flex flex-col-reverse items-center self-end gap-y-6"
+                       flex flex-col-reverse items-center justify-center gap-y-6"
           >
             <Link
               to="/"

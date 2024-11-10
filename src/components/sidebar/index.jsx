@@ -38,8 +38,8 @@ export function Sidebar() {
         </div>
       </button>
       <div
-        className={`sidebar fixed top-0 bottom-0 right-0 p-2 w-2/3 text-center bg-light-social-brand 
-                    z-40 transition-transform duration-500 flex flex-col
+        className={`sidebar fixed top-0 bottom-0 right-0 p-2 w-screen text-center bg-light-social-brand 
+                    z-40 transition-transform duration-500 flex flex-col shadow-default
                     ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="text-lg flex-grow">
           <div className="p-2 mt-1 flex justify-center items-center">

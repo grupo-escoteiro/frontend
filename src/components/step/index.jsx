@@ -32,7 +32,9 @@ function Step({ steps, active = 1 }) {
           {showDivider && (
             <span
               className={`
-                inline-block w-6 h-px mx-2
+                lg:inline-block lg:w-6 lg:h-px lg:mx-2
+                md:inline-block md:w-6 md:h-px md:mx-2
+                inline-block w-1 h-px mx-1
                 ${isCompleted ? 'bg-social-brand' : 'bg-social-gray'}
               `}
             ></span>

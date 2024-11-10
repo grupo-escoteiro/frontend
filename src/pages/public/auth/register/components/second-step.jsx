@@ -14,10 +14,17 @@ function SecondStep() {
   } = useContext(registerContext);
 
   return (
-    <Container className="grid grid-cols-[1fr_3fr] gap-x-7 w-[1160px]">
+    <Container
+      className="lg:grid lg:grid-cols-[1fr_3fr] lg:gap-x-7 lg:max-w-[1024px]
+                 md:grid md:grid-cols-1 md:gap-x-7 md:max-w-[620px]
+                 grid grid-cols-1 gap-x-7 max-w-[320px]"
+    >
       <div
-        className="text-social-white h-full w-full bg-no-repeat
-                      bg-cover bg-[url('/register-flow/box-side-background.png')]">
+        className="lg:inline-block lg:text-social-white lg:h-full lg:w-full lg:bg-no-repeat
+                   lg:bg-cover lg:bg-[url('/register-flow/box-side-background.png')]
+                   md:hidden
+                   hidden"
+      >
         <div
           className={`
               w-full h-full justify-evenly flex-col py-16 px-8 flex items-center
@@ -29,25 +36,33 @@ function SecondStep() {
           <img src={boneco} />
         </div>
       </div>
-      <div className="py-16 px-8 gap-y-8 flex flex-col items-center">
+      <div
+        className="lg:py-16 px-8 gap-y-8 flex flex-col items-center
+                   md:py-16
+                   py-8"
+      >
         <Step
           steps={stepsAmount}
           active={currentStep}
         />
         <form className="w-full max-w-3xl">
-          <fieldset className="grid grid-cols-2 gap-x-6 gap-y-6 pb-8">
+          <fieldset
+            className="grid lg:grid-cols-2 gap-x-6 gap-y-6 pb-8
+                       md:grid-cols-2
+                       grid-cols-1"
+          >
             <div className="flex flex-col gap-y-2">
               <label
                 htmlFor="name"
                 className="font-semibold"
               >
-                    Nome completo
+                Nome completo
               </label>
               <input
                 type="text"
                 name="nome"
                 id="name"
-                placeholder="Digite seu nome completo"
+                placeholder="Digite o nome do responsável"
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -111,13 +126,36 @@ function SecondStep() {
               />
             </div>
           </fieldset>
-          <fieldset className="flex justify-end items-center gap-x-6 mt-5">
+          <fieldset
+            className="lg:flex lg:items-center lg:justify-end lg:gap-x-6
+                       md:flex md:items-center md:justify-end md:gap-x-6
+                       hidden"
+          >
             <Link
               to="/"
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-                Voltar
+              Voltar
+            </Link>
+            <Button
+              variant="green"
+              type="button"
+              content="Próximo"
+              onClick={changeRegisterStep}
+            />
+          </fieldset>
+          <fieldset
+            className="lg:hidden
+                       md:hidden
+                       flex flex-col-reverse items-center justify-center gap-y-6"
+          >
+            <Link
+              to="/"
+              className="text-social-red font-regular transition duration-500
+                            hover:brightness-50"
+            >
+              Voltar
             </Link>
             <Button
               variant="green"
