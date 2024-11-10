@@ -124,7 +124,7 @@ const imagesData = [
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-10 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-justify lg:px-0
                    md:text-left"
       >
         is simply dummy text of the printing and typesetting industry.
