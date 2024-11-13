@@ -174,11 +174,11 @@ function OurHistory() {
   function generateImagesBoard() {
     return (
       <div
-        className="lg:flex lg:h-24 lg:gap-11 lg:overflow-x-visible
-                   md:flex md:gap-8
-                   md:items-center md:justify-start
+        className="lg:flex lg:gap-x-[58px] lg:h-24 lg:overflow-x-visible lg:px-0
+                   md:flex md:gap-8 md:h-24
+                   md:items-center md:justify-start md:px-[3.5px]
                    flex gap-8 overflow-x-scroll items-center justify-start h-24
-                   snap-x snap-mandatory scroll-smooth invisible-scrollbar"
+                   snap-x snap-mandatory scroll-smooth invisible-scrollbar px-[3.5px]"
       >
         {imagesData.map((imageData, index) => (
           <img
@@ -186,7 +186,7 @@ function OurHistory() {
             className={`
               lg:w-24 lg:h-24 lg:cursor-pointer lg:hover:scale-105
               lg:transition lg:duration-500
-              md:h-20 md:w-20 md:mx-2
+              md:h-20 md:w-20
               h-20 w-20 shrink-0 snap-center rounded-full object-cover
               touch-pan-x select-none
               ${index === 0 && 'outline outline-social-brand outline-[2px] scale-105'}
