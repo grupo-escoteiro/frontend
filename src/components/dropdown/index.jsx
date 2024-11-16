@@ -4,7 +4,8 @@ import { Box } from '../box';
 function Dropdown({
   visible = false,
   itemsList,
-  className = ''
+  className = '',
+  onSelect 
 }) {
   return (
     <Box
@@ -20,7 +21,10 @@ function Dropdown({
             return (
               <li
                 key={item.id}
-                onClick={item.trigger}
+                onClick={() => {
+                  item.trigger();
+                  onSelect?.(item.id); 
+                }}
                 className={`
                   flex gap-x-2 cursor-pointer hover:text-social-brand
                   transition-colors
@@ -45,7 +49,8 @@ Dropdown.propTypes = {
       component: node.isRequired,
     })
   ).isRequired,
-  className: string
+  className: string,
+  onSelect: func 
 };
 
 export { Dropdown };
