@@ -6,134 +6,126 @@ import { motion, AnimatePresence } from 'framer-motion';
 const imagesData = [
   {
     src: '/gallery/imagem-1.jpg',
-    title: 'Piquenique com as crianças',
+    title: 'Um Grandioso Dia',
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-16 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-left lg:px-0
                    md:text-left"
       >
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
+        No Movimento Escoteiro, cada atividade é uma oportunidade de aprendizado 
+        e crescimento. Desde aventuras ao ar livre até projetos que estimulam a criatividade, 
+        os jovens desenvolvem habilidades importantes enquanto fortalecem valores como trabalho em equipe, 
+        respeito e liderança. Participar desse movimento significa não apenas explorar novos horizontes, mas 
+        também construir memórias inesquecíveis que durarão para sempre, criando laços que atravessam gerações e
+        mantendo o espírito do escotismo.
       </p>
     )
   },
   {
     src: '/gallery/imagem-2.jpg',
-    title: 'Eu não sei de nada',
+    title: 'Um Dia de União e Conquistas',
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-16 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-left lg:px-0
                    md:text-left"
       >
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
+        Reunidos sob o mesmo propósito, celebramos as conquistas de cada 
+        integrante deste movimento que transforma vidas. Entre sorrisos e aplausos, 
+        fortalecemos laços de amizade e compartilhamos experiências que inspiram a jornada de todos. 
+        Esta união reflete o compromisso de cada um em construir um futuro mais justo e colaborativo. 
+        Aqui, cada momento é especial e nos lembra que, juntos, somos mais fortes. Venha fazer parte desta 
+        família e descubra como o escotismo pode mudar sua vida!
       </p>
     )
   },
   {
     src: '/gallery/imagem-3.jpg',
-    title: 'Escoteiros em atividade',
+    title: 'Compromisso e Trabalho em Equipe',
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-16 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-left lg:px-0
                    md:text-left"
       >
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
+        Cada encontro é uma oportunidade de celebrar o esforço coletivo 
+        e o aprendizado contínuo. Aqui, escoteiros de diferentes idades 
+        compartilham momentos de crescimento, realizam conquistas e fortalecem valores essenciais 
+        para a vida em comunidade. Com união e dedicação, construímos um ambiente onde cada jovem 
+        pode se desenvolver e transformar o mundo ao seu redor. Venha se juntar a nós e descubra como é fazer parte 
+        desta jornada de descobertas e aventuras!
       </p>
     )
   },
   {
     src: '/gallery/imagem-4.jpg',
-    title: 'Culpa do Alemão',
+    title: 'A Força do Escotismo',
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-16 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-left lg:px-0
                    md:text-left"
       >
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
+        No coração de cada encontro escoteiro, surge uma energia única que 
+        transforma simples momentos em experiências extraordinárias. Com uniformes 
+        que simbolizam união e propósito, jovens e adultos se reúnem para compartilhar conhecimentos, 
+        celebrar conquistas e fortalecer laços de amizade. Sob a bandeira que tremula orgulhosamente, 
+        cada formação, cada atividade e cada gesto de companheirismo reflete os valores fundamentais do movimento 
+        escoteiro.
       </p>
     )
   },
   {
     src: '/gallery/imagem-5.jpg',
-    title: 'Texto Ryan Bolado',
+    title: 'Ritmo e Alegria',
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-16 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-left lg:px-0
                    md:text-left"
       >
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
+        Na jornada escoteira, a música se torna uma poderosa ferramenta de união 
+        e expressão, onde cada batida de tambor e cada canção entoada carregam consigo 
+        o espírito de fraternidade e alegria. Com instrumentos em mãos e sorrisos nos rostos, escotistas 
+        e jovens compartilham momentos musicais que transcendem as palavras, criando uma atmosfera de harmonia 
+        e celebração que fortalece os laços entre todos os membros do movimento, tornando cada encontro uma experiência 
+        única e memorável.
       </p>
     )
   },
   {
     src: '/gallery/imagem-6.jpg',
-    title: 'Texto teste',
+    title: 'Movimento e Sincronismo',
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-16 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-left lg:px-0
                    md:text-left"
       >
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
+        Em cada atividade escoteira, o movimento sincronizado se torna uma expressão de 
+        unidade e disciplina. Com gestos coordenados e sorrisos nos rostos, os jovens aprendem 
+        que cada movimento tem um propósito, cada gesto conta uma história. Através dessas dinâmicas, desenvolvem 
+        não apenas coordenação e ritmo, mas também o verdadeiro espírito de equipe, onde cada participante é uma parte 
+        essencial de um todo maior, criando momentos de aprendizado que combinam diversão e desenvolvimento pessoal.
       </p>
     )
   },
   {
     src: '/gallery/imagem-7.jpg',
-    title: 'Texto 4',
+    title: 'Escotismo e Espiritualidade',
     date: '31/10/2023',
     text: (
       <p
-        className="lg:pl-16 lg:text-justify lg:px-0
+        className="lg:pl-16 lg:text-left lg:px-0
                    md:text-left"
       >
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
+        No encontro entre fé e escotismo, surge um momento especial de reflexão e crescimento 
+        espiritual. Com respeito e abertura, jovens escoteiros participam de momentos que transcendem 
+        as atividades cotidianas, aprendendo valores fundamentais através do diálogo inter-religioso e da convivência 
+        harmoniosa. Estes encontros fortalecem não apenas a dimensão espiritual do movimento escoteiro, mas também 
+        promovem o entendimento e o respeito pela diversidade de crenças, construindo pontes entre diferentes 
+        tradições e culturas.
       </p>
     )
   },
@@ -229,28 +221,26 @@ function OurHistory() {
                      flex flex-col pt-12"
         >
           <div className="lg:flex lg:pt-0">
-            <div className="lg:px-0 flex">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={selectedImage.src}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="lg:w-[3800px] lg:h-[420px] lg:rounded-md lg:cursor-pointer
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={selectedImage.src}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="lg:w-[530px] lg:h-[420px] lg:rounded-md lg:cursor-pointer
                              lg:object-cover lg:shadow-lg
                              md:w-full md:h-[320px]
                              w-full h-[200px] rounded-md cursor-pointer object-cover shadow-lg"
-                  title={selectedImage.date}
-                  src={selectedImage.src}
-                  alt={selectedImage.title}
-                  aria-describedby={selectedImage.date}
-                  draggable={false}
-                />
-              </AnimatePresence>
-            </div>
+                title={selectedImage.date}
+                src={selectedImage.src}
+                alt={selectedImage.title}
+                aria-describedby={selectedImage.date}
+                draggable={false}
+              />
+            </AnimatePresence>
             <div
-              className="lg:text-left
+              className="lg:text-left lg:flex lg:flex-col lg:min-h-[420px]
                          md:text-left
                          text-left">
               <AnimatePresence mode="wait">
@@ -260,7 +250,7 @@ function OurHistory() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="lg:py-6 lg:text-2xl lg:font-semibold lg:pl-16
+                  className="lg:pb-6 lg:pt-0 lg:text-2xl lg:font-semibold lg:pl-16
                              md:py-6 md:text-2xl md:font-semibold
                              py-6 text-2xl font-semibold"
                 >
@@ -279,12 +269,13 @@ function OurHistory() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
+                  className="lg:flex-1 md:flex-1 flex-1"
                 >
                   {selectedImage.text}
                 </motion.div>
               </AnimatePresence>
               <div
-                className="lg:flex-row lg:justify-start lg:items-center lg:px-16 lg:gap-x-4 lg:pt-16
+                className="lg:flex-row lg:justify-start lg:items-center lg:pl-16 lg:gap-x-4 lg:pt-16
                            md:flex-row md:justify-start md:items-center md:gap-x-4
                            flex flex-col justify-left items-start pt-8 gap-y-4"
               >
