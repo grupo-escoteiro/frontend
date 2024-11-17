@@ -12,7 +12,7 @@ function Footer() {
                    md:max-w-[620px] md:mx-auto
                    max-w-[320px] mx-auto">
         <figure
-          className="lg:flex lg:gap-12 lg:items-center
+          className="lg:flex lg:gap-x-8 lg:items-center
                      md:flex md:justify-between md:items-center md:pt-10
                      items-center"
           title="Voltar à home"

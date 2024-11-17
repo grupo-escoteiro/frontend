@@ -286,7 +286,7 @@ function OurHistory() {
               <div
                 className="lg:flex-row lg:justify-start lg:items-center lg:px-16 lg:gap-x-4 lg:pt-16
                            md:flex-row md:justify-start md:items-center md:gap-x-4
-                           flex flex-col justify-left items-start pt-10 gap-y-4"
+                           flex flex-col justify-left items-start pt-8 gap-y-4"
               >
                 <p>
                   <span className="text-social-brand font-semibold">Venha</span>{' '}
