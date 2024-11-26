@@ -262,3 +262,245 @@ Quando se trabalha em um repostiório de código compartilhado utilizando Git, e
       # Aqui você pode criar sua nova branch de desenvolvimento normalmente e seguir trabalhando
     ```
 3. Garanta que o seu código esteja funcionando antes de subir para o GitHub. Ou seja, teste o que você fez e garanta que não quebrou também o que já estava pronto anteriormente.
+
+# Tasks
+
+1. Adicionar Sistema de Recuperação de Senha
+Código: TSK-101
+Dificuldade: 5
+Descrição: Implementar uma funcionalidade para recuperação de senha no sistema, utilizando o Firebase Authentication.
+Dependências: Nenhuma.
+
+2. Otimizar a Performance no Firebase Firestore
+Código: TSK-102
+Dificuldade: 8
+Descrição: Implementar consultas otimizadas no Firestore para reduzir custos de leitura e melhorar a performance no carregamento de dados.
+Dependências: Tarefa TSK-101 deve estar concluída para validação de acesso.
+
+3. Desenvolver Tela de Perfil do Usuário
+Código: TSK-103
+Dificuldade: 13
+Descrição: Criar uma página onde usuários possam visualizar e editar suas informações pessoais, com validação de permissões baseadas no papel (voluntário, jovem ou responsável).
+Dependências: Tarefa TSK-101 concluída para garantir login funcional.
+
+4. Implementar Funcionalidade de Importação/Exportação de Dados
+Código: TSK-104
+Dificuldade: 21
+Descrição: Permitir que os chefes do grupo exportem dados em formato CSV e importem novos dados para atualizar registros, garantindo a conformidade com a LGPD.
+Dependências: Tarefa TSK-103 para manipulação de dados do usuário.
+
+5. Criar Página de Administração
+Código: TSK-105
+Dificuldade: 34
+Descrição: Implementar uma interface de administração onde os chefes possam gerenciar os usuários, atualizar informações e acessar relatórios com filtros.
+Dependências: Tarefa TSK-103 deve estar concluída.
+
+6. Implementar Acessibilidade
+Código: TSK-106
+Dificuldade: 21
+Descrição: Garantir que o site seja WCAG 2.1 AA compliant, com foco em acessibilidade para deficientes visuais e motores, incluindo suporte para leitores de tela e navegação por teclado.
+Dependências: Nenhuma.
+
+7. Criar Dashboard de Estatísticas
+Código: TSK-107
+Dificuldade: 34
+Descrição: Desenvolver uma tela de dashboard para os chefes visualizarem estatísticas como número de voluntários, jovens, mudanças de endereço e outros dados relevantes.
+Dependências: Tarefa TSK-105 deve estar concluída para garantir que os dados estejam acessíveis.
+
+8. Implementar Integração com Redes Sociais
+Código: TSK-108
+Dificuldade: 8
+Descrição: Criar botões de compartilhamento de conteúdo para redes sociais e permitir que usuários façam login utilizando Google ou Facebook.
+Dependências: Nenhuma.
+
+9. Criar Sistema de Notificações
+Código: TSK-109
+Dificuldade: 55
+Descrição: Desenvolver um sistema de notificações em tempo real para alertar usuários sobre atualizações ou mudanças importantes, utilizando Firebase Cloud Messaging.
+Dependências: Tarefa TSK-102 para configuração inicial e TSK-103 para atribuir notificações por tipo de usuário.
+
+10. Implementar Sistema de Upload de Documentos
+Código: TSK-110
+Dificuldade: 34
+Descrição: Permitir que os usuários façam upload de documentos importantes (como RG ou autorização), com suporte à verificação por parte dos administradores.
+Dependências: Tarefa TSK-105 para que os administradores possam validar os documentos.
+
+11. Adicionar Notificação de Atualização Disponível
+Código: TSK-PWA-211
+Dificuldade: 13
+Descrição: Implementar uma notificação no frontend para alertar os usuários sobre a disponibilidade de uma nova versão do aplicativo, incentivando o refresh para atualização.
+Dependências: Tarefa TSK-PWA-204 concluída.
+
+12. Criar Funcionalidade de Download de Dados Offline
+Código: TSK-PWA-212
+Dificuldade: 21
+Descrição: Permitir que administradores baixem relatórios em PDF ou CSV no modo offline, sincronizando o upload ou alterações automaticamente quando voltarem online.
+Dependências: Tarefas TSK-PWA-203 e TSK-PWA-206.
+
+13. Habilitar "Adicionar à Tela Inicial" com Personalização
+Código: TSK-PWA-213
+Dificuldade: 8
+Descrição: Garantir que o PWA tenha uma experiência fluida para ser adicionado à tela inicial do dispositivo, com ícones personalizados e suporte ao tema configurado.
+Dependências: Tarefa TSK-PWA-201 concluída.
+
+14. Implementar Feedback Visual para Estado Offline
+Código: TSK-PWA-214
+Dificuldade: 13
+Descrição: Adicionar uma barra ou indicador visual que informe aos usuários quando estão offline, com mensagens sobre o que podem ou não realizar nesse estado.
+Dependências: Tarefa TSK-PWA-203 concluída.
+
+15. Implementar Upload Progressivo de Imagens
+Código: TSK-PWA-215
+Dificuldade: 34
+Descrição: Permitir que os usuários façam upload de fotos ou documentos mesmo offline, armazenando-os localmente e sincronizando automaticamente quando o dispositivo estiver online.
+Dependências: Tarefas TSK-PWA-203 e TSK-PWA-206 concluídas.
+
+16. Criar Funcionalidade de Notificações de Eventos Importantes
+Código: TSK-PWA-216
+Dificuldade: 34
+Descrição: Configurar notificações push segmentadas para informar sobre mudanças de atividades, reuniões ou eventos importantes diretamente no PWA.
+Dependências: Tarefa TSK-PWA-205 concluída.
+
+17. Adicionar Suporte a Temas Escuro e Claro
+Código: TSK-PWA-217
+Dificuldade: 13
+Descrição: Implementar a alternância entre tema claro e escuro com base nas configurações do sistema operacional ou escolha do usuário.
+Dependências: Nenhuma.
+
+18. Criar Suporte para Multilínguas no PWA
+Código: TSK-PWA-218
+Dificuldade: 21
+Descrição: Adicionar suporte para múltiplos idiomas (por exemplo, português e inglês), garantindo que o PWA seja acessível para usuários de diferentes regiões.
+Dependências: Nenhuma.
+
+19. Implementar Sincronização de Configurações do Usuário DÁ PARA FAZER (MENOS A PARTE DE PREFERÊNCIA DE NOTIFICAÇÃO)
+Código: TSK-PWA-219
+Dificuldade: 21
+Descrição: Permitir que as configurações personalizadas dos usuários (temas, preferências de notificação) sejam armazenadas no Firestore e sincronizadas em todos os dispositivos.
+Dependências: Tarefa TSK-PWA-203 concluída.
+
+20. Desenvolver Funcionalidade de Feedback no PWA
+Código: TSK-PWA-220
+Dificuldade: 8
+Descrição: Criar uma funcionalidade que permita que os usuários enviem feedback sobre a experiência diretamente no PWA, mesmo offline.
+Dependências: Tarefa TSK-PWA-203 para armazenamento de dados offline.
+
+21. Implementar Integração com API de Previsão do Tempo
+Código: TSK-API-221
+Dificuldade: 8
+Descrição: Conectar o sistema a uma API gratuita de previsão do tempo (como OpenWeatherMap) para exibir informações climáticas nas páginas de atividades ao ar livre.
+Dependências: Nenhuma.
+
+22. Integrar API de Geolocalização
+Código: TSK-API-222
+Dificuldade: 13
+Descrição: Usar uma API como a Google Geocoding API para permitir que os usuários preencham automaticamente seus endereços ao digitar apenas o CEP.
+Dependências: Nenhuma.
+
+23. Criar Funcionalidade de Calendário com API do Google Calendar
+Código: TSK-API-223
+Dificuldade: 34
+Descrição: Integrar o sistema com a API do Google Calendar para sincronizar eventos e atividades do grupo diretamente com o calendário dos usuários.
+Dependências: Tarefas TSK-101 e TSK-105 para autenticação e administração.
+
+24. Adicionar Integração com API de Redes Sociais
+Código: TSK-API-224
+Dificuldade: 21
+Descrição: Usar APIs como a do Facebook ou Instagram para exibir publicações do grupo de escoteiros diretamente no site.
+Dependências: Nenhuma.
+
+25. Incorporar API de Mapas
+Código: TSK-API-225
+Dificuldade: 13
+Descrição: Integrar uma API como a do Google Maps ou Leaflet para exibir a localização da sede do grupo e outros pontos de interesse.
+Dependências: Nenhuma.
+
+26. Implementar Integração com API de Notícias
+Código: TSK-API-226
+Dificuldade: 8
+Descrição: Conectar o sistema a uma API de notícias gratuita, como a NewsAPI, para exibir artigos relacionados à inclusão social e atividades escoteiras.
+Dependências: Nenhuma.
+
+27. Criar Sistema de Tradução Automática
+Código: TSK-API-227
+Dificuldade: 21
+Descrição: Usar uma API como a do Google Translate para traduzir textos do sistema em tempo real, permitindo maior acessibilidade para usuários estrangeiros.
+Dependências: Tarefa TSK-PWA-218 para suporte a multilínguas.
+
+28. Configurar API de Estatísticas de Acessos
+Código: TSK-API-228
+Dificuldade: 8
+Descrição: Usar uma API como Google Analytics ou Matomo para monitorar estatísticas de acessos e entender o comportamento dos usuários.
+Dependências: Nenhuma.
+
+29. Integrar API de Doações Online
+Código: TSK-API-229
+Dificuldade: 34
+Descrição: Conectar o sistema a uma API como PayPal Donations ou Stripe para permitir doações online ao grupo de escoteiros.
+Dependências: Tarefa TSK-105 para gerenciamento de usuários.
+
+30. Implementar Notificação de Alertas com API de Serviços Públicos
+Código: TSK-API-230
+Dificuldade: 13
+Descrição: Usar uma API como Brasil.IO para exibir alertas de saúde pública, segurança ou outros assuntos importantes no site.
+Dependências: Tarefa TSK-106 para acessibilidade.
+
+31. Implementar Gráficos de Linhas e Barras com Recharts NÃO DÁ TEMPO DE FAZER
+Código: TSK-VIS-231
+Dificuldade: 13
+Descrição: Usar a biblioteca Recharts para criar gráficos de linhas e barras que mostrem a evolução no número de cadastros de voluntários, jovens e responsáveis ao longo do tempo.
+Dependências: Tarefa TSK-105 para acesso aos dados de administração.
+
+32. Criar Painel de Dados com Tabelas Interativas usando React-Table
+Código: TSK-VIS-232
+Dificuldade: 8
+Descrição: Usar React-Table para exibir relatórios de usuários cadastrados, com opções de busca, ordenação e filtros dinâmicos.
+Dependências: Tarefa TSK-105.
+
+33. Visualizar Atividades em Mapas com React-Leaflet
+Código: TSK-VIS-233
+Dificuldade: 21
+Descrição: Usar a biblioteca React-Leaflet para exibir no mapa a distribuição de eventos e atividades escoteiras cadastradas na plataforma.
+Dependências: Tarefa TSK-225 para integração de mapas.
+
+34. Implementar Gráficos de Pizza para Dados de Participação
+Código: TSK-VIS-234
+Dificuldade: 8
+Descrição: Usar Chart.js com o wrapper React react-chartjs-2 para exibir gráficos de pizza que mostrem a proporção de jovens, responsáveis e voluntários cadastrados.
+Dependências: Tarefa TSK-VIS-231.
+
+35. Criar Dashboards Responsivos com Ant Design
+Código: TSK-VIS-235
+Dificuldade: 13
+Descrição: Usar Ant Design para criar um dashboard administrativo responsivo, integrando gráficos, tabelas e widgets em um único layout.
+Dependências: Tarefa TSK-231.
+
+36. Implementar Linha do Tempo de Atividades
+Código: TSK-VIS-236
+Dificuldade: 21
+Descrição: Usar React-Vis Timeline para criar uma linha do tempo interativa mostrando eventos e mudanças no sistema, como novos cadastros ou atualizações de dados.
+Dependências: Tarefa TSK-105 para acessar eventos do sistema.
+
+37. Criar Relatórios Exportáveis em PDF com React-PDF
+Código: TSK-VIS-237
+Dificuldade: 13
+Descrição: Usar React-PDF para permitir a exportação de relatórios administrativos diretamente em formato PDF.
+Dependências: Tarefa TSK-VIS-232 para definir os relatórios.
+
+38. Visualizar Indicadores de Progresso com React-Vis
+Código: TSK-VIS-238
+Dificuldade: 8
+Descrição: Usar React-Vis para exibir indicadores visuais como barras de progresso ou medidores, destacando metas atingidas, como o número de novos membros cadastrados.
+Dependências: Tarefa TSK-VIS-231.
+
+39. Exibir Relatórios com Gráficos Dinâmicos em D3.js
+Código: TSK-VIS-239
+Dificuldade: 34
+Descrição: Usar D3.js com React (via React-D3) para criar visualizações avançadas e dinâmicas, como gráficos animados e hierárquicos.
+Dependências: Tarefa TSK-105 para coleta de dados administrativos.
+
+40. Integrar Relatórios com Exportação para Excel usando SheetJS
+Código: TSK-VIS-240
+Dificuldade: 13
+Descrição: Usar SheetJS para permitir que os administradores exportem tabelas e relatórios do sistema para arquivos Excel (.xlsx).
+Dependências: Tarefa TSK-VIS-232 para configurar as tabelas.
