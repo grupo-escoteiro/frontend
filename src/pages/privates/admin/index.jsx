@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pencil, Trash2, ChevronLeft, ChevronRight, BookUser } from 'lucide-react';
+import { Pencil, Trash2, ChevronLeft, ChevronRight, BookUser, Search } from 'lucide-react';
 import { SectionTitle } from '../../../components/section-title';
 import { dadosPorPagina, maskEmail, truncateName } from '../../../helpers/admin-validate';
 import { IconVolunteers } from './components/cube-icon-volunteers';
@@ -50,10 +50,16 @@ const users = [
 function Admin() {
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredUsers = users.filter(user => 
+    user.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const totalPages = Math.ceil(users.length / dadosPorPagina);
   const startIndex = (currentPage - 1) * dadosPorPagina;
   const endIndex = startIndex + dadosPorPagina;
-  const currentUsers = users.slice(startIndex, endIndex);
+  const currentUsers = filteredUsers.slice(startIndex, endIndex);
 
   return (
     <PageTransition>
@@ -68,7 +74,18 @@ function Admin() {
             <IconChildren />
             <IconResponsible />
           </div>
-          <div className="overflow-x-auto bg-green-50 rounded-lg shadow-default">
+          <div className="relative mb-4">
+            <input
+              type="text"
+              placeholder="Buscar por nome..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full p-3 pl-10 rounded border border-social-gray focus:outline-none 
+                         focus:ring-2 focus:ring-green-500"
+            />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          </div>
+          <div className="overflow-x-auto mt-10 bg-green-50 rounded-lg shadow-default">
             <table className="w-full">
               <thead>
                 <tr className="text-left text-2xl border-b border-gray-200">
