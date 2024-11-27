@@ -9,7 +9,7 @@ function BackdropModal({
     <div
       onClick={onClose}
       className={`
-        fixed inset-0 w-screen h-screen -mt-[152px] transition-colors grid place-items-center bg-social-black/50
+        fixed inset-0 w-full h-full transition-colors flex items-center bg-social-black/50
         ${open ? 'visible bg-social-black/50' : 'invisible'}
       `}
     >

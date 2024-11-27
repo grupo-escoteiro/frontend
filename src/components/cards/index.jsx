@@ -1,7 +1,7 @@
 import { string } from 'prop-types';
 import { SocialIcon } from 'react-social-icons';
 
-function Cards({ url, instagram, linkedin }) {
+function Cards({ url, instagram, linkedin, desc, title }) {
   return (
     <article
       className="lg:relative lg:w-[22rem] lg:h-[30rem] lg:rounded lg:overflow-hidden lg:shadow-default
@@ -21,7 +21,7 @@ function Cards({ url, instagram, linkedin }) {
             src={url}
             alt="Pessoa sorrindo, cabelo preto e utilizando uma camisa preta"
           />
-          <ul className="absolute flex left-1/2 -translate-x-1/2 gap-8 bottom-6 z-10">
+          <ul className="absolute flex left-1/2 -translate-x-1/2 gap-6 bottom-6 z-10">
             <li className="list-none" title="Instagram">
               <SocialIcon
                 url={instagram}
@@ -43,14 +43,16 @@ function Cards({ url, instagram, linkedin }) {
           </ul>
         </div>
         <div
-          className="lg:z-[4] lg:w-full lg:h-[8rem] lg:bg-social-white lg:text-left lg:text-[#333] 
-                     lg:transition lg:duration-500 lg:px-8 lg:py-5 
-                     absolute bottom-0 left-0 z-[4] py-3 px-3 bg-social-white text-left
+          className="lg:z-[4] lg:w-full lg:bg-social-white lg:text-left lg:text-[#333] 
+                     lg:transition lg:duration-500 lg:px-4
+                     absolute bottom-0 left-0 z-[4] py-6 px-4 bg-social-white
                    text-[#333] transition duration-500"
         >
-          <h2 className="mb-[0.5rem] font-bold">Richard Ryan</h2>
-          <p className="opacity-90">
-        Fui o desenvolvedor Full-Stack deste projeto, utilizando <em>React</em>, <em>C#</em> e <em>SQL-Server</em>.
+          <h2 className="font-bold">
+            {title}
+          </h2>
+          <p className="opacity-90 max-w-[280px]">
+            {desc}
           </p>
         </div>
       </header>
@@ -62,6 +64,8 @@ Cards.propTypes = {
   url: string,
   instagram: string,
   linkedin: string,
+  desc: string,
+  title: string,
 };
 
 

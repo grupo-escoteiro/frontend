@@ -1,8 +1,8 @@
 import { Cards } from '../../../../components/cards';
 import { SectionTitle } from '../../../../components/section-title';
-import ryan from '/fotos-ryan.jpg';
-import alemao from '/fotos-alemao.jpg';
-import jao from '/fotos-jao.jpg';
+import wilberchefinho from '/chefe-wilber.jpg';
+import chefa from '/chefa.jpg';
+import ryanchefinho from '/chefe-ryan.jpg';
 
 function OurTeam() {
   return (
@@ -25,22 +25,28 @@ function OurTeam() {
                      md:grid md:grid-cols-2
                      flex flex-col justify-center items-center gap-12">
           <Cards
-            url={ryan}
+            url={ryanchefinho}
             instagram="https://www.instagram.com/ryan_carvalho06?igsh=ZnFzYTVrNjN3aG90&utm_source=qr"
             linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
             campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            title="Ícaro Vegano"
+            desc="Líder técnico do grupo com experiência em desenvolvimento web."
           />
           <Cards
-            url={alemao}
+            url={wilberchefinho}
             instagram="https://www.instagram.com/ryan_carvalho06?igsh=ZnFzYTVrNjN3aG90&utm_source=qr"
             linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
             campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            title="Zé Luneta"
+            desc="Membro do grupo com experiência em desenvolvimento web."
           />
           <Cards
-            url={jao}
+            url={chefa}
             instagram="https://www.instagram.com/ryan_carvalho06?igsh=ZnFzYTVrNjN3aG90&utm_source=qr"
             linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
             campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            title="Nina Bússola"
+            desc="Membro do grupo com experiência em desenvolvimento web."
           />
         </div>
       </div>

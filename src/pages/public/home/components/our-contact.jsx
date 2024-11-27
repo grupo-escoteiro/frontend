@@ -99,7 +99,8 @@ function OurContact() {
         <div
           className="lg:flex lg:flex-row lg:justify-end lg:w-full lg:gap-x-5 lg:mt-10
                      md:flex md:flex-row md:justify-between md:w-full md:gap-y-5 md:mt-10 
-                     flex flex-col w-full gap-y-5 mt-10">
+                     flex flex-col w-full gap-y-5 mt-10"
+        >
           <Button
             form="contact-form"
             type="reset"
