@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 function MainPersonalAddress() {
   return (
     <>
-      <form className="flex flex-wrap gap-x-6 gap-y-14">
+      <form
+        className="lg:flex lg:flex-wrap lg:gap-x-6 lg:gap-y-14
+                   md:flex md:flex-wrap md:justify-between md:gap-x-6 md:gap-y-14
+                   flex flex-col"
+      >
         <fieldset
           className="lg:hidden
                      md:hidden
