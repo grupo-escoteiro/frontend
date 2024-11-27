@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Pencil, Trash2, ChevronLeft, ChevronRight, BookUser } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Pencil, Trash2, ChevronLeft, ChevronRight, BookUser, Search } from 'lucide-react';
 import { SectionTitle } from '../../../components/section-title';
 import { dadosPorPagina, maskEmail, truncateName } from '../../../helpers/admin-validate';
 import { IconVolunteers } from './components/cube-icon-volunteers';
@@ -50,10 +50,20 @@ const users = [
 function Admin() {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(users.length / dadosPorPagina);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredUsers = users.filter(user => 
+    user.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredUsers.length / dadosPorPagina);
   const startIndex = (currentPage - 1) * dadosPorPagina;
   const endIndex = startIndex + dadosPorPagina;
-  const currentUsers = users.slice(startIndex, endIndex);
+  const currentUsers = filteredUsers.slice(startIndex, endIndex);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm]);
 
   return (
     <PageTransition>
@@ -68,7 +78,18 @@ function Admin() {
             <IconChildren />
             <IconResponsible />
           </div>
-          <div className="overflow-x-auto bg-green-50 rounded-lg shadow-default">
+          <div className="relative mb-4">
+            <input
+              type="text"
+              placeholder="Buscar por nome..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full p-3 pl-10 rounded border border-social-gray focus:outline-none 
+                         focus:ring-2 focus:ring-green-500"
+            />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          </div>
+          <div className="overflow-x-auto mt-10 bg-green-50 rounded-lg shadow-default">
             <table className="w-full">
               <thead>
                 <tr className="text-left text-2xl border-b border-gray-200">
@@ -131,27 +152,31 @@ function Admin() {
             </table>
           </div>
           <div className="mt-4 flex justify-between items-center">
-            <div>
-                  Página {currentPage} de {totalPages}
+            <div className={`${filteredUsers.length === 0 ? 'text-gray-400' : ''}`}>
+              {filteredUsers.length === 0 ? (
+                'Nenhum resultado encontrado'
+              ) : (
+                `Página ${currentPage} de ${totalPages}`
+              )}
             </div>
             <div className="flex space-x-2">
               <button
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
+                disabled={currentPage === 1 || filteredUsers.length === 0}
                 className={`px-4 py-2 rounded font-semibold transition duration-500 ${
-                          currentPage === 1
-                              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                              : 'bg-social-brand text-social-white hover:brightness-90'
-                      }`}
+                  currentPage === 1 || filteredUsers.length === 0
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-social-brand text-social-white hover:brightness-90'
+                }`}      
               >
                 <ChevronLeft className="h-4 w-4 inline mr-1" />
                       Anterior
               </button>
               <button
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                disabled={currentPage === totalPages}
+                disabled={currentPage >= totalPages || filteredUsers.length === 0}
                 className={`px-4 py-2 rounded font-semibold transition duration-500 ${
-                          currentPage === totalPages
+                          currentPage >= totalPages || filteredUsers.length === 0
                               ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                               : 'bg-social-brand text-social-white hover:brightness-90'
                       }`}
