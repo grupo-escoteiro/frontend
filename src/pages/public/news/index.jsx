@@ -24,10 +24,14 @@ function News() {
             className="lg:pt-12 lg:pb-14 lg:text-left
                        md:pt-12 md:pb-14 md:text-left
                        pt-4 pb-8 text-left"
-            content="Noticias"
+            content="Notícias"
           />
           <div>
-            <ul className="flex gap-8 flex-wrap">
+            <ul
+              className="lg:flex lg:gap-y-8 lg:flex-wrap
+                         md:flex md:gap-y-8 md:flex-wrap
+                         flex gap-y-8 flex-wrap"
+            >
               {news.length > 0 && news.map(newItem =>
               { 
                 if (newItem.urlToImage)
@@ -36,13 +40,21 @@ function News() {
                     <li 
                       key={newItem.url} 
                     >
-                      <Box className="grid grid-cols-[1fr,2fr] gap-4 max-h-[224px] overflow-y-hidden pr-4">
+                      <Box
+                        className="lg:grid lg:grid-cols-[1fr,2fr] lg:gap-4 lg:max-h-[224px] lg:overflow-y-hidden lg:pr-4
+                                   md:grid md:grid-cols-[1fr,2fr] md:gap-4 md:max-h-[224px] md:overflow-y-hidden md:pr-4
+                                   grid grid-cols-1 overflow-y-hidden gap-4"
+                      >
                         <img 
                           src={newItem.urlToImage} 
                           alt={newItem.title}
                           className="object-cover min-h-full min-w-full"
                         />
-                        <div className="flex flex-col gap-4 py-4">
+                        <div
+                          className="lg:flex lg:flex-col lg:gap-4 lg:py-4
+                                     md:flex md:flex-col md:gap-4 md:py-4
+                                     flex flex-col gap-4 py-4 px-4"
+                        >
                           <h2 className="font-bold">
                             {newItem.title}
                           </h2>

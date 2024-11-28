@@ -14,7 +14,7 @@ import { Privacy } from '../pages/privates/privacy';
 import { NotFound } from '../pages/NotFound';
 import { AnimatePresence } from 'framer-motion';
 import { ChatGemini } from '../pages/privates/chat';
-import {News} from '../pages/public/news';
+import { News } from '../pages/public/news';
 
 function DefaultRouters() {
   const location = useLocation();

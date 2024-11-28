@@ -127,7 +127,7 @@ function Header() {
               <AnimatedLink text={'Home'} to="/" />
             </li>
             <li>
-              <AnimatedLink text={'Noticias'} to="/noticias" />
+              <AnimatedLink text={'Notícias'} to="/noticias" />
             </li>
             <li>
               <AnimatedLink to="/ramos" text={'Ramos'} />
