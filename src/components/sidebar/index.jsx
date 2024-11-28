@@ -7,6 +7,7 @@ const navItems = [
   { text: 'Home', to: '/' },
   { text: 'Ramos', to: '/ramos' },
   { text: 'Galeria', to: '/galeria' },
+  { text: 'Noticias', to: '/noticias' },
 ];
 
 export function Sidebar() {
@@ -61,7 +62,7 @@ export function Sidebar() {
             </div>
           </div>
           <nav className="flex flex-col items-start pt-4 px-2 gap-y-6">
-            <ul className="flex flex-col gap-y-6 pt-4">
+            <ul className="flex flex-col items-start gap-y-6 pt-4">
               {navItems.map((item) => (
                 <li key={item.to}>
                   <AnimatedLink
