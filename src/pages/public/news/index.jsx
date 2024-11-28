@@ -42,7 +42,7 @@ function News() {
                     >
                       <Box
                         className="lg:grid lg:grid-cols-[1fr,2fr] lg:gap-4 lg:max-h-[224px] lg:overflow-y-hidden lg:pr-4
-                                   md:grid md:grid-cols-[1fr,2fr] md:gap-4 md:max-h-[224px] md:overflow-y-hidden md:pr-4
+                                   md:grid md:grid-cols-[1fr,2fr] md:gap-4 md:overflow-y-hidden md:pr-4
                                    grid grid-cols-1 overflow-y-hidden gap-4"
                       >
                         <img 
