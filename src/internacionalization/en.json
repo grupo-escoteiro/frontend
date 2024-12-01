@@ -382,15 +382,21 @@
         "small": "All rights reserved"
     },
     "sidebar": {
-    "firstH2": "Group",
-    "firstSpan": "Scout",
-    "firstTerra": "Terra Da Saudade",
-    "cadastro": "Sign Up",
-    "direito": "© 2024 All rights reserved.",
-    "home": "Home",
-    "ramos": "Branches",
-    "galeria": "Gallery",
-    "noticias": "News"
-}
+        "firstH2": "Group ",
+        "firstSpan": "Scout",
+        "firstTerra": "Terra Da Saudade",
+        "cadastro": "Sign Up",
+        "direito": "© 2024 All rights reserved.",
+        "home": "Home",
+        "ramos": "Branches",
+        "galeria": "Gallery",
+        "noticias": "News"
+    },
+    "useOnline":{
+        "toastSuccess": "You are online.",
+        "toastError": "You are offline.",
+        "toastInfo": "You are offline.",
+        "label": "Test connection"
+    }
 
 }

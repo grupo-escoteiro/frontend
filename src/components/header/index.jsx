@@ -59,7 +59,8 @@ function Header() {
       <div
         className="lg:max-w-[1024px] lg:mx-auto lg:py-7 lg:px-0 lg:flex 
               lg:justify-between lg:items-center md:max-w-[620px] md:mx-auto 
-              md:py-7 md:px-0 md:flex md:justify-between md:items-center max-w-[320px] mx-auto">
+              md:py-7 md:px-0 md:flex md:justify-between md:items-center max-w-[320px] mx-auto"
+      >
         <figure
           className="lg:flex lg:gap-2 lg:items-center lg:cursor-pointer 
                 lg:p-0 md:flex md:gap-2 md:items-center md:cursor-pointer 
@@ -134,7 +135,7 @@ function Header() {
             <Sidebar />
           </nav>
           <figcaption
-            className="lg:text-left lg:max-w-48 lg:inline-block md:text-left md:max-w-48 md:inline-block hidden">
+            className="lg:text-left lg:max-w-48 lg:inline-block md:text-left md:max-w-48 md:hidden hidden">
             {t('header.firstFig')} <strong className="text-social-brand">
               {t('header.firstStrong')}</strong> {t('header.firstTerra')}
           </figcaption>
@@ -238,6 +239,17 @@ function Header() {
             </li>
           </ul>
         </nav>
+      </div>
+      <div
+        className="lg:hidden
+                   md:flex md:justify-center md:max-w-[620px] md:mx-auto
+                   hidden"
+      >
+        <figcaption
+          className="md:text-center">
+          {t('header.firstFig')} <strong className="text-social-brand">
+            {t('header.firstStrong')}</strong> {t('header.firstTerra')}
+        </figcaption>
       </div>
     </header>
   );

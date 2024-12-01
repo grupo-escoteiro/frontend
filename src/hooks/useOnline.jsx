@@ -1,18 +1,21 @@
 import { useEffect } from 'react';
 import { toast } from 'sonner';
+import { useTranslation } from 'react-i18next';
 
 export function useOnlineStatus() {
+
+  const { t } = useTranslation ();
 
   useEffect(() => {
     const checkConnection = async () => {
       try {
         await fetch('https://api.ipify.org/?format=json');
         toast.getHistory().forEach(element => toast.dismiss(element.id));
-        toast.success('Você está online.');
+        toast.success(t('useOnline.toastSuccess'));
       } catch {
-        toast.error('Você está offline.', {
+        toast.error(t('useOnline.toastError'), {
           action: {
-            label: 'Testar conexão',
+            label: t('useOnline.label'),
             onClick: checkConnection,
           },
         });
@@ -20,13 +23,13 @@ export function useOnlineStatus() {
     };
 
     const handleOnline = () => {
-      toast.success('Você está online.');
+      toast.success(t('useOnline.toastSuccess'));
     };
 
     const handleOffline = () => {
-      toast.info('Você está offline.', {
+      toast.info(t('useOnline.toastInfo'), {
         action: {
-          label: 'Testar conexão',
+          label: t('useOnline.label'),
           onClick: checkConnection,
         },
       });

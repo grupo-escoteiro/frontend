@@ -325,7 +325,7 @@
         "small": "Todos los derechos reservados"
     },
     "sidebar": {
-    "firstH2": "Grupo",
+    "firstH2": "Grupo ",
     "firstSpan": "Scout",
     "firstTerra": "Terra Da Saudade",
     "cadastro": "Regístrate",
@@ -334,6 +334,11 @@
     "ramos": "Ramas",
     "galeria": "Galería",
     "noticias": "Noticias"
-}
-
+    },
+    "useOnline":{
+        "toastSuccess": "Estás en línea.",
+        "toastError": "Estás fuera de línea.",
+        "toastInfo": "Estás fuera de línea.",
+        "label": "Probar conexión"
+    }
 }

@@ -383,7 +383,7 @@
         "small":"Todos direitos reservados"
     },
     "sidebar":{
-        "firstH2":"Grupo",
+        "firstH2":"Grupo ",
         "firstSpan":"Escoteiro",
         "firstTerra":"Terra Da Saudade",
         "cadastro":"Cadastre-se",
@@ -392,5 +392,11 @@
         "ramos":"Ramos",
         "galeria":"Galeria",
         "noticias":"Noticias"
+    },
+    "useOnline":{
+        "toastSuccess":"Você está online.",
+        "toastError":"Você está offline.",
+        "toastInfo":"Você está offline.",
+        "label":"Testar conexão"
     }
 }
