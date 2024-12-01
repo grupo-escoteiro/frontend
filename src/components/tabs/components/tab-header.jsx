@@ -3,8 +3,7 @@ import { arrayOf, string, func, number } from 'prop-types';
 function TabHeader({ titles, tab, changeTab }) {
   return (
     <div
-      className="lg:flex lg:justify-start lg:items-center 
-                 border-b border-solid border-social-gray
+      className="lg:flex lg:justify-start lg:items-center border-b border-solid border-social-gray
                  md:flex md:justify-start md:items-center
                  flex justify-center items-center"
     >

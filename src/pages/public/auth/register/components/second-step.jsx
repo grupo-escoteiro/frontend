@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import boneco from '/bonecopipa.svg';
 import { useContext } from 'react';
 import { registerContext } from '../../../../../contexts/register-context';
+import { useTranslation } from 'react-i18next';
 
 function SecondStep() {
+
+  const { t } = useTranslation ();
   const {
     stepsAmount,
     currentStep,
@@ -31,7 +34,7 @@ function SecondStep() {
             `}
         >
           <h1 className="mb-16 text-xl text-social-white font-semibold">
-              Faça seu cadastro
+            {t('register.thirdthdH1')}
           </h1>
           <img src={boneco} />
         </div>
@@ -56,13 +59,13 @@ function SecondStep() {
                 htmlFor="name"
                 className="font-semibold"
               >
-                Nome completo
+                {t('register.firsthCadastro')}
               </label>
               <input
                 type="text"
                 name="nome"
                 id="name"
-                placeholder="Digite o nome do responsável"
+                placeholder= {t('register.firsthPlace')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -71,13 +74,13 @@ function SecondStep() {
                 htmlFor="cpf"
                 className="font-semibold"
               >
-                CPF
+                {t('register.secondthCadastro')}
               </label>
               <input
                 type="text"
                 name="cpf"
                 id="cpf"
-                placeholder="Digite seu cpf"
+                placeholder={t('register.secondthPlace')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -86,7 +89,7 @@ function SecondStep() {
                 htmlFor="data"
                 className="font-semibold"
               >
-                    Data de nascimento
+                {t('register.thirdthCadastro')}
               </label>
               <input
                 type="date"
@@ -100,13 +103,13 @@ function SecondStep() {
                 htmlFor="telefone"
                 className="font-semibold"
               >
-                    Telefone
+                {t('register.fourthCadastro')}
               </label>
               <input
                 type="tel"
                 name="telefone"
                 id="telefone"
-                placeholder="(xx) xxxxx-xxxx"
+                placeholder={t('register.fourPlace')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -115,13 +118,13 @@ function SecondStep() {
                 htmlFor="telefone-emer"
                 className="font-semibold"
               >
-                    Telefone de emergência
+                {t('register.fifithCadastro')}
               </label>
               <input
                 type="tel"
                 name="telefone-emergencia"
                 id="telefone-emer"
-                placeholder="(xx) xxxxx-xxxx"
+                placeholder={t('register.fifitPlace')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -136,12 +139,12 @@ function SecondStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.fifithLink')}
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.fifithButtom')}
               onClick={changeRegisterStep}
             />
           </fieldset>
@@ -155,12 +158,12 @@ function SecondStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.sixthLink')}
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.sixthButtom')}
               onClick={changeRegisterStep}
             />
           </fieldset>

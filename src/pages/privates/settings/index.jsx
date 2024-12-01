@@ -6,8 +6,11 @@ import { MainPersonalAddress } from './components/main-personal-address';
 import { MainPersonalInformations } from './components/main-personal-informations';
 import { MainPersonalImage } from './components/main-personal-image';
 import { PageTransition } from '../../../components/page-transition';
+import { useTranslation } from 'react-i18next';
 
 function Settings() {
+
+  const { t } = useTranslation ();
 
   const tabs = [
     <MainPersonalInformations key="1" />,
@@ -25,7 +28,7 @@ function Settings() {
                      max-w-[320px] mx-auto"
         >
           <SectionTitle
-            content="Configurações"
+            content={t('settings.sectionTitle')}
             className="mb-5"
           />
           <Container
@@ -43,21 +46,21 @@ function Settings() {
                               transition duration-500 p-2 hover:bg-social-brand hover:text-social-white
                               rounded">
                   <button>
-                    Informações pessoais
+                    {t('settings.firstbuttom')}  
                   </button>
                 </li>
                 <li
                   className="font-semibold transition duration-500 p-2 
                   hover:bg-social-brand hover:text-social-white rounded">
                   <button>
-                    Segurança
+                    {t('settings.secondButtom')}
                   </button>
                 </li>
               </ul>
             </menu>
             <div className="lg:border-l lg:border-social-gray lg:w-full">
               <Tabs
-                titles={['Principal', 'Endereço', 'Imagens']}
+                titles={[t('settings.firstTitle'), t('settings.secondTitle'), t('settings.thirdTitle')]}
                 body={ tabs }
               />
             </div>

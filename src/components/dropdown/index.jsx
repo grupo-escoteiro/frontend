@@ -45,7 +45,7 @@ Dropdown.propTypes = {
   itemsList: arrayOf(
     shape({
       id: number.isRequired,
-      trigger: func.isRequired,
+      trigger: func,
       component: node.isRequired,
     })
   ).isRequired,

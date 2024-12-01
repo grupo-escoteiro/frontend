@@ -2,8 +2,10 @@ import { Container } from '../../../components/container';
 import { PageTransition } from '../../../components/page-transition';
 import { SectionTitle } from '../../../components/section-title';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Privacy() {
+  const { t } = useTranslation ();
 
   const [isDownloading, setIsDownloading] = useState(false);
 
@@ -28,7 +30,7 @@ function Privacy() {
                        max-w-[320px] mx-auto"
           >
             <SectionTitle
-              content="Políticas de Privacidade"
+              content={t('privacy.sectionTitle')}
               className="lg:mb-14 lg:text-left
                          md:mb-14 md:text-left
                          mb-10 text-left"
@@ -52,7 +54,7 @@ function Privacy() {
                                md:text-xl md:font-semibold md:text-left
                                text-lg font-semibold text-center"
                   >
-                    Nosso comprometimento com sua privacidade
+                    {t('privacy.firstH2')}
                   </h2>
                   <div>
                     <h2
@@ -60,43 +62,35 @@ function Privacy() {
                                  md:hidden
                                  hidden"
                     >
-                      Última atualização
+                      {t('privacy.secondH2')}
                     </h2>
                     <p
                       className="lg:text-justify lg:text-sm lg:pt-1 lg:inline-block text-social-gray
                                  md:hidden
                                  hidden"
                     >
-                      Esta política foi atualizada em: 07/10/2024
+                      {t('privacy.firstP')}
                     </p>
                   </div>
                 </div>
                 <p className="pt-5">
-                  A sua privacidade é importante para nós. É política do Grupo Escoteiro
-                  Terra da Saudade respeitar sua privacidade em relação a qualquer
-                  informação sua que possamos coletar no site GETS (Grupo Escoteiro
-                  Terra da Saudade).
+                  {t('privacy.secondP')}
                 </p>
               </div>
               <div className="pb-6">
                 <h2 className="text-lg font-semibold text-social-brand">
-                  1. Informações que coletamos
+                  {t('privacy.thirdH2')}
                 </h2>
                 <p className="pt-5">
-                  Coletamos informações pessoais que você nos fornece
-                  diretamente, como: nome, data de nascimento, e-mail, endereço residencial, 
-                  número de telefone e etc.
-                  Esses dados são muito importantes para nosso controle de quem segue cadastrado
-                  dentro do nosso sistema e que esteja participando das atividades.
+                  {t('privacy.thirdP')}
                 </p>
               </div>
               <div className="pb-6">
                 <h2 className="text-lg font-semibold text-social-brand">
-                  2. Como usamos suas informações
+                  {t('privacy.fourH2')}
                 </h2>
                 <p className="pt-5">
-                  Usamos as informações que coletamos de várias formas,
-                  inclusive para:
+                  {t('privacy.fourP')}
                   <ul className="pl-2">
                     <li className="flex items-center">
                       <span
@@ -104,7 +98,7 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Fornecer, operar e manter nosso site.
+                      {t('privacy.firstSpan')}
                     </li>
                     <li className="flex items-center">
                       <span
@@ -112,7 +106,7 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Observar se você está ativo dentro do nosso site.
+                      {t('privacy.secondSpan')}
                     </li>
                     <li className="flex items-center">
                       <span
@@ -120,8 +114,7 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Melhorar e personalizar a sua experiência de navegação, 
-                        oferecendo conteúdos e funcionalidades mais relevantes.
+                      {t('privacy.thirdSpan')}
                     </li>
                     <li className="flex items-center">
                       <span
@@ -129,8 +122,7 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Enviar comunicações importantes sobre o uso do site, 
-                        atualizações ou mudanças em nossas políticas.
+                      {t('privacy.fourSpan')}
                     </li>
                     <li className="flex items-center">
                       <span
@@ -138,7 +130,7 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Garantir a segurança do site e prevenir atividades fraudulentas ou não autorizadas.
+                      {t('privacy.fifithSpan')}
                     </li>
                     <li className="flex items-center">
                       <span
@@ -146,48 +138,41 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Cumprir com requisitos legais e regulamentares que nos obrigam a reter 
-                        determinados dados por um período específico.
+                      {t('privacy.sixthSpan')}
                     </li>
                   </ul>
                 </p>
               </div>
               <div className="pb-6">
                 <h2 className="text-lg font-semibold text-social-brand">
-                  3. Proteção de dados
+                  {t('privacy.fifithH2')}
                 </h2>
                 <p className="pt-5">
-                  Temos um cuidado especial com os dados de crianças e adolescentes. Sempre solicitamos autorização dos
-                  pais ou responsáveis legais antes de coletar ou usar informações de menores de idade.
+                  {t('privacy.fifithP')}
                 </p>
               </div>
               <div className="pb-6">
                 <h2 className="text-lg font-semibold text-social-brand">
-                  4. Uso de imagem
+                  {t('privacy.sixthH2')}
                 </h2>
                 <p className="pt-5">
-                  Ocasionalmente, tiramos fotos e gravamos vídeos durante nossas atividades. 
-                  Sempre solicitamos autorização prévia dos participantes
-                  (ou dos pais/responsáveis, no caso de menores) antes de usar ou compartilhar 
-                  essas imagens publicamente.
+                  {t('privacy.sixthP')}
                 </p>
               </div>
               <div className="pb-6">
                 <h2 className="text-lg font-semibold text-social-brand">
-                  5. Compartilhamento de informações
+                  {t('privacy.seventhH2')}
                 </h2>
                 <p className="pt-5">
-                  Não vendemos, trocamos ou transferimos suas informações pessoais para terceiros, 
-                  exceto quando necessário para cumprir com a lei,
-                  desenvolver nossas atividades escoteiras ou proteger nossos direitos.
+                  {t('privacy.seventhP')}
                 </p>
               </div>
               <div className="pb-6">
                 <h2 className="text-lg font-semibold text-social-brand">
-                  6. Segurança de dados
+                  {t('privacy.eighthH2')}
                 </h2>
                 <p className="pt-5">
-                  Implementamos medidas de segurança para proteger suas informações pessoais, incluindo:
+                  {t('privacy.eighthP')}
                   <ul className="pl-2">
                     <li className="flex items-center">
                       <span
@@ -195,7 +180,7 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Armazenamento seguro de dados.
+                      {t('privacy.seventhSpan')}
                     </li>
                     <li className="flex items-center">
                       <span
@@ -203,7 +188,7 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Acesso restrito às informações pessoais.
+                      {t('privacy.eighthSpan')}
                     </li>
                     <li className="flex items-center">
                       <span
@@ -211,26 +196,24 @@ function Privacy() {
                                    md:hidden
                                    hidden"
                       ></span>
-                        Treinamento de voluntários sobre práticas de privacidade.
+                      {t('privacy.ninethSpan')}
                     </li>
                   </ul>
                 </p>
               </div>
               <div className="pb-6">
                 <h2 className="text-lg font-semibold text-social-brand">
-                  7. Contato
+                  {t('privacy.ninethH2')}
                 </h2>
                 <p className="pt-5">
-                  Poderá entrar em contato caso tenha alguma dúvida, é só clicar no ícone flutuante do WhatsApp ao
-                  lado da tela ou poderá enviar uma mensagem de e-mail que iremos de responder e tirar todas as suas 
-                  dúvidas.
+                  {t('privacy.ninethP')}
                 </p>
               </div>
               <div className="pb-6">
                 <h2
                   className="text-lg font-semibold text-social-brand border-t-2 border-social-gray
                          pt-6">
-                  Arquivos
+                  {t('privacy.tenthH2')}
                 </h2>
                 <div className="pt-7">
                   <a
@@ -240,7 +223,7 @@ function Privacy() {
                               transition duration-500 hover:text-social-white 
                               hover:bg-social-brand hover:border-social-white cursor-pointer
                               disabled:opacity-50 disabled:cursor-not-allowed">
-                    Baixar PDF
+                    {t('privacy.firstA')}
                   </a>
                 </div>
               </div>
