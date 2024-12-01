@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import boneco from '/bonecopipa.svg';
 import { useContext } from 'react';
 import { registerContext } from '../../../../../contexts/register-context';
+import { useTranslation } from 'react-i18next';
+
 
 function SixthChildStep() {
+  const { t } = useTranslation ();
   const {
     stepsAmount,
     currentStep,
@@ -31,7 +34,7 @@ function SixthChildStep() {
             `}
         >
           <h1 className="mb-16 text-xl text-social-white font-semibold text-center">
-              Agora cadastre o seu grande escoteiro
+            {t('register.sixthStepH1')}
           </h1>
           <img src={boneco} alt="Ilustração" />
         </div>
@@ -55,13 +58,13 @@ function SixthChildStep() {
                 htmlFor="cep"
                 className="font-semibold"
               >
-                    CEP
+                {t('register.sixthStepFirstCadastro')}
               </label>
               <input
                 type="text"
                 name="cep"
                 id="cep"
-                placeholder="xxxxx-xxx"
+                placeholder={t('register.sixthStepFirstPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -70,13 +73,13 @@ function SixthChildStep() {
                 htmlFor="rua"
                 className="font-semibold"
               >
-                Rua
+                {t('register.sixthStepSecondCadastro')}
               </label>
               <input
                 type="text"
                 name="rua"
                 id="rua"
-                placeholder="Digite sua rua"
+                placeholder={t('register.sixthStepSecondPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -91,13 +94,13 @@ function SixthChildStep() {
                 htmlFor="bairro"
                 className="font-semibold"
               >
-                  Bairro
+                {t('register.sixthStepThirdCadastro')}
               </label>
               <input
                 type="text"
                 name="bairro"
                 id="bairro"
-                placeholder="Digite seu bairro"
+                placeholder={t('register.sixthStepThirdPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -106,13 +109,13 @@ function SixthChildStep() {
                 htmlFor="cidade"
                 className="font-semibold"
               >
-                  Cidade
+                {t('register.sixthStepFourthCadastro')}
               </label>
               <input
                 type="text"
                 name="cidade"
                 id="cidade"
-                placeholder="Digite sua cidade"
+                placeholder={t('register.sixthStepFourthPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -121,7 +124,7 @@ function SixthChildStep() {
                 htmlFor="estado"
                 className="font-semibold"
               >
-                  Estado
+                {t('register.sixthStepFifithCadastro')}
               </label>
               <select id="estado" className="w-full h-16 px-4 py-2 rounded border border-social-gray">
                 <option>SP</option>
@@ -135,13 +138,13 @@ function SixthChildStep() {
               htmlFor="complemento"
               className="font-semibold"
             >
-                    Complemento
+              {t('register.sixthStepSixthCadastro')}
             </label>
             <input
               type="text"
               name="complemento"
               id="complemento"
-              placeholder="Escreva seu complemento"
+              placeholder={t('register.sixthStepFifithPlace')}
               className="w-full h-16 px-4 py-2 rounded border border-social-gray"
             />
           </fieldset>
@@ -155,12 +158,12 @@ function SixthChildStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-                Voltar
+              {t('register.sixthStepFirstLink')}
             </Link>
             <Button
               variant="green"
               type="submit"
-              content="Cadastrar"
+              content={t('register.sixthStepFirstButtom')}
             />
           </fieldset>
           <fieldset
@@ -173,12 +176,12 @@ function SixthChildStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-                Voltar
+              {t('register.sixthStepSecondLink')}
             </Link>
             <Button
               variant="green"
               type="submit"
-              content="Cadastrar"
+              content={t('register.sixthStepSecondButtom')}
             />
           </fieldset>
         </form>

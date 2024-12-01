@@ -7,6 +7,8 @@ import { IconChildren } from './components/cube-icon-children';
 import { IconResponsible } from './components/cube-icon-reponsible';
 import { PageTransition } from '../../../components/page-transition';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 
 const users = [
   { name: 'Matheus Natieli', ramo: 'Lobinho', status: 'Inativo', 
@@ -49,6 +51,9 @@ const users = [
 
 function Admin() {
 
+  const { t } = useTranslation ();
+
+
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -70,7 +75,7 @@ function Admin() {
       <div className="pt-16 pb-12">
         <section className="max-w-[1160px] mx-auto">
           <SectionTitle 
-            content="Painel Administrativo" 
+            content={t('admin.content')}
             className="pb-14"
           />
           <div className="flex gap-x-10 pb-14">        
@@ -81,7 +86,7 @@ function Admin() {
           <div className="relative mb-4">
             <input
               type="text"
-              placeholder="Buscar por nome..."
+              placeholder={t('admin.placeBuscar')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-3 pl-10 rounded border border-social-gray focus:outline-none 
@@ -93,12 +98,12 @@ function Admin() {
             <table className="w-full">
               <thead>
                 <tr className="text-left text-2xl border-b border-gray-200">
-                  <th className="p-3 font-bold text-green-600">Nome</th>
-                  <th className="p-3 font-bold text-center text-green-600">Ramo</th>
-                  <th className="p-3 text-center font-bold text-green-600">Status</th>
-                  <th className="p-3 font-bold text-center text-green-600">Sexo</th>
-                  <th className="p-3 font-bold text-green-600">Email</th>
-                  <th className="p-3 font-bold text-center text-green-600">Ações</th>
+                  <th className="p-3 font-bold text-green-600">{t('admin.name')}</th>
+                  <th className="p-3 font-bold text-center text-green-600">{t('admin.ramo')}</th>
+                  <th className="p-3 text-center font-bold text-green-600">{t('admin.status')}</th>
+                  <th className="p-3 font-bold text-center text-green-600">{t('admin.sexo')}</th>
+                  <th className="p-3 font-bold text-green-600">{t('admin.email')}</th>
+                  <th className="p-3 font-bold text-center text-green-600">{t('admin.acoes')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -170,7 +175,7 @@ function Admin() {
                 }`}      
               >
                 <ChevronLeft className="h-4 w-4 inline mr-1" />
-                      Anterior
+                {t('admin.buttomAnterior')}
               </button>
               <button
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
@@ -181,7 +186,7 @@ function Admin() {
                               : 'bg-social-brand text-social-white hover:brightness-90'
                       }`}
               >
-                      Próxima
+                {t('admin.buttomProxima')}
                 <ChevronRight className="h-4 w-4 inline ml-1" />
               </button>
             </div>

@@ -3,8 +3,13 @@ import { SectionTitle } from '../../../../components/section-title';
 import wilberchefinho from '/chefe-wilber.jpg';
 import chefa from '/chefa.jpg';
 import ryanchefinho from '/chefe-ryan.jpg';
+import { useTranslation } from 'react-i18next';
+
 
 function OurTeam() {
+
+  const { t } = useTranslation ();
+
   return (
     <section
       className="lg:pt-12 lg:pb-20
@@ -15,7 +20,7 @@ function OurTeam() {
                    md:max-w-[620px] md:mx-auto
                    max-w-[320px] mx-auto">
         <SectionTitle
-          content="Nossa equipe"
+          content={t('home.ourTeam.title')}
           className="lg:mb-9 lg:text-left
                      md:mb-9 md:text-left
                      mb-9 text-left"
@@ -30,7 +35,7 @@ function OurTeam() {
             linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
             campaign=share_via&utm_content=profile&utm_medium=ios_app"
             title="Ícaro Vegano"
-            desc="Líder técnico do grupo com experiência em desenvolvimento web."
+            desc={t('home.ourTeam.firstDesc')}
           />
           <Cards
             url={wilberchefinho}
@@ -38,7 +43,7 @@ function OurTeam() {
             linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
             campaign=share_via&utm_content=profile&utm_medium=ios_app"
             title="Zé Luneta"
-            desc="Membro do grupo com experiência em desenvolvimento web."
+            desc={t('home.ourTeam.secondDesc')}
           />
           <Cards
             url={chefa}
@@ -46,7 +51,7 @@ function OurTeam() {
             linkedin="https://www.linkedin.com/in/richard-ryan-carvalho-63a9a5261?utm_source=share&utm_
             campaign=share_via&utm_content=profile&utm_medium=ios_app"
             title="Nina Bússola"
-            desc="Membro do grupo com experiência em desenvolvimento web."
+            desc={t('home.ourTeam.thirdDesc')}
           />
         </div>
       </div>

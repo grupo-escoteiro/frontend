@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { arrayOf, node, oneOfType, shape, string } from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 function Faq({ faqs }) {
   const [openIndex, setOpenIndex] = useState(null);
+
+  const { t } = useTranslation ();
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -31,7 +34,7 @@ function Faq({ faqs }) {
                          w-full flex justify-between items-center px-4 py-3 text-social-black
                          font-medium text-left"
             >
-              {faq.question}
+              {t(faq.question)}
               <ChevronDown
                 className={`
                   transition-transform duration-300
@@ -48,7 +51,7 @@ function Faq({ faqs }) {
               <div
                 className="lg:px-4 lg:py-3 lg:text-social-black
                            px-4 py-3 text-left text-social-black">
-                {faq.answer}
+                {t(faq.answer)}
               </div>
             </div>
           </div>

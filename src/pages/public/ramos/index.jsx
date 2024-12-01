@@ -4,9 +4,12 @@ import flordeliz from '/flor-de-liz.svg';
 import { useEffect, useState } from 'react';
 import { Modal } from '../../../components/modal';
 import { PageTransition } from '../../../components/page-transition';
+import { useTranslation } from 'react-i18next';
 
 function Ramos() {
   const [openLobinho, setOpenLobinho] = useState(false);
+
+  const { t } = useTranslation ();
 
   const [openJunior, setOpenJunior] = useState(false);
 
@@ -40,7 +43,7 @@ function Ramos() {
             className="lg:pt-12 lg:pb-14 lg:text-left
                        md:pt-12 md:pb-14 md:text-left
                        pt-4 pb-8 text-left"
-            content="Ramos"
+            content={t('ramos.title')}
           />
           <div
             className="lg:flex lg:flex-row lg:gap-x-16
@@ -65,26 +68,15 @@ function Ramos() {
                          text-lg"
             >
               <span className="text-social-brand pr-2">
-                Lobinho:
+                {t('ramos.spanLobinho')} 
               </span>
-                O Lobismo é parte do movimento educacional escoteiro desenvolvido para aplicar os Princípios do
-                Escotismo, de Conta com a colaboração de adultos voluntários, segundo os Fundamentos do Escotismo,
-                bem como da participação ativa da família. A organização e as atividades dos lobos foram traduzidas do
-                Cub Book; The Jungle Book; Cub activies, tendo sido adaptados à nossa realidade.
-                É inspirado na História do The Jungle Book de Rudyard Kipling, história que versa
-                sobre a vida de um menino criado por lobos e que é educado pelos membros do povo de Seeonee.
-                O Propósito do Lobismo é contribuir para que a criança comece a firmar a educação do lar,
-                desenvolvendo a responsabilidade do seu desenvolvimento,
-                conforme a proposta educacional do Movimento Escoteiro.
-                Promove oportunidade para adequação do cotidiano da criança à vida escoteira,
-                além de propiciar o conhecer e respeitar o próximo, procurando desenvolver o senso de cooperação,
-                participação e o convívio harmonioso com a comunidade.
+              {t('ramos.contentLobinho')}
               <button
                 onClick={handleModalOpenLobinho}
                 className="text-social-brand flex py-10 transition duration-500 hover:brightness-50"
                 type="button"
               >
-                Ver mais
+                {t('ramos.buttomVer')}
               </button>
             </p>
           </div>
@@ -111,20 +103,14 @@ function Ramos() {
                          text-lg"
             >
               <span className="text-social-brand pr-2">
-                Junior:
+                {t('ramos.spanJunior')}
               </span>
-                A Seção Júnior visa proporcionar ao pré-adolescente e o
-                adolescente de ambos os sexos o incentivo no desenvolvimento do caráter,
-                respeitando as transformações do corpo e da mente e trabalhando para um pleno,
-                desenvolvimento físico, intelectual, afetivo e espiritual.
-                Levando esse adolescente a buscar com afinco o conhecimento.
-                Os escoteiros juniores são estimulados a descobrir seus limites em atividades como acampamentos,
-                jornadas e jogos ao ar livre.
+              {t('ramos.contentJunior')}
               <button
                 onClick={handleModalOpenJunior}
                 className="text-social-brand flex py-10 transition duration-500 hover:brightness-50"
                 type="button">
-                Ver mais
+                {t('ramos.secondButtomVer')}
               </button>
             </p>
             <div
@@ -150,42 +136,28 @@ function Ramos() {
               className="w-[140px] h-[140px]"
               src={lobinho}
             />
-            <h2 className="text-xl font-bold text-social-brand">Lobinho</h2>
+            <h2 className="text-xl font-bold text-social-brand">{t('ramos.h2Lobinho')}</h2>
           </div>
           <p
             className="lg:hidden
                        md:hidden
                        inline-block text-lg"
           >
-            Deveres com Deus: tratando de forma indissociável dos demais pilares,
-            abaixo descritos, o escoteiro é estimulado a procurar em Deus seu referencial,
-            praticando sua crença e respeitando os demais.
+            {t('ramos.modalLobinho')}
           </p>
           <p
             className="lg:inline-block lg:text-2xl
                        md:inline-block md:text-xl
                        hidden"
           >
-            Deveres com Deus: tratando de forma indissociável dos demais pilares,
-            abaixo descritos, o escoteiro é estimulado a procurar em Deus seu referencial,
-            praticando sua crença e respeitando os demais.
-            Deveres para com a Pátria: transcendendo o dever de sua comunidade o escoteiro é
-            estimulado através do seu conhecimento cívico e social, a compreender,
-            aprimorar e multiplicar os valores do cidadão Brasileiro.
-            Deveres para com o Próximo: estimulando atividades as quais se compreendem o valor do próximo,
-            o escoteiro baseia todo o seu trabalho ao servir ao próximo e cuidar de seu bem-estar.
-            Aprender fazendo: É vivenciando as experiências que o jovem aprende, desenvolve e inova seu mundo.
-            É aprendendo pela prática que ele vai aprimorando seus conhecimentos.
-            Aceitação da Lei e Promessa: O escoteiro é estimulado através das experiências a assumir voluntariamente
-            um código de conduta que o leva a um conjunto de valores, e estes são representados pela Lei e
-            Promessa.
+            {t('ramos.secondModalLobinho')}
           </p>
           <div className="text-end py-6 px-12">
             <button
               onClick={handleModalOpenLobinho}
               className="mt-4 text-social-red transition duration-500 hover:brightness-50"
             >
-              Fechar
+              {t('ramos.secondButtomFechar')}
             </button>
           </div>
         </Modal>
@@ -198,49 +170,28 @@ function Ramos() {
               className="w-[140px] h-[140px]"
               src={flordeliz}
             />
-            <h2 className="text-xl font-bold text-social-brand">Junior</h2>
+            <h2 className="text-xl font-bold text-social-brand">{t('ramos.h2Junior')}</h2>
           </div>
           <p
             className="lg:hidden
                        md:hidden
                        inline-block text-lg"
           >
-            Prometo pela minha honra fazer o melhor possível para:
-            Cumprir meus deveres para com Deus e minha Pátria;
-            Ajudar o próximo em toda e qualquer ocasião;
-            Obedecer à Lei Escoteira.
-            A Lei Escoteira seguida pelos juniores é:
-            O Escoteiro tem uma só palavra, sua honra vale mais que a própria vida;
-            O Lema do Escoteiro Júnior é Sempre Alerta.
+            {t('ramos.modalJunior')}
           </p>
           <p
             className="lg:inline-block lg:text-2xl
                        md:inline-block md:text-xl
                        hidden"
           >
-            Prometo pela minha honra fazer o melhor possível para:
-            Cumprir meus deveres para com Deus e minha Pátria;
-            Ajudar o próximo em toda e qualquer ocasião;
-            Obedecer à Lei Escoteira.
-            A Lei Escoteira seguida pelos juniores é:
-            O Escoteiro tem uma só palavra, sua honra vale mais que a própria vida;
-            O Escoteiro é Leal;
-            O Escoteiro está Sempre Alerta para ajudar o Próximo e pratica diariamente uma boa ação;
-            O Escoteiro é Amigo de todos e Irmão dos demais Escoteiros;
-            O Escoteiro é cortês;
-            O Escoteiro é amigo dos animais e das Plantas;
-            O Escoteiro é obediente e disciplinado;
-            O Escoteiro é alegre e sorri nas dificuldades;
-            O Escoteiro é econômico e respeita o bem alheio;
-            O Escoteiro é limpo de corpo e alma.
-            O Lema do Escoteiro Júnior é Sempre Alerta.
+            {t('ramos.secondModalJunior')}
           </p>
           <div className="text-end py-6 px-12">
             <button
               onClick={handleModalOpenJunior}
               className="mt-4 text-social-red transition duration-500 hover:brightness-50"
             >
-              Fechar
+              {t('ramos.buttomFechar')}
             </button>
           </div>
         </Modal>
