@@ -7,7 +7,6 @@ import { IconChildren } from './components/cube-icon-children';
 import { IconResponsible } from './components/cube-icon-reponsible';
 import { PageTransition } from '../../../components/page-transition';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 const users = [
   { name: 'Matheus Natieli', ramo: 'Lobinho', status: 'Inativo', 
@@ -82,6 +81,14 @@ function Admin() {
             <IconChildren />
             <IconResponsible />
           </div>
+          <CSVLink 
+            data={users}
+            filename="Users.CSV"
+            target="_blank"
+            className="w-full text-right inline-block text-social-brand mb-2"
+          >
+            Download
+          </CSVLink>
           <div className="relative mb-4">
             <input
               type="text"
