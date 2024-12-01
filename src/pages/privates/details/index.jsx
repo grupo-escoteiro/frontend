@@ -84,7 +84,7 @@ function DetailsUser() {
   return (
     <PageTransition>
       <section className="pt-12 pb-20">
-        <div className="max-w-[1160px] mx-auto">
+        <div className="max-w-[1024px] mx-auto">
           <div className="flex items-center justify-between">
             <SectionTitle
               className="pt-12 pb-14 whitespace-nowrap"
