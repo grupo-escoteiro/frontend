@@ -7,6 +7,8 @@ import { IconChildren } from './components/cube-icon-children';
 import { IconResponsible } from './components/cube-icon-reponsible';
 import { PageTransition } from '../../../components/page-transition';
 import { Link } from 'react-router-dom';
+import { CSVLink } from 'react-csv';
+import { useTranslation } from 'react-i18next';
 
 const users = [
   { name: 'Matheus Natieli', ramo: 'Lobinho', status: 'Inativo', 
