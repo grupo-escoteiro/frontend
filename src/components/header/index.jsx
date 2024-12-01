@@ -10,8 +10,14 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { LogOut, Settings, ShieldAlert, Star, LockKeyhole } from 'lucide-react';
 import { signOutAsync } from '../../services/firebase/auth';
 import { toast } from 'sonner';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import ReactFlagsSelect from 'react-flags-select';
 
 function Header() {
+
+  const { t } = useTranslation ();
+
   const { currentUser } = getAuth();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,10 +31,24 @@ function Header() {
   async function logout() {
     try {
       await signOutAsync();
-      toast.success('Usuário deslogado com sucesso!');
+      toast.success(t('header.logoutSucess'));
       navigate('/');
     } catch {
-      toast.error('Erro ao deslogar o usuário!');
+      toast.error('header.logoutError');
+    }
+  }
+
+  function handleLanguageSelection (code){
+    switch(code){
+      case 'US':
+        i18next.changeLanguage('en');
+        break;
+      case 'ES':
+        i18next.changeLanguage('es');
+        break;
+      default:
+        i18next.changeLanguage('pt-BR');
+        break;
     }
   }
 
@@ -74,7 +94,7 @@ function Header() {
                           trigger: () => navigate('/configuracao'),
                           component: (
                             <DropdownItem
-                              text="Configurações"
+                              text={t('header.firstText')}
                               edit="border-b border-social-gray pb-2"
                               icon={<Settings />}
                             />
@@ -83,19 +103,19 @@ function Header() {
                         {
                           id: 2,
                           trigger: () => navigate('/privacy'),
-                          component: <DropdownItem text="Privacidade" edit="" icon={<ShieldAlert />} />,
+                          component: <DropdownItem text={t('header.secondText')} edit="" icon={<ShieldAlert />} />,
                         },
                         {
                           id: 3,
                           trigger: async () => navigate('/chat'),
-                          component: <DropdownItem text="Chat" edit="" icon={<Star />} />,
+                          component: <DropdownItem text={t('header.thirdText')} edit="" icon={<Star />} />,
                         },
                         {
                           id: 5,
                           trigger: async () => await logout(),
                           component: (
                             <DropdownItem
-                              text="Logout"
+                              text={t('header.forthText')}
                               edit="text-social-red transition duration-500 hover:text-social-brand"
                               icon={<LogOut />}
                             />
@@ -107,7 +127,7 @@ function Header() {
                     />
                   </>
                 ) : (
-                  <AnimatedLink to="/autenticacao/login" text="Login" />
+                  <AnimatedLink to="/autenticacao/login" text={t('header.fifithText')} />
                 )}
               </li>
             </ul>
@@ -115,25 +135,27 @@ function Header() {
           </nav>
           <figcaption
             className="lg:text-left lg:max-w-48 lg:inline-block md:text-left md:max-w-48 md:inline-block hidden">
-            Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
+            {t('header.firstFig')} <strong className="text-social-brand">
+              {t('header.firstStrong')}</strong> {t('header.firstTerra')}
           </figcaption>
         </figure>
         <figcaption className="lg:text-left lg:max-w-44 lg:hidden md:text-left md:max-w-44 md:hidden text-center">
-          Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
+          {t('header.secondFig')} <strong className="text-social-brand">
+            {t('header.secondFig')}</strong> {t('header.secondTerra')}
         </figcaption>
         <nav className="lg:inline-block md:inline-block hidden">
           <ul className="lg:flex lg:items-center lg:gap-4 md:flex md:items-center md:gap-4">
             <li>
-              <AnimatedLink text={'Home'} to="/" />
+              <AnimatedLink text={t('header.animatedText')} to="/" />
             </li>
             <li>
-              <AnimatedLink text={'Notícias'} to="/noticias" />
+              <AnimatedLink text={t('header.animatedSecondText')} to="/noticias" />
             </li>
             <li>
-              <AnimatedLink to="/ramos" text={'Ramos'} />
+              <AnimatedLink to="/ramos" text={t('header.animatedThirdText')} />
             </li>
             <li>
-              <AnimatedLink to="/galeria" text={'Galeria'} />
+              <AnimatedLink to="/galeria" text={t('header.animatedForthText')} />
             </li>
             <li className="lg:relative">
               {currentUser ? (
@@ -157,7 +179,7 @@ function Header() {
                         trigger: () => navigate('/configuracao'),
                         component: (
                           <DropdownItem
-                            text="Configurações"
+                            text={t('header.firstDropdownText')}
                             edit="border-b border-social-gray pb-2"
                             icon={<Settings />}
                           />
@@ -166,24 +188,33 @@ function Header() {
                       {
                         id: 2,
                         trigger: () => navigate('/privacy'),
-                        component: <DropdownItem text="Privacidade" edit="" icon={<ShieldAlert />} />,
+                        component: <DropdownItem 
+                          text={t('header.secondDropdownText')} 
+                          edit="" 
+                          icon={<ShieldAlert />} />,
                       },
                       {
                         id: 3,
                         trigger: async () => navigate('/chat'),
-                        component: <DropdownItem text="Chat" edit="" icon={<Star />} />,
+                        component: <DropdownItem 
+                          text={t('header.thirdDropdownText')}
+                          edit="" 
+                          icon={<Star />} />,
                       },
                       {
                         id: 4,
                         trigger: async () => navigate('/admin'),
-                        component: <DropdownItem text="Admin" edit="" icon={<LockKeyhole />} />,
+                        component: <DropdownItem 
+                          text={t('header.forthDropdownText')}
+                          edit="" 
+                          icon={<LockKeyhole />} />,
                       },
                       {
                         id: 5,
                         trigger: async () => await logout(),
                         component: (
                           <DropdownItem
-                            text="Logout"
+                            text={t('header.fifithDropdownText')}
                             edit="text-social-red transition duration-500 hover:text-social-brand"
                             icon={<LogOut />}
                           />
@@ -195,8 +226,15 @@ function Header() {
                   />
                 </>
               ) : (
-                <AnimatedLink to="/autenticacao/login" text="Login" />
+                <AnimatedLink to="/autenticacao/login" text={t('header.seventhDropdownText')} />
               )}
+            </li>
+            <li>
+              <ReactFlagsSelect 
+                countries={['US', 'ES', 'BR']}
+                placeholder={t('header.languageText')}
+                onSelect={handleLanguageSelection}
+              />
             </li>
           </ul>
         </nav>

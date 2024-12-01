@@ -5,8 +5,10 @@ import { Button } from '../../../../../components/button';
 import boneco from '/bonecopipa.svg';
 import { useContext } from 'react';
 import { registerContext } from '../../../../../contexts/register-context';
+import { useTranslation } from 'react-i18next';
 
 function ThirdStep() {
+  const { t } = useTranslation ();
   const {
     stepsAmount,
     currentStep,
@@ -31,7 +33,7 @@ function ThirdStep() {
             `}
         >
           <h1 className="mb-16 text-xl text-social-white font-semibold">
-              Faça seu cadastro
+            {t('register.thirdStepH1')}
           </h1>
           <img src={boneco} alt="Ilustração" />
         </div>
@@ -52,13 +54,13 @@ function ThirdStep() {
                 htmlFor="cep"
                 className="font-semibold"
               >
-                    CEP
+                {t('register.thirdStepFirstCadastro')}
               </label>
               <input
                 type="text"
                 name="cep"
                 id="cep"
-                placeholder="xxxxx-xxx"
+                placeholder={t('register.thirdStepFirstPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -67,13 +69,13 @@ function ThirdStep() {
                 htmlFor="rua"
                 className="font-semibold"
               >
-                Rua
+                {t('register.thirdStepSecondCadastro')}
               </label>
               <input
                 type="text"
                 name="rua"
                 id="rua"
-                placeholder="Digite sua rua"
+                placeholder={t('register.thirdStepSecondPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -88,13 +90,13 @@ function ThirdStep() {
                 htmlFor="bairro"
                 className="font-semibold"
               >
-                  Bairro
+                {t('register.thirdStepThirdCadastro')}
               </label>
               <input
                 type="text"
                 name="bairro"
                 id="bairro"
-                placeholder="Digite seu bairro"
+                placeholder={t('register.thirdStepThirdPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -103,13 +105,13 @@ function ThirdStep() {
                 htmlFor="cidade"
                 className="font-semibold"
               >
-                  Cidade
+                {t('register.thirdStepFourthCadastro')}
               </label>
               <input
                 type="text"
                 name="cidade"
                 id="cidade"
-                placeholder="Digite sua cidade"
+                placeholder={t('register.thirdStepFourthPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -118,7 +120,7 @@ function ThirdStep() {
                 htmlFor="estado"
                 className="font-semibold"
               >
-                  Estado
+                {t('register.thirdStepFifithCadastro')}
               </label>
               <select id="estado" className="w-full h-16 px-4 py-2 rounded border border-social-gray">
                 <option>SP</option>
@@ -132,13 +134,13 @@ function ThirdStep() {
               htmlFor="complemento"
               className="font-semibold"
             >
-                    Complemento
+              {t('register.thirdStepSixthCadastro')}
             </label>
             <input
               type="text"
               name="complemento"
               id="complemento"
-              placeholder="Escreva seu complemento"
+              placeholder={t('register.thirdStepFifithPlace')}
               className="w-full h-16 px-4 py-2 rounded border border-social-gray"
             />
           </fieldset>
@@ -152,12 +154,12 @@ function ThirdStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.thirdStepFirstLink')}
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.thirdStepFirstButtom')}
               onClick={changeRegisterStep}
             />
           </fieldset>
@@ -171,12 +173,12 @@ function ThirdStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.thirdStepSecondLink')}
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.thirdStepSecondButtom')}
               onClick={changeRegisterStep}
             />
           </fieldset>

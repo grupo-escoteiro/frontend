@@ -7,8 +7,10 @@ import boneco from '/bonecopipa.svg';
 import { registerContext } from '../../../../../contexts/register-context';
 import { useContext } from 'react';
 import { EJourney } from '../../../../../helpers/enums/journey.js';
+import { useTranslation } from 'react-i18next';
 
 function FirstStep() {
+  const { t } = useTranslation ();
   const {
     setJourney,
     journey,
@@ -35,7 +37,7 @@ function FirstStep() {
             `}
         >
           <h1 className="mb-16 text-xl text-social-white font-semibold">
-              Faça seu cadastro
+            {t('register.h1Cadastro')}
           </h1>
           <img src={boneco} />
         </div>
@@ -55,10 +57,11 @@ function FirstStep() {
                        md:text-3xl
                        text-2xl"
           >
-            Aqui você irá decidir o rumo da sua jornada!
+            {t('register.h2Cadastro')}
+
           </h2>
           <strong className="font-semibold text-xl">
-              Escolha qual caminho quer seguir
+            {t('register.strongCadastro')}
           </strong>
         </div>
         <form className="flex flex-col gap-y-16 w-full">
@@ -80,7 +83,8 @@ function FirstStep() {
                 htmlFor="first-choice"
                 className="text-base font-normal cursor-pointer"
               >
-                  Desejo ser o responsável pelo novo escoteiro
+                {t('register.labelCadastro')}
+
               </label>
             </div>
             <div className="flex items-center gap-x-4">
@@ -100,7 +104,8 @@ function FirstStep() {
                 htmlFor="second-choice"
                 className="text-base font-normal cursor-pointer"
               >
-                  Estou aqui para ser voluntário
+                {t('register.secondLabelCadastro')}
+
               </label>
             </div>
             <div className="flex items-center gap-x-4">
@@ -120,7 +125,7 @@ function FirstStep() {
                 htmlFor="third-choice"
                 className="text-base font-normal cursor-pointer"
               >
-                  Meu destino é grandioso: serei voluntário e responsável
+                {t('register.thirdLabelCadastro')}
               </label>
             </div>
           </fieldset>
@@ -134,12 +139,13 @@ function FirstStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.firstLink')}
+
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.firstbuttom')}
               onClick={changeRegisterStep}
             />
           </fieldset>
@@ -153,12 +159,12 @@ function FirstStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.secondLink')}
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.secondButtom')}
               onClick={changeRegisterStep}
             />
           </fieldset>

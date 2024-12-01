@@ -1,8 +1,12 @@
 import { Input } from '../../../../components/input';
 import { Button } from '../../../../components/button';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function MainPersonalInformations() {
+
+  const { t } = useTranslation ();
+
   return (
     <>
       <form
@@ -16,30 +20,30 @@ function MainPersonalInformations() {
                      flex flex-col px-6 py-14 gap-y-14"
         >
           <Input 
-            label="Nome completo" 
-            placeholder="Digite seu nome completo"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.firstLabel')}
+            placeholder={t('settings.firstPlace')}
+            errorMessage={t('settings.firstError')}
           />
           <Input 
-            label="CPF"
-            placeholder="Digite seu cpf"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.secondLabel')}
+            placeholder={t('settings.secondPlace')}
+            errorMessage={t('settings.secondError')}
           />
           <Input 
-            label="Data de Nascimento"
-            placeholder="Digite sua data de nascimento"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.thirdLabel')}
+            placeholder={t('settings.thirdPlace')}
+            errorMessage={t('settings.thirdError')}
           />
           <Input 
-            label="Telefone Principal"
-            placeholder="Digite seu telefone principal"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.forthtLabel')}
+            placeholder={t('settings.forthPlace')}
+            errorMessage={t('settings.forthError')}
           />
         
           <Input 
-            label="Telefone de Emergência"
-            placeholder="Digite seu telefone de Emergência"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.fifithLabel')}
+            placeholder={t('settings.fifithPlace')}
+            errorMessage={t('settings.fifithError')}
           />
         </fieldset>
         <fieldset
@@ -48,14 +52,14 @@ function MainPersonalInformations() {
                      hidden"
         >
           <Input 
-            label="Nome completo" 
-            placeholder="Digite seu nome completo"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.sixthLabel')}
+            placeholder={t('settings.sixthPlace')}
+            errorMessage={t('settings.sixthError')}
           />
           <Input 
-            label="CPF"
-            placeholder="Digite seu cpf"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.seventhLabel')}
+            placeholder={t('settings.seventhPlace')}
+            errorMessage={t('settings.seventhError')}
           />
         </fieldset>
         <fieldset
@@ -64,14 +68,14 @@ function MainPersonalInformations() {
                      hidden"
         >
           <Input 
-            label="Nome completo" 
-            placeholder="Digite seu nome completo"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.eigthLabel')}
+            placeholder={t('settings.eigthPlace')}
+            errorMessage={t('settings.eigthError')}
           />
           <Input 
-            label="CPF"
-            placeholder="Digite seu cpf"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.ninethLabel')}
+            placeholder={t('settings.ninethPlace')}
+            errorMessage={t('settings.ninethError')}
           />
         </fieldset>
         <fieldset
@@ -80,20 +84,20 @@ function MainPersonalInformations() {
                      hidden"
         >
           <Input 
-            label="Data de Nascimento"
-            placeholder="Digite sua data de nascimento"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.tenthLabel')}
+            placeholder={t('settings.tenthPlace')}
+            errorMessage={t('settings.tenthError')}
           />
           <Input 
-            label="Telefone Principal"
-            placeholder="Digite seu telefone principal"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.eleventhLabel')}
+            placeholder={t('settings.eleventhPlace')}
+            errorMessage={t('settings.eleventhError')}
           />
         
           <Input 
-            label="Telefone de Emergência"
-            placeholder="Digite seu telefone de Emergência"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.twelvethLabel')}
+            placeholder={t('settings.twelvethPlace')}
+            errorMessage={t('settings.twelvethError')}
           />
         </fieldset>
         <fieldset
@@ -102,20 +106,20 @@ function MainPersonalInformations() {
                      hidden"
         >
           <Input 
-            label="Data de Nascimento"
-            placeholder="Digite sua data de nascimento"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.thirdthLabel')}
+            placeholder={t('settings.thirdthPlace')}
+            errorMessage={t('settings.thirdthError')}
           />
           <Input 
-            label="Telefone Principal"
-            placeholder="Digite seu telefone principal"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.fourteenthLabel')}
+            placeholder={t('settings.fourteenthPlace')}
+            errorMessage={t('settings.fourteenthError')}
           />
         
           <Input 
-            label="Telefone de Emergência"
-            placeholder="Digite seu telefone de Emergência"
-            errorMessage="Qualquer mensagem"
+            label={t('settings.fifteenthLabel')}
+            placeholder={t('settings.fifteenthPlace')}
+            errorMessage={t('settings.fifteenthError')}
           />
         </fieldset>
       </form>
@@ -125,7 +129,7 @@ function MainPersonalInformations() {
                    hidden"
       >
         <Link className="text-social-red transition duration-500 hover:brightness-50">
-            Voltar
+          {t('settings.firstLink')}
         </Link>
         <Button
           type="submit" 
@@ -139,7 +143,7 @@ function MainPersonalInformations() {
                    flex flex-col-reverse items-center justify-center pb-16 gap-y-4"
       >
         <Link className="text-social-red transition duration-500 hover:brightness-50">
-            Voltar
+          {t('settings.secondLink')}
         </Link>
         <Button
           type="submit" 

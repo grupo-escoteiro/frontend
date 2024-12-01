@@ -1,6 +1,10 @@
 import logo from '/logo.svg';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+
+  const { t } = useTranslation ();
+
   return (
     <footer
       className="lg:w-full lg:bg-light-social-brand
@@ -33,14 +37,13 @@ function Footer() {
           <p
             className="lg:max-w-[580px] lg:text-base lg:inline-block
                        hidden">
-            Juntos construímos um mundo melhor. Cada gesto transforma sonhos em realidade.
-            Lado a lado, desafios viram oportunidades e a esperança se torna ação.
-            Somos parte de algo maior, e juntos, fazemos a diferença.
+            {t('footer.pFooter')}
           </p>
           <figcaption
             className="lg:text-2xl lg:max-w-[270px] lg:text-left
                        text-lg text-center">
-            Grupo <strong className="text-social-brand">Escoteiro</strong> Terra Da Saudade - 05/SP
+            {t('footer.firstFig')}
+            <strong className="text-social-brand">{t('footer.firstStrong')}</strong>{t('footer.firstTerra')}
           </figcaption>
         </figure>
         <div
@@ -48,7 +51,7 @@ function Footer() {
                      md:w-full md:text-center md:pb-12
                      w-full text-center pt-4 pb-12"
         >
-          <small className="text-social-gray">&copy; Todos direitos reservados</small>
+          <small className="text-social-gray">&copy; {t('footer.small')}</small>
         </div>
       </div>
     </footer>

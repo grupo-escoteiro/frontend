@@ -5,8 +5,13 @@ import { Link } from 'react-router-dom';
 import boneco from '/bonecopipa.svg';
 import { useContext } from 'react';
 import { registerContext } from '../../../../../contexts/register-context';
+import { useTranslation } from 'react-i18next';
+
 
 function FifthChildStep() {
+
+  const { t } = useTranslation ();
+
   const {
     stepsAmount,
     currentStep,
@@ -31,8 +36,8 @@ function FifthChildStep() {
             `}
         >
           <h1 className="mb-16 text-xl text-social-white font-semibold text-center">
-              Agora cadastre o seu grande escoteiro
-          </h1>
+            {t('register.secondH1')}
+          </h1> 
           <img src={boneco} />
         </div>
       </div>
@@ -52,13 +57,13 @@ function FifthChildStep() {
                 htmlFor="name"
                 className="font-semibold"
               >
-                    Nome completo
+                {t('register.firstPlace')}
               </label>
               <input
                 type="text"
                 name="nome"
                 id="name"
-                placeholder="Digite o nome do escoteiro"
+                placeholder={t('register.firstLabelCadastro')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -67,13 +72,13 @@ function FifthChildStep() {
                 htmlFor="cpf"
                 className="font-semibold"
               >
-                CPF
+                {t('register.secondthLabelCadastro')}
               </label>
               <input
                 type="text"
                 name="cpf"
                 id="cpf"
-                placeholder="Digite seu cpf"
+                placeholder={t('register.secondPlace')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -82,7 +87,7 @@ function FifthChildStep() {
                 htmlFor="data"
                 className="font-semibold"
               >
-                    Data de nascimento
+                {t('register.thirdthLabelCadastro')}
               </label>
               <input
                 type="date"
@@ -96,13 +101,13 @@ function FifthChildStep() {
                 htmlFor="telefone"
                 className="font-semibold"
               >
-                    Telefone
+                {t('register.thirdthLabelCadastro')}
               </label>
               <input
                 type="tel"
                 name="telefone"
                 id="telefone"
-                placeholder="(xx) xxxxx-xxxx"
+                placeholder={t('register.fourthPlace')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -111,13 +116,13 @@ function FifthChildStep() {
                 htmlFor="telefone-emer"
                 className="font-semibold"
               >
-                    Telefone de emergência
+                {t('register.fifithLabelCadastro')}
               </label>
               <input
                 type="tel"
                 name="telefone-emergencia"
                 id="telefone-emer"
-                placeholder="(xx) xxxxx-xxxx"
+                placeholder={t('register.fifithPlace')}
                 className="w-full h-16 px-5 py-5 rounded border border-social-gray"
               />
             </div>
@@ -132,12 +137,12 @@ function FifthChildStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.thirdLink')}
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.thirdButtom')}
               onClick={changeRegisterStep}
             />
           </fieldset>
@@ -151,12 +156,12 @@ function FifthChildStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-              Voltar
+              {t('register.fourthLink')}
             </Link>
             <Button
               variant="green"
               type="button"
-              content="Próximo"
+              content={t('register.fourthButtom')}
               onClick={changeRegisterStep}
             />
           </fieldset>

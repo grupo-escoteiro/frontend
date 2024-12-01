@@ -6,8 +6,11 @@ import boneco from '/bonecopipa.svg';
 import { useContext } from 'react';
 import { registerContext } from '../../../../../contexts/register-context';
 import { EJourney } from '../../../../../helpers/enums/journey';
+import { useTranslation } from 'react-i18next';
 
 function FourthStep() {
+  const { t } = useTranslation ();
+
   const {
     stepsAmount,
     currentStep,
@@ -34,7 +37,7 @@ function FourthStep() {
             `}
         >
           <h1 className="mb-16 text-xl text-social-white font-semibold">
-              Faça seu cadastro
+            {t('register.fourthStepH1')}
           </h1>
           <img src={boneco} alt="Ilustração" />
         </div>
@@ -54,12 +57,12 @@ function FourthStep() {
                 htmlFor="email"
                 className="font-semibold"
               >
-                    E-mail
+                {t('register.fourthStepFirstCadastro')}
               </label>
               <input
                 type="email"
                 name="email"
-                id="email"
+                id={t('register.fourthStepFirstPlace')}
                 placeholder="seuemail@gmail.com"
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
@@ -75,13 +78,13 @@ function FourthStep() {
                 htmlFor="senha"
                 className="font-semibold"
               >
-                  Senha
+                {t('register.fourthStepSecondCadastro')}
               </label>
               <input
                 type="password"
                 name="password"
                 id="senha"
-                placeholder="Digite sua senha"
+                placeholder={t('register.fourthStepSecondPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -90,13 +93,13 @@ function FourthStep() {
                 htmlFor="confirm-password"
                 className="font-semibold"
               >
-                  Confirmação de senha
+                {t('register.fourthStepThirdCadastro')}
               </label>
               <input
                 type="password"
                 name="passwordConfirmation"
                 id="confirm-password"
-                placeholder="Confirme sua senha"
+                placeholder={t('register.fourthStepThirdPlace')}
                 className="w-full h-16 px-4 py-2 rounded border border-social-gray"
               />
             </div>
@@ -111,12 +114,13 @@ function FourthStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-                Voltar
+              {t('register.fourthStepFirstLink')}
             </Link>
             <Button
               variant="green"
               type={journey === EJourney.voluntary ? 'submit' : 'button'}
-              content={journey === EJourney.voluntary ? 'Cadastrar' : 'Próximo'}
+              content={journey === EJourney.voluntary ? t('register.fourthStepFirstButtom')
+                : t('register.fourthStepFirstContentButtom')}
               onClick={journey === EJourney.voluntary ? null : changeRegisterStep}
             />
           </fieldset>
@@ -130,12 +134,13 @@ function FourthStep() {
               className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
             >
-                Voltar
+              {t('register.fourthStepSecondLink')}
             </Link>
             <Button
               variant="green"
               type={journey === EJourney.voluntary ? 'submit' : 'button'}
-              content={journey === EJourney.voluntary ? 'Cadastrar' : 'Próximo'}
+              content={journey === EJourney.voluntary ? t('register.fourthStepSecondtButtom') 
+                : t('register.fourthStepSecondContentButtom')}
               onClick={journey === EJourney.voluntary ? null : changeRegisterStep}
             />
           </fieldset>
