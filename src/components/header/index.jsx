@@ -242,7 +242,7 @@ function Header() {
       </div>
       <div
         className="lg:hidden
-                   md:flex md:justify-center md:max-w-[620px] md:mx-auto
+                   md:flex md:justify-center md:max-w-[620px] md:mx-auto md:pb-8
                    hidden"
       >
         <figcaption

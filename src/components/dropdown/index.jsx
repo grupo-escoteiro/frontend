@@ -10,7 +10,7 @@ function Dropdown({
   return (
     <Box
       className={`lg:p-4 lg:mt-2 lg:transition-opacity lg:duration-200 lg:z-20 lg:right-0
-        p-4 transition-opacity duration-500 z-20 md:absolute md:right-16 absolute right-16
+        p-4 transition-opacity duration-500 z-20 md:absolute md:right-20 absolute right-16
         ${visible ? 'inline-block' : 'hidden'}
         ${className}
       `}
