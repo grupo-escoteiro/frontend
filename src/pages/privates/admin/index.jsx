@@ -8,7 +8,7 @@ import { IconResponsible } from './components/cube-icon-reponsible';
 import { PageTransition } from '../../../components/page-transition';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import { CSVLink } from 'react-csv';
 
 const users = [
   { name: 'Matheus Natieli', ramo: 'Lobinho', status: 'Inativo', 
