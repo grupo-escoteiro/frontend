@@ -73,7 +73,7 @@ function Admin() {
   return (
     <PageTransition>
       <div className="pt-16 pb-12">
-        <section className="max-w-[1160px] mx-auto">
+        <section className="max-w-[1024px] mx-auto">
           <SectionTitle 
             content={t('admin.content')}
             className="pb-14"
@@ -87,7 +87,8 @@ function Admin() {
             data={users}
             filename="Users.CSV"
             target="_blank"
-            className="w-full text-right inline-block text-social-brand mb-2"
+            className="w-full text-right inline-block text-social-brand mb-2
+                       transition duration-500 hover:brightness-50"
           >
             Download
           </CSVLink>
