@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { SectionTitle } from '../../../components/section-title';
 import { imagesList } from '../../../helpers/gallery-images-list.js';
 import { PageTransition } from '../../../components/page-transition/index.jsx';
+import { useTranslation } from 'react-i18next';
+
 
 const layoutClasses = [
   'lg:col-span-8 lg:row-span-2 md:col-span-6',
@@ -17,6 +19,9 @@ const layoutClasses = [
 ];
 
 function Gallery() {
+
+  const { t } = useTranslation ();
+
   const [page, setPage] = useState(1);
   const partialImagesList = imagesList.filter(image => image.id <= layoutClasses.length * page);
   const partialImageListHasTheSameSize = partialImagesList.length === imagesList.length;
@@ -33,7 +38,7 @@ function Gallery() {
             className="lg:pt-12 lg:pb-14
                        md:pt-0 md:pb-14
                        pt-0 pb-14"
-            content="Galeria"
+            content={t('galery.title')}
           />
           <div
             className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center
@@ -67,7 +72,7 @@ function Gallery() {
                 type="button"
                 onClick={() => setPage(prev => prev + 1)}
               >
-                Carregar mais +
+                {t('galery.carregar')}
               </button>
             </div>
           )}

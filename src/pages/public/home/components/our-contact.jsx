@@ -4,8 +4,11 @@ import { Button } from '../../../../components/button';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactUsFormScheme } from '../../../../helpers/contact-us-validations-scheme.js';
+import { useTranslation } from 'react-i18next';
 
 function OurContact() {
+  const { t } = useTranslation ();
+
   const {
     register,
     handleSubmit,
@@ -30,7 +33,7 @@ function OurContact() {
                    md:max-w-[620px] md:mx-auto
                    max-w-[320px] mx-auto">
         <SectionTitle
-          content="Contate-nos"
+          content={t('home.ourContact.title')}
           className="lg:mb-9 lg:text-left
                      md:mb-9 md:text-left
                      mb-9 text-left"
@@ -44,8 +47,8 @@ function OurContact() {
         >
           <Input
             {...register('name')}
-            label="Nome"
-            placeholder="Digite seu nome completo"
+            label={t('home.ourContact.firstLabel')}
+            placeholder={t('home.ourContact.firstPlace')}
             errorMessage={errors.name?.message}
             name="name"
           />
@@ -55,8 +58,8 @@ function OurContact() {
           >
             <Input
               {...register('email')}
-              label="E-mail"
-              placeholder="Digite seu e-mail"
+              label={t('home.ourContact.secondLabel')}
+              placeholder={t('home.ourContact.secondPlace')}
               errorMessage={errors.email?.message}
               name="email"
             />
@@ -78,7 +81,7 @@ function OurContact() {
                     : 'border border-solid border-social-brand text-social-brand'
                 }
               `}
-              placeholder="Digite sua mensagem"
+              placeholder={t('home.ourContact.thirdPlace')}
             />
             {errors.content && (
               <span className="text-social-red font-regular text-sm">
@@ -89,8 +92,8 @@ function OurContact() {
           <div className="lg:inline-block hidden">
             <Input
               {...register('email')}
-              label="E-mail"
-              placeholder="Digite seu e-mail"
+              label={t('home.ourContact.forthLabel')}
+              placeholder={t('home.ourContact.forthPlace')}
               errorMessage={errors.email?.message}
               name="email"
             />
@@ -104,13 +107,13 @@ function OurContact() {
           <Button
             form="contact-form"
             type="reset"
-            content="cancelar"
+            content={t('home.ourContact.buttomCancel')}
           />
           <Button
             type="submit"
             form="contact-form"
             variant="green"
-            content="enviar"
+            content={t('home.ourContact.buttomEnviar')}
           />
         </div>
       </div>

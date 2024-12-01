@@ -2,138 +2,60 @@ import { useRef, useState } from 'react';
 import { SectionTitle } from '../../../../components/section-title';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const imagesData = [
-  {
-    src: '/gallery/imagem-1.jpg',
-    title: 'Um Grandioso Dia',
-    date: '31/10/2023',
-    text: (
-      <p
-        className="lg:pl-16 lg:text-left lg:px-0
-                   md:text-left"
-      >
-        No Movimento Escoteiro, cada atividade é uma oportunidade de aprendizado 
-        e crescimento. Desde aventuras ao ar livre até projetos que estimulam a criatividade, 
-        os jovens desenvolvem habilidades importantes enquanto fortalecem valores como trabalho em equipe, 
-        respeito e liderança. Participar desse movimento significa não apenas explorar novos horizontes, mas 
-        também construir memórias inesquecíveis que durarão para sempre, criando laços que atravessam gerações e
-        mantendo o espírito do escotismo.
-      </p>
-    )
-  },
-  {
-    src: '/gallery/imagem-2.jpg',
-    title: 'Um Dia de União e Conquistas',
-    date: '31/10/2023',
-    text: (
-      <p
-        className="lg:pl-16 lg:text-left lg:px-0
-                   md:text-left"
-      >
-        Reunidos sob o mesmo propósito, celebramos as conquistas de cada 
-        integrante deste movimento que transforma vidas. Entre sorrisos e aplausos, 
-        fortalecemos laços de amizade e compartilhamos experiências que inspiram a jornada de todos. 
-        Esta união reflete o compromisso de cada um em construir um futuro mais justo e colaborativo. 
-        Aqui, cada momento é especial e nos lembra que, juntos, somos mais fortes. Venha fazer parte desta 
-        família e descubra como o escotismo pode mudar sua vida!
-      </p>
-    )
-  },
-  {
-    src: '/gallery/imagem-3.jpg',
-    title: 'Compromisso e Trabalho em Equipe',
-    date: '31/10/2023',
-    text: (
-      <p
-        className="lg:pl-16 lg:text-left lg:px-0
-                   md:text-left"
-      >
-        Cada encontro é uma oportunidade de celebrar o esforço coletivo 
-        e o aprendizado contínuo. Aqui, escoteiros de diferentes idades 
-        compartilham momentos de crescimento, realizam conquistas e fortalecem valores essenciais 
-        para a vida em comunidade. Com união e dedicação, construímos um ambiente onde cada jovem 
-        pode se desenvolver e transformar o mundo ao seu redor. Venha se juntar a nós e descubra como é fazer parte 
-        desta jornada de descobertas e aventuras!
-      </p>
-    )
-  },
-  {
-    src: '/gallery/imagem-4.jpg',
-    title: 'A Força do Escotismo',
-    date: '31/10/2023',
-    text: (
-      <p
-        className="lg:pl-16 lg:text-left lg:px-0
-                   md:text-left"
-      >
-        No coração de cada encontro escoteiro, surge uma energia única que 
-        transforma simples momentos em experiências extraordinárias. Com uniformes 
-        que simbolizam união e propósito, jovens e adultos se reúnem para compartilhar conhecimentos, 
-        celebrar conquistas e fortalecer laços de amizade. Sob a bandeira que tremula orgulhosamente, 
-        cada formação, cada atividade e cada gesto de companheirismo reflete os valores fundamentais do movimento 
-        escoteiro.
-      </p>
-    )
-  },
-  {
-    src: '/gallery/imagem-5.jpg',
-    title: 'Ritmo e Alegria',
-    date: '31/10/2023',
-    text: (
-      <p
-        className="lg:pl-16 lg:text-left lg:px-0
-                   md:text-left"
-      >
-        Na jornada escoteira, a música se torna uma poderosa ferramenta de união 
-        e expressão, onde cada batida de tambor e cada canção entoada carregam consigo 
-        o espírito de fraternidade e alegria. Com instrumentos em mãos e sorrisos nos rostos, escotistas 
-        e jovens compartilham momentos musicais que transcendem as palavras, criando uma atmosfera de harmonia 
-        e celebração que fortalece os laços entre todos os membros do movimento, tornando cada encontro uma experiência 
-        única e memorável.
-      </p>
-    )
-  },
-  {
-    src: '/gallery/imagem-6.jpg',
-    title: 'Movimento e Sincronismo',
-    date: '31/10/2023',
-    text: (
-      <p
-        className="lg:pl-16 lg:text-left lg:px-0
-                   md:text-left"
-      >
-        Em cada atividade escoteira, o movimento sincronizado se torna uma expressão de 
-        unidade e disciplina. Com gestos coordenados e sorrisos nos rostos, os jovens aprendem 
-        que cada movimento tem um propósito, cada gesto conta uma história. Através dessas dinâmicas, desenvolvem 
-        não apenas coordenação e ritmo, mas também o verdadeiro espírito de equipe, onde cada participante é uma parte 
-        essencial de um todo maior, criando momentos de aprendizado que combinam diversão e desenvolvimento pessoal.
-      </p>
-    )
-  },
-  {
-    src: '/gallery/imagem-7.jpg',
-    title: 'Escotismo e Espiritualidade',
-    date: '31/10/2023',
-    text: (
-      <p
-        className="lg:pl-16 lg:text-left lg:px-0
-                   md:text-left"
-      >
-        No encontro entre fé e escotismo, surge um momento especial de reflexão e crescimento 
-        espiritual. Com respeito e abertura, jovens escoteiros participam de momentos que transcendem 
-        as atividades cotidianas, aprendendo valores fundamentais através do diálogo inter-religioso e da convivência 
-        harmoniosa. Estes encontros fortalecem não apenas a dimensão espiritual do movimento escoteiro, mas também 
-        promovem o entendimento e o respeito pela diversidade de crenças, construindo pontes entre diferentes 
-        tradições e culturas.
-      </p>
-    )
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 function OurHistory() {
+
+  const { t } = useTranslation ();
+
+  const imagesData = [
+    {
+      src: '/gallery/imagem-1.jpg',
+      title: 'home.ourHistory.firstImageTitle',
+      date: '31/10/2023',
+      text: 'home.ourHistory.firstImageDescription'
+    },
+    {
+      src: '/gallery/imagem-2.jpg',
+      title: 'home.ourHistory.secondImageTitle',
+      date: '31/10/2023',
+      text:  'home.ourHistory.secondImageDescription'
+    },
+    {
+      src: '/gallery/imagem-3.jpg',
+      title: 'home.ourHistory.thirdImageTitle',
+      date: '31/10/2023',
+      text: 'home.ourHistory.thirdImageDescription'
+    },
+    {
+      src: '/gallery/imagem-4.jpg',
+      title: 'home.ourHistory.fourthImageTitle',
+      date: '31/10/2023',
+      text: 'home.ourHistory.fourthImageDescription'
+    },
+    {
+      src: '/gallery/imagem-5.jpg',
+      title: 'home.ourHistory.fifithImageTitle',
+      date: '31/10/2023',
+      text: 'home.ourHistory.fifithImageDescription'
+    },
+    {
+      src: '/gallery/imagem-6.jpg',
+      title: 'home.ourHistory.sixthImageTitle',
+      date: '31/10/2023',
+      text: 'home.ourHistory.sixthImageDescription'
+    },
+    {
+      src: '/gallery/imagem-7.jpg',
+      title: 'home.ourHistory.seventhImageTitle',
+      date: '31/10/2023',
+      text: 'home.ourHistory.seventhImageDescription'
+    },
+  ];
+
   const imageRefs = useRef([]);
   const [selectedImage, setSelectedImage] = useState(imagesData[0]);
+ 
 
   function handleImageClick(imageData, e) {
     setSelectedImage(imageData);
@@ -207,7 +129,7 @@ function OurHistory() {
                    md:max-w-[620px] md:mx-auto
                    max-w-[320px] mx-auto">
         <SectionTitle
-          content="Nossa História"
+          content={t('home.ourHistory.title')}
           className="lg:text-left
                      md:text-left
                      text-left"
@@ -258,7 +180,7 @@ function OurHistory() {
                     className="lg:text-social-brand lg:font-semibold lg:text-2xl
                                md:text-social-brand md:font-semibold md:text-2xl
                                text-social-brand font-semibold text-2xl">
-                    {selectedImage.title}
+                    {t(selectedImage.title)}
                   </span>
                 </motion.h1>
               </AnimatePresence>
@@ -271,7 +193,12 @@ function OurHistory() {
                   transition={{ duration: 0.5 }}
                   className="lg:flex-1 md:flex-1 flex-1"
                 >
-                  {selectedImage.text}
+                  <p
+                    className="lg:pl-16 lg:text-left lg:px-0
+                     md:text-left"
+                  >
+                    {t(selectedImage.text)}
+                  </p>
                 </motion.div>
               </AnimatePresence>
               <div
@@ -280,9 +207,13 @@ function OurHistory() {
                            flex flex-col justify-left items-start pt-8 gap-y-4"
               >
                 <p>
-                  <span className="text-social-brand font-semibold">Venha</span>{' '}
-                      fazer parte desta
-                  <span className="text-social-brand font-semibold"> história:</span>
+                  <span className="text-social-brand font-semibold">
+                    {t('home.ourHistory.cta.span.firstPart')}
+                  </span>{' '}
+                  {t('home.ourHistory.cta.span.secondPart')}{' '}
+                  <span className="text-social-brand font-semibold"> 
+                    {t('home.ourHistory.cta.span.thirdPart')}
+                  </span>
                 </p>
                 <Link
                   className={`
@@ -294,7 +225,7 @@ function OurHistory() {
                   type="button"
                   to={'/autenticacao/cadastrar'}
                 >
-                    Cadastre-se
+                  {t('home.ourHistory.cta.buttom')}
                 </Link>
               </div>
             </div>

@@ -12,8 +12,14 @@ import { signInWithEmailAndPasswordAsync } from '../../../../services/firebase/a
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 import { PageTransition } from '../../../../components/page-transition/index.jsx';
+import { useTranslation } from 'react-i18next';
+
+
 
 function Login() {
+
+  const { t } = useTranslation ();
+
   const {
     register,
     handleSubmit,
@@ -31,10 +37,10 @@ function Login() {
   async function handleUserLogin(data) {
     try {
       await signInWithEmailAndPasswordAsync(data.email, data.password);
-      toast.success('Usuário logado com sucesso!');
+      toast.success(t('login.loginSucess'));
       navigate('/');
     } catch {
-      toast.error('E-mail e/ou senha inválidos');
+      toast.error(t('login.loginError'));
     }
   }
 
@@ -58,26 +64,26 @@ function Login() {
             `}
           >
             <p className="mb-16 text-xl text-social-white font-semibold">
-              Requisitos para uma senha forte
+              {t('login.strongPassword')}
             </p>
             <ul className="flex flex-col gap-y-4 max-w-80">
               <PasswordRule
-                content="No mínimo 8 caracteres"
+                content={t('login.contentCaracteres')}
                 hasError={errors.password?.message === ELoginErrorMessages.password.invalidMinLength}
               />
               <PasswordRule
-                content="No mínimo 1 letra minúscula e 1 letra maiúscula"
+                content={t('login.contentMinimal')}
                 hasError={errors.password?.message ===
                   ELoginErrorMessages.password.shouldContainLowerAndUppercaseLetter
                 }
               />
               <PasswordRule
-                content="Pelo menos um caractere especial"
+                content={t('login.contentCaracterSpecial')}
                 hasError={errors.password?.message ===
                           ELoginErrorMessages.password.shouldContainAtLeastOneSpecialCharacter}
               />
               <PasswordRule
-                content="No mínimo 1 caracteres numérico"
+                content={t('login.contentCaracterNumber')}
                 hasError={errors.password?.message === ELoginErrorMessages.password.shouldContainerAtLeastOneNumber}
               />
             </ul>
@@ -95,27 +101,27 @@ function Login() {
                 className="text-social-red font-regular transition duration-500
                             hover:brightness-50"
               >
-                Voltar
+                {t('login.voltar')}
               </Link>
             </div>
-            <h1 className="text-4xl text-social-brand font-bold mb-3">Login</h1>
+            <h1 className="text-4xl text-social-brand font-bold mb-3">{t('login.h1Login')}</h1>
             <strong className="inline-flex items-center text-sm text-social-gray font-regular gap-x-2">
               <Flame />
-              Venha com a gente nesta aventura
+              {t('login.strong')}
             </strong>
           </div>
           <form onSubmit={handleSubmit(handleUserLogin)} className="flex flex-col gap-y-6" id="login-form">
             <Input
               {...register('email')}
-              label="E-mail"
-              placeholder="Insira o seu e-mail aqui"
+              label={t('login.firstLabel')}
+              placeholder={t('login.firstPlace')}
               errorMessage={errors.email?.message}
               name="email"
             />
             <Input
               {...register('password')}
-              placeholder="*******"
-              label="Senha"
+              placeholder={t('login.secondPlace')}
+              label={t('login.secondLabel')}
               errorMessage={errors.password?.message}
               type="password"
               name="password"
@@ -131,7 +137,7 @@ function Login() {
                         text-social-brand italic underline transition
                         duration-500 hover:brightness-50"
               >
-                Cadastre-se
+                {t('login.linkCadastro')}
               </Link>
               <Button content="Enviar" variant="green" type="submit" form="login-form" />
             </fieldset>
@@ -146,7 +152,7 @@ function Login() {
                         text-social-brand italic underline transition
                         duration-500 hover:brightness-50"
               >
-                Cadastre-se
+                {t('login.secondLinkCadastro')}
               </Link>
               <Button content="Enviar" variant="green" type="submit" form="login-form" />
             </fieldset>

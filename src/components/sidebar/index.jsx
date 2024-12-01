@@ -2,21 +2,40 @@ import logo from '/logo.svg';
 import { AnimatedLink } from '../header/components/AnimatedLink';
 import { Link } from 'react-router-dom';
 import { useState, useCallback } from 'react';
+import i18next from 'i18next';
+import ReactFlagsSelect from 'react-flags-select';
+import { useTranslation } from 'react-i18next';
 
 const navItems = [
-  { text: 'Home', to: '/' },
-  { text: 'Ramos', to: '/ramos' },
-  { text: 'Galeria', to: '/galeria' },
-  { text: 'Noticias', to: '/noticias' },
+  { text: 'sidebar.home', to: '/' },
+  { text: 'sidebar.ramos' , to: '/ramos' },
+  { text: 'sidebar.galeria', to: '/galeria' },
+  { text: 'sidebar.noticias', to: '/noticias' },
 ];
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const { t } = useTranslation ();
+
   const toggleSidebar = useCallback(() => {
     setIsOpen(prev => !prev);
     document.querySelector('.sidebar').classList.toggle('translate-x-full');
   }, []);
+
+  function handleLanguageSelection (code){
+    switch(code){
+      case 'US':
+        i18next.changeLanguage('en');
+        break;
+      case 'ES':
+        i18next.changeLanguage('es');
+        break;
+      default:
+        i18next.changeLanguage('pt-BR');
+        break;
+    }
+  }
   
   return (
     <aside
@@ -57,20 +76,30 @@ export function Sidebar() {
             />
             <div className="text-left max-w-44">
               <h2 className="font-semibold">
-                Grupo <span className="text-social-brand">Escoteiro</span> Terra da Saudade
+                {t('sidebar.firstH2')}
+                <span className="text-social-brand">{t('sidebar.firstSpan')}</span> {t('sidebar.firstTerra')}
               </h2>
             </div>
           </div>
           <nav className="flex flex-col items-start pt-4 px-2 gap-y-6">
             <ul className="flex flex-col items-start gap-y-6 pt-4">
               {navItems.map((item) => (
-                <li key={item.to}>
-                  <AnimatedLink
-                    text={item.text}
-                    to={item.to}
-                  />
-                </li>
+                <>
+                  <li key={item.to}>
+                    <AnimatedLink
+                      text={t(item.text)}
+                      to={item.to}
+                    />
+                  </li>
+                </>  
               ))}
+              <li>
+                <ReactFlagsSelect 
+                  countries={['US', 'ES', 'BR']}
+                  placeholder={t('header.languageText')}
+                  onSelect={handleLanguageSelection}
+                />
+              </li>
             </ul>
             <div className="w-full">
               <Link
