@@ -10,3 +10,12 @@
 .invisible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.flags > :first-child {
+  @apply text-social-black;
+}
+
+.dark .flags > :first-child {
+  
+  @apply text-white;
+}
