@@ -142,7 +142,7 @@ function Header() {
         </figure>
         <figcaption className="lg:text-left lg:max-w-44 lg:hidden md:text-left md:max-w-44 md:hidden text-center">
           {t('header.secondFig')} <strong className="text-social-brand">
-            {t('header.secondFig')}</strong> {t('header.secondTerra')}
+            {t('header.secondStrong')}</strong> {t('header.secondTerra')}
         </figcaption>
         <nav className="lg:inline-block md:inline-block hidden">
           <ul className="lg:flex lg:items-center lg:gap-4 md:flex md:items-center md:gap-4">
