@@ -1,10 +1,11 @@
-import logo from '/logo.svg';
+
 import { AnimatedLink } from '../header/components/AnimatedLink';
 import { Link } from 'react-router-dom';
 import { useState, useCallback } from 'react';
 import i18next from 'i18next';
 import ReactFlagsSelect from 'react-flags-select';
 import { useTranslation } from 'react-i18next';
+import logoDark from '/logo-dark.svg';
 
 const navItems = [
   { text: 'sidebar.home', to: '/' },
@@ -65,13 +66,14 @@ export function Sidebar() {
       <div
         className={`sidebar fixed top-0 bottom-0 right-0 px-4 py-6 w-screen text-center bg-light-social-brand 
                     z-40 transition-transform duration-500 flex flex-col shadow-default
+                    dark:bg-dark-social-background dark:text-dark-social-white
                     ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="text-lg flex-grow">
           <div className="flex justify-start items-center gap-x-2">
             <img
               className="w-20 h-20"
-              src={logo}
+              src={logoDark}
               alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas."
             />
             <div className="text-left max-w-44">
