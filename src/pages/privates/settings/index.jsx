@@ -10,18 +10,18 @@ import { useTranslation } from 'react-i18next';
 
 function Settings() {
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const tabs = [
     <MainPersonalInformations key="1" />,
     <MainPersonalAddress key="2" />,
-    <MainPersonalImage key="3"/>
+    <MainPersonalImage key="3" />
   ];
 
   return (
     <PageTransition>
       <Header />
-      <section className="pt-12 pb-16">
+      <section className="pt-12 pb-16 dark:bg-dark-social-background dark:text-dark-social-white">
         <div
           className="lg:max-w-[1024px] lg:mx-auto
                      md:max-w-[620px] md:mx-auto
@@ -46,7 +46,7 @@ function Settings() {
                               transition duration-500 p-2 hover:bg-social-brand hover:text-social-white
                               rounded">
                   <button>
-                    {t('settings.firstbuttom')}  
+                    {t('settings.firstbuttom')}
                   </button>
                 </li>
                 <li
@@ -61,7 +61,7 @@ function Settings() {
             <div className="lg:border-l lg:border-social-gray lg:w-full">
               <Tabs
                 titles={[t('settings.firstTitle'), t('settings.secondTitle'), t('settings.thirdTitle')]}
-                body={ tabs }
+                body={tabs}
               />
             </div>
           </Container>

@@ -11,53 +11,65 @@ import { CSVLink } from 'react-csv';
 import { useTranslation } from 'react-i18next';
 
 const users = [
-  { name: 'Matheus Natieli', ramo: 'Lobinho', status: 'Inativo', 
-    genero: 'Masculino', email: 'matheusg.safadinha@gmail.com' 
+  {
+    name: 'Matheus Natieli', ramo: 'Lobinho', status: 'Inativo',
+    genero: 'Masculino', email: 'matheusg.safadinha@gmail.com'
   },
-  { name: 'Ryan Brabox', ramo: 'Júnior', status: 'Ativo', 
-    genero: 'Masculino', email: 'ryaanziiiin.brabox@gmail.com' 
+  {
+    name: 'Ryan Brabox', ramo: 'Júnior', status: 'Ativo',
+    genero: 'Masculino', email: 'ryaanziiiin.brabox@gmail.com'
   },
-  { name: 'Dani Psicopata da Mata', ramo: 'Lobinho', status: 'Ativo', 
-    genero: 'Masculino', email: 'psicopata.da.mata@gmail.com' 
+  {
+    name: 'Dani Psicopata da Mata', ramo: 'Lobinho', status: 'Ativo',
+    genero: 'Masculino', email: 'psicopata.da.mata@gmail.com'
   },
-  { name: 'Pai de Família Barbie', ramo: 'Lobinho', status: 'Ativo', 
-    genero: 'Masculino', email: 'barbiezinha@gmail.com' 
+  {
+    name: 'Pai de Família Barbie', ramo: 'Lobinho', status: 'Ativo',
+    genero: 'Masculino', email: 'barbiezinha@gmail.com'
   },
-  { name: 'Alemão do Horto', ramo: 'Lobinho', status: 'Inativo', 
-    genero: 'Masculino', email: 'alemao.horto@gmail.com' 
+  {
+    name: 'Alemão do Horto', ramo: 'Lobinho', status: 'Inativo',
+    genero: 'Masculino', email: 'alemao.horto@gmail.com'
   },
-  { name: 'Jão Pé de Feijão', ramo: 'Júnior', status: 'Inativo', 
-    genero: 'Masculino', email: 'feijao.pe@gmail.com' 
+  {
+    name: 'Jão Pé de Feijão', ramo: 'Júnior', status: 'Inativo',
+    genero: 'Masculino', email: 'feijao.pe@gmail.com'
   },
-  { name: 'Ícaro Vegano', ramo: 'Lobinho', status: 'Inativo', 
-    genero: 'Masculino', email: 'i.vegano@gmail.com' 
+  {
+    name: 'Ícaro Vegano', ramo: 'Lobinho', status: 'Inativo',
+    genero: 'Masculino', email: 'i.vegano@gmail.com'
   },
-  { name: 'Dj Tiossão', ramo: 'Júnior', status: 'Ativo', 
-    genero: 'Masculino', email: 'dj.tiosso@gmail.com' 
+  {
+    name: 'Dj Tiossão', ramo: 'Júnior', status: 'Ativo',
+    genero: 'Masculino', email: 'dj.tiosso@gmail.com'
   },
-  { name: 'Gustavo Matonense', ramo: 'Lobinho', status: 'Inativo', 
-    genero: 'Masculino', email: 'futebol.matonense@gmail.com' 
+  {
+    name: 'Gustavo Matonense', ramo: 'Lobinho', status: 'Inativo',
+    genero: 'Masculino', email: 'futebol.matonense@gmail.com'
   },
-  { name: 'Carequinha', ramo: 'Júnior', status: 'Ativo', 
-    genero: 'Masculino', email: 'carequinha.com.cabelo@gmail.com' 
+  {
+    name: 'Carequinha', ramo: 'Júnior', status: 'Ativo',
+    genero: 'Masculino', email: 'carequinha.com.cabelo@gmail.com'
   },
-  { name: 'Alekão da Massa', ramo: 'Lobinho', status: 'Ativo', 
-    genero: 'Masculino', email: 'alekao.massa@gmail.com' 
+  {
+    name: 'Alekão da Massa', ramo: 'Lobinho', status: 'Ativo',
+    genero: 'Masculino', email: 'alekao.massa@gmail.com'
   },
-  { name: 'Lucão Sub15', ramo: 'Júnior', status: 'Inativo', 
-    genero: 'Masculino', email: 'rei.delas.sub15@gmail.com' 
+  {
+    name: 'Lucão Sub15', ramo: 'Júnior', status: 'Inativo',
+    genero: 'Masculino', email: 'rei.delas.sub15@gmail.com'
   }
 ];
 
 function Admin() {
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
 
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredUsers = users.filter(user => 
+  const filteredUsers = users.filter(user =>
     user.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -72,18 +84,18 @@ function Admin() {
 
   return (
     <PageTransition>
-      <div className="pt-16 pb-12">
-        <section className="max-w-[1024px] mx-auto">
-          <SectionTitle 
+      <div className="pt-16 pb-12 dark:bg-dark-social-background dark:text-dark-social-white">
+        <section className="max-w-[1024px] mx-auto dark:bg-dark-social-background">
+          <SectionTitle
             content={t('admin.content')}
             className="pb-14"
           />
-          <div className="flex gap-x-10 pb-14">        
+          <div className="flex gap-x-10 pb-14">
             <IconVolunteers />
             <IconChildren />
             <IconResponsible />
           </div>
-          <CSVLink 
+          <CSVLink
             data={users}
             filename="Users.CSV"
             target="_blank"
@@ -99,11 +111,16 @@ function Admin() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-3 pl-10 rounded border border-social-gray focus:outline-none 
-                         focus:ring-2 focus:ring-green-500"
+                         focus:ring-2 focus:ring-green-500
+                         dark:bg-dark-social-background dark:text-dark-social-white
+                      dark:shadow-dark-social-white"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
           </div>
-          <div className="overflow-x-auto mt-10 bg-green-50 rounded-lg shadow-default">
+          <div
+            className="overflow-x-auto mt-10 bg-green-50 rounded-lg shadow-default
+           dark:bg-dark-social-background dark:text-dark-social-white
+                      dark:shadow-dark-social-white">
             <table className="w-full">
               <thead>
                 <tr className="text-left text-2xl border-b border-gray-200">
@@ -117,9 +134,11 @@ function Admin() {
               </thead>
               <tbody>
                 {currentUsers.map((user, index) => (
-                  <tr 
-                    key={index} 
-                    className={user.status === 'Ativo' ? 'bg-green-50' : 'bg-white'}
+                  <tr
+                    key={index}
+                    className={user.status === 'Ativo'
+                      ? 'bg-green-50  dark:bg-dark-social-background dark:text-dark-social-white'
+                      : 'bg-white  dark:bg-dark-social-background dark:text-dark-social-white'}
                   >
                     <td className="p-3">
                       <span title={user.name}>{truncateName(user.name)}</span>
@@ -129,9 +148,9 @@ function Admin() {
                       <span
                         className={`flex items-center justify-center cursor-default select-none
                                   w-24 h-8 rounded text-base font-semibold
-                                  transition duration-500 hover:brightness-75 ${
-                                  user.status === 'Ativo' ? 'bg-green-600 text-social-white' : 
-                                  'bg-social-red text-social-white' }`}
+                                  transition duration-500 hover:brightness-75
+                                  ${user.status === 'Ativo' ? 'bg-green-600 text-social-white' :
+                            'bg-social-red text-social-white'}`}
                       >
                         {user.status}
                       </span>
@@ -140,13 +159,13 @@ function Admin() {
                     <td className="p-3">{maskEmail(user.email)}</td>
                     <td className="p-3 flex justify-center">
                       <div className="flex space-x-2">
-                        <Link 
+                        <Link
                           to=""
                           className="text-blue-600 transition duration-500 hover:brightness-50"
                         >
                           <Pencil size={20} />
                         </Link>
-                        <Link 
+                        <Link
                           to=""
                           className="text-red-600 transition duration-500 hover:brightness-50"
                         >
@@ -177,11 +196,11 @@ function Admin() {
               <button
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1 || filteredUsers.length === 0}
-                className={`px-4 py-2 rounded font-semibold transition duration-500 ${
-                  currentPage === 1 || filteredUsers.length === 0
+                className={`px-4 py-2 rounded font-semibold 
+                  transition duration-500 ${currentPage === 1 || filteredUsers.length === 0
                     ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     : 'bg-social-brand text-social-white hover:brightness-90'
-                }`}      
+                  }`}
               >
                 <ChevronLeft className="h-4 w-4 inline mr-1" />
                 {t('admin.buttomAnterior')}
@@ -189,11 +208,11 @@ function Admin() {
               <button
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                 disabled={currentPage >= totalPages || filteredUsers.length === 0}
-                className={`px-4 py-2 rounded font-semibold transition duration-500 ${
-                          currentPage >= totalPages || filteredUsers.length === 0
-                              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                              : 'bg-social-brand text-social-white hover:brightness-90'
-                      }`}
+                className={`px-4 py-2 rounded font-semibold 
+                  transition duration-500 ${currentPage >= totalPages || filteredUsers.length === 0
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-social-brand text-social-white hover:brightness-90'
+                  }`}
               >
                 {t('admin.buttomProxima')}
                 <ChevronRight className="h-4 w-4 inline ml-1" />

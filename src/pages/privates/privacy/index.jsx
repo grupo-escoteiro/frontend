@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 function Privacy() {
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const [isDownloading, setIsDownloading] = useState(false);
 
@@ -23,7 +23,7 @@ function Privacy() {
   return (
     <PageTransition>
       <main>
-        <section className="pt-12 pb-20">
+        <section className="pt-12 pb-20 dark:bg-dark-social-background dark:text-dark-social-white">
           <div
             className="lg:max-w-[1024px] lg:mx-auto
                        md:max-w-[620px] md:mx-auto
@@ -48,7 +48,7 @@ function Privacy() {
                 <div
                   className="lg:flex lg:gap-x-52
                              md:flex md:gap-x-52"
-                >    
+                >
                   <h2
                     className="lg:text-2xl lg:font-semibold lg:text-left text-social-brand
                                md:text-xl md:font-semibold md:text-left

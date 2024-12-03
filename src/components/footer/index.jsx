@@ -11,7 +11,8 @@ function Footer() {
     <footer
       className="lg:w-full lg:bg-light-social-brand
                  md:w-full md:bg-light-social-brand
-                 w-full bg-light-social-brand dark:bg-dark-social-background"
+                 w-full bg-light-social-brand 
+                 dark:bg-dark-social-background"
     >
       <div
         className="lg:max-w-[1024px] lg:mx-auto
@@ -56,7 +57,7 @@ function Footer() {
                      md:w-full md:text-center md:pb-12
                      w-full text-center pt-4 pb-12"
         >
-          <small className="text-social-gray dark:text-dark-social-gray">
+          <small className="text-social-gray dark:text-dark-social-white">
             &copy; {t('footer.small')}</small>
         </div>
       </div>

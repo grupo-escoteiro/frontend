@@ -6,7 +6,9 @@ function DefaultLayout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main
+        className="flex-1 dark:bg-dark-social-background
+      dark:text-dark-social-white">
         <Outlet />
       </main>
       <Footer />

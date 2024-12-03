@@ -10,6 +10,7 @@ function AuthLayout() {
         md:py-0 md:h-screen md:w-screen
         bg-[url('/register-flow/box-side-background.png')]
         bg-no-repeat bg-cover mix-blend-multiply py-10 min-h-screen
+        dark:bg-dark-social-background
       `}>
       <Outlet />
     </main>
