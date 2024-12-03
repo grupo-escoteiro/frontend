@@ -10,6 +10,7 @@ import { createRoot } from 'react-dom/client';
 
 import { SideContact } from './components/side-contact';
 import { ToTop } from './components/to-top';
+import { Weather } from './components/weather';
 import { AccessibilityPanel } from './components/accessibility-panel/index.jsx';
 
 import { AccessibilityContextProvider } from './contexts/accessibility-context.jsx';
@@ -23,24 +24,24 @@ import en from './internacionalization/en.json';
 import es from './internacionalization/es.json';
 
 i18n
-  .use(initReactI18next) 
+  .use(initReactI18next)
   .use(LanguageDetector)
   .init({
     resources: {
       'pt-BR': {
         translation: ptBR
       },
-      'en':{
+      'en': {
         translation: en
       },
-      'es':{
+      'es': {
         translation: es
       }
     },
-    lng: 'pt-BR', 
+    lng: 'pt-BR',
     fallbackLng: 'pt-BR',
     interpolation: {
-      escapeValue: false 
+      escapeValue: false
     },
     debug: true,
     detection: {
@@ -62,6 +63,7 @@ createRoot(document.getElementById('root')).render(
       </AccessibilityContextProvider>
       <SideContact />
       <ToTop />
+      <Weather />
     </StrictMode>
   </>
 );
