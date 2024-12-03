@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 const navItems = [
   { text: 'sidebar.home', to: '/' },
-  { text: 'sidebar.ramos' , to: '/ramos' },
+  { text: 'sidebar.ramos', to: '/ramos' },
   { text: 'sidebar.galeria', to: '/galeria' },
   { text: 'sidebar.noticias', to: '/noticias' },
 ];
@@ -16,15 +16,15 @@ const navItems = [
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const toggleSidebar = useCallback(() => {
     setIsOpen(prev => !prev);
     document.querySelector('.sidebar').classList.toggle('translate-x-full');
   }, []);
 
-  function handleLanguageSelection (code){
-    switch(code){
+  function handleLanguageSelection(code) {
+    switch (code) {
       case 'US':
         i18next.changeLanguage('en');
         break;
@@ -36,7 +36,7 @@ export function Sidebar() {
         break;
     }
   }
-  
+
   return (
     <aside
       className="lg:hidden 
@@ -52,13 +52,13 @@ export function Sidebar() {
         <div className="relative w-8 h-8">
           <i
             className={`fa-solid fa-xmark absolute inset-0 transition-all duration-500
-                        ease-in-out transform ${isOpen ? 'opacity-100 rotate-0' : 
-                        'opacity-0 -rotate-90'}`}
+                        ease-in-out transform ${isOpen ? 'opacity-100 rotate-0' :
+                'opacity-0 -rotate-90'}`}
           ></i>
           <i
             className={`fa-solid fa-bars absolute inset-0 transition-all duration-500 
-                        ease-in-out transform ${isOpen ? 'opacity-0 rotate-90' : 
-                        'opacity-100 rotate-0'}`}
+                        ease-in-out transform ${isOpen ? 'opacity-0 rotate-90' :
+                'opacity-100 rotate-0'}`}
           ></i>
         </div>
       </button>
@@ -91,10 +91,10 @@ export function Sidebar() {
                       to={item.to}
                     />
                   </li>
-                </>  
+                </>
               ))}
               <li>
-                <ReactFlagsSelect 
+                <ReactFlagsSelect
                   countries={['US', 'ES', 'BR']}
                   placeholder={t('header.languageText')}
                   onSelect={handleLanguageSelection}

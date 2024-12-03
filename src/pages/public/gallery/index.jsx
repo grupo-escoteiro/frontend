@@ -20,7 +20,7 @@ const layoutClasses = [
 
 function Gallery() {
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const [page, setPage] = useState(1);
   const partialImagesList = imagesList.filter(image => image.id <= layoutClasses.length * page);
@@ -28,7 +28,7 @@ function Gallery() {
 
   return (
     <PageTransition>
-      <section className="pt-12 pb-20">
+      <section className="pt-12 pb-20 dark:bg-dark-social-background dark:text-dark-social-white">
         <div
           className="lg:max-w-[1024px] lg:mx-auto
                      md:max-w-[620px] md:mx-auto
@@ -58,7 +58,8 @@ function Gallery() {
                   <img
                     src={image.url}
                     alt={image.alt}
-                    className="w-full h-full object-cover shadow-default transition duration-500 hover:scale-105"
+                    className="w-full h-full object-cover shadow-default transition duration-500 hover:scale-105
+                    dark:shadow-dark-social-white"
                   />
                 </a>
               </div>

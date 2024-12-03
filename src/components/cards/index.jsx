@@ -43,7 +43,8 @@ function Cards({ url, instagram, linkedin, desc, title }) {
           </ul>
         </div>
         <div
-          className="lg:z-[4] lg:w-full lg:bg-social-white lg:text-left lg:text-[#333] 
+          className="lg:z-[4] lg:w-full lg:bg-social-white lg:text-left lg:text-[#333]  
+                     lg:dark:bg-dark-social-background lg:dark:text-dark-social-white
                      lg:transition lg:duration-500 lg:px-4
                      absolute bottom-0 left-0 z-[4] py-6 px-4 bg-social-white
                    text-[#333] transition duration-500"

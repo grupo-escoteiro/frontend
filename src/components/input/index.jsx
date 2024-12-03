@@ -23,17 +23,18 @@ const InputBase = (
     <fieldset className="flex flex-col">
       <label
         htmlFor={label}
-        className="font-medium text-[16px] text-social-black"
+        className="font-medium text-[16px] text-social-black dark:text-dark-social-white"
       >
         {label}
       </label>
       <div
         className={`
           py-5 px-4 my-2 bg-social-white flex items-center justify-between gap-x-4 rounded
+          dark:bg-dark-social-gray
           ${errorMessage === undefined
-            ? 'border border-solid border-social-gray text-social-gray'
+            ? 'border border-solid border-social-gray text-social-gray dark:text-dark-social-gray'
             : errorMessage
-              ? 'border border-solid border-social-red text-social-red'
+              ? 'border border-solid border-social-red text-social-red dark:text-dark-social-red'
               : 'border border-solid border-social-brand text-social-brand'
           }
         `}
@@ -47,6 +48,8 @@ const InputBase = (
           className={`
             outline-none placeholder:text-social-gray bg-social-white
             placeholder:font-regular placeholder:text-sm w-full text-social-black
+            dark:bg-dark-social-gray
+            dark:text-dark-social-white
           `}
           name={rest.name}
           ref={ref || inputReference}
@@ -55,7 +58,7 @@ const InputBase = (
         />
         {errorMessage && (
           <X
-            className="text-social-red"
+            className="text-social-red dark:text-dark-social-red"
             size={23}
             aria-hidden="true"
           />
@@ -69,7 +72,7 @@ const InputBase = (
         )}
       </div>
       {errorMessage && (
-        <span className="text-social-red font-regular text-sm">{errorMessage}</span>
+        <span className="text-social-red font-regular text-sm dark:text-dark-social-red">{errorMessage}</span>
       )}
     </fieldset>
   );
