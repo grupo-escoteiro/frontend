@@ -5,6 +5,8 @@ function Box({ children, className }) {
     <div
       className={`
         bg-social-white rounded shadow-default max-w-6xl inline-block
+        dark:bg-dark-social-background dark:text-dark-social-white
+        dark: shadow-dark-social-white
         ${className}
       `}
     >

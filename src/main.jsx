@@ -22,6 +22,9 @@ import App from './App.jsx';
 import ptBR from './internacionalization/pt-BR.json';
 import en from './internacionalization/en.json';
 import es from './internacionalization/es.json';
+import { Theme } from './components/theme/index.jsx';
+
+import { ThemeContextProvider } from './contexts/theme.jsx';
 
 i18n
   .use(initReactI18next)
@@ -53,17 +56,20 @@ i18n
 createRoot(document.getElementById('root')).render(
   <>
     <StrictMode>
-      <AccessibilityContextProvider>
-        <App />
-        <AccessibilityPanel />
-        <Toaster
-          richColors
-          expand={true}
-        />
-      </AccessibilityContextProvider>
-      <SideContact />
-      <ToTop />
-      <Weather />
+      <ThemeContextProvider>
+        <AccessibilityContextProvider>
+          <App />
+          <AccessibilityPanel />
+          <Toaster
+            richColors
+            expand={true}
+          />
+        </AccessibilityContextProvider>
+        <SideContact />
+        <ToTop />
+        <Weather />
+        <Theme />
+      </ThemeContextProvider>
     </StrictMode>
   </>
 );

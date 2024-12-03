@@ -8,13 +8,14 @@ import { useTranslation } from 'react-i18next';
 
 function OurTeam() {
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   return (
     <section
       className="lg:pt-12 lg:pb-20
                  md:pt-12 md:pb-20
-                 pt-12 pb-20">
+                 pt-12 pb-20
+                 dark:bg-dark-social-gray dark:text-dark-social-white">
       <div
         className="lg:max-w-[1024px] lg:mx-auto
                    md:max-w-[620px] md:mx-auto

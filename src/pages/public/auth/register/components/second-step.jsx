@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 function SecondStep() {
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
   const {
     stepsAmount,
     currentStep,
@@ -65,8 +65,9 @@ function SecondStep() {
                 type="text"
                 name="nome"
                 id="name"
-                placeholder= {t('register.firsthPlace')}
-                className="w-full h-16 px-5 py-5 rounded border border-social-gray"
+                placeholder={t('register.firsthPlace')}
+                className="w-full h-16 px-5 py-5 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -81,7 +82,8 @@ function SecondStep() {
                 name="cpf"
                 id="cpf"
                 placeholder={t('register.secondthPlace')}
-                className="w-full h-16 px-5 py-5 rounded border border-social-gray"
+                className="w-full h-16 px-5 py-5 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -95,7 +97,8 @@ function SecondStep() {
                 type="date"
                 name="data"
                 id="data"
-                className="w-full h-16 px-5 py-5 rounded border border-social-gray"
+                className="w-full h-16 px-5 py-5 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -110,7 +113,8 @@ function SecondStep() {
                 name="telefone"
                 id="telefone"
                 placeholder={t('register.fourPlace')}
-                className="w-full h-16 px-5 py-5 rounded border border-social-gray"
+                className="w-full h-16 px-5 py-5 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -125,7 +129,8 @@ function SecondStep() {
                 name="telefone-emergencia"
                 id="telefone-emer"
                 placeholder={t('register.fifitPlace')}
-                className="w-full h-16 px-5 py-5 rounded border border-social-gray"
+                className="w-full h-16 px-5 py-5 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
           </fieldset>
