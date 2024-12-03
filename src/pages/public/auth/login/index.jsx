@@ -18,7 +18,7 @@ import { useTranslation } from 'react-i18next';
 
 function Login() {
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const {
     register,
@@ -80,7 +80,7 @@ function Login() {
               <PasswordRule
                 content={t('login.contentCaracterSpecial')}
                 hasError={errors.password?.message ===
-                          ELoginErrorMessages.password.shouldContainAtLeastOneSpecialCharacter}
+                  ELoginErrorMessages.password.shouldContainAtLeastOneSpecialCharacter}
               />
               <PasswordRule
                 content={t('login.contentCaracterNumber')}

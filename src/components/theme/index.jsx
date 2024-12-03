@@ -10,10 +10,10 @@ function Theme() {
       onClick={toggleTheme}
       title="Mudar tema"
       className={`
-      fixed right-[10px] rounded-md top-1/2 translate-y-[83px] bg-social-brand p-2
+      fixed right-[10px] rounded-md top-1/2 translate-y-[83px] bg-dark-social-gray dark:bg-dark-social-white p-2
       cursor-pointer hover:brightness-90 z-50 transition-all lg:inline-block hidden
     `}>
-      <SunMoon className='text-white' />
+      <SunMoon className='text-white dark:text-dark-social-gray' />
     </div>
   );
 }

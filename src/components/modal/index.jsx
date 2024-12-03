@@ -46,6 +46,7 @@ function Modal({
         open={open}
         className={`
           bg-social-white p-4 rounded max-w-[1024px] overflow-x-hidden
+          dark:bg-dark-social-background dark:text-dark-social-white
           ${rest.className}
         `}
         ref={modalRef}

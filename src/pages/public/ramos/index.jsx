@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 function Ramos() {
   const [openLobinho, setOpenLobinho] = useState(false);
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const [openJunior, setOpenJunior] = useState(false);
 
@@ -34,7 +34,7 @@ function Ramos() {
 
   return (
     <PageTransition>
-      <section className="pt-12 pb-20">
+      <section className="pt-12 pb-20 dark:bg-dark-social-background dark:text-dark-social-white">
         <div
           className="lg:max-w-[1024px] lg:mx-auto
                      md:max-w-[620px] md:mx-auto
@@ -58,7 +58,7 @@ function Ramos() {
               <img
                 className="lg:w-[4000px] lg:h-[240px] lg:rounded-full lg:object-cover lg:shadow-default
                            md:w-[240px] md:h-[240px] md:rounded-full md:object-cover md:shadow-default
-                           w-[180px] h-[180px] rounded-full object-cover shadow-default"
+                           w-[180px] h-[180px] rounded-full object-cover shadow-default dark:shadow-dark-social-white"
                 src={lobinho}
               />
             </div>
@@ -68,7 +68,7 @@ function Ramos() {
                          text-lg"
             >
               <span className="text-social-brand pr-2">
-                {t('ramos.spanLobinho')} 
+                {t('ramos.spanLobinho')}
               </span>
               {t('ramos.contentLobinho')}
               <button
@@ -121,7 +121,7 @@ function Ramos() {
               <img
                 className="lg:w-[1800px] lg:h-[260px] lg:rounded-full lg:object-cover lg:shadow-default
                          md:w-[240px] md:h-[240px] md:rounded-full md:object-cover md:shadow-default
-                         w-[180px] h-[180px] rounded-full object-cover shadow-default"
+                         w-[180px] h-[180px] rounded-full object-cover shadow-default dark:shadow-dark-social-white"
                 src={flordeliz}
               />
             </div>
