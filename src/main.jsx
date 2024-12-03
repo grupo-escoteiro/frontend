@@ -10,6 +10,7 @@ import { createRoot } from 'react-dom/client';
 
 import { SideContact } from './components/side-contact';
 import { ToTop } from './components/to-top';
+import { Weather } from './components/weather';
 import { AccessibilityPanel } from './components/accessibility-panel/index.jsx';
 
 import { AccessibilityContextProvider } from './contexts/accessibility-context.jsx';
@@ -66,6 +67,7 @@ createRoot(document.getElementById('root')).render(
         </AccessibilityContextProvider>
         <SideContact />
         <ToTop />
+        <Weather />
         <Theme />
       </ThemeContextProvider>
     </StrictMode>
