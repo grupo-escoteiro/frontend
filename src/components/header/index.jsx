@@ -1,11 +1,10 @@
-import logo from '/logo.svg';
 import avatar from '/avatar.png';
 import { AnimatedLink } from './components/AnimatedLink';
 import { Dropdown } from '../dropdown';
 import { getAuth } from 'firebase/auth';
 import { Sidebar } from '../sidebar';
 import { DropdownItem } from './components/dropdownItem';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LogOut, Settings, ShieldAlert, Star, LockKeyhole } from 'lucide-react';
 import { signOutAsync } from '../../services/firebase/auth';
@@ -13,10 +12,12 @@ import { toast } from 'sonner';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import ReactFlagsSelect from 'react-flags-select';
+import { ThemeContext } from '../../contexts/theme';
 
 function Header() {
+  const { getLogo } = useContext(ThemeContext);
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const { currentUser } = getAuth();
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +39,8 @@ function Header() {
     }
   }
 
-  function handleLanguageSelection (code){
-    switch(code){
+  function handleLanguageSelection(code) {
+    switch (code) {
       case 'US':
         i18next.changeLanguage('en');
         break;
@@ -54,8 +55,12 @@ function Header() {
 
   return (
     <header
-      className="lg:w-full lg:bg-light-social-brand lg:pb-0 md:w-full
-           md:bg-light-social-brand md:pb-0 bg-light-social-brand pb-8">
+      className="lg:w-full lg:bg-light-social-brand 
+            lg:dark:bg-dark-social-background lg:pb-0 md:w-full
+           md:bg-light-social-brand 
+           md:dark:bg-dark-social-background 
+           md:dark:text-dark-social-white md:pb-0 bg-light-social-brand pb-8
+           dark:bg-dark-social-background">
       <div
         className="lg:max-w-[1024px] lg:mx-auto lg:py-7 lg:px-0 lg:flex 
               lg:justify-between lg:items-center md:max-w-[620px] md:mx-auto 
@@ -70,9 +75,12 @@ function Header() {
         >
           <img
             className="lg:w-24 lg:h-24 w-20 h-20"
-            src={logo}
+            src={getLogo()}
             alt="Árvore com um machado cravado no meio dela, diversos galhos e folhas." />
-          <nav className="flex items-center gap-x-5">
+          <nav
+            className="flex items-center gap-x-5 
+            lg:dark:text-dark-social-white lg:dark:bg-dark-social-background 
+            md:dark:text-dark-social-white md:dark:bg-dark-social-background" >
             <ul className="lg:hidden md:hidden">
               <li className="inline-block">
                 {currentUser ? (
@@ -140,11 +148,15 @@ function Header() {
               {t('header.firstStrong')}</strong> {t('header.firstTerra')}
           </figcaption>
         </figure>
-        <figcaption className="lg:text-left lg:max-w-44 lg:hidden md:text-left md:max-w-44 md:hidden text-center">
+        <figcaption
+          className="lg:text-left lg:max-w-44 lg:hidden 
+          lg:dark:text-dark-social-white md:text-left md:max-w-44 md:hidden text-center">
           {t('header.secondFig')} <strong className="text-social-brand">
             {t('header.secondStrong')}</strong> {t('header.secondTerra')}
         </figcaption>
-        <nav className="lg:inline-block md:inline-block hidden">
+        <nav
+          className="lg:inline-block md:inline-block hidden 
+            lg:dark:text-dark-social-white md:dark:text-dark-social-white">
           <ul className="lg:flex lg:items-center lg:gap-4 md:flex md:items-center md:gap-4">
             <li>
               <AnimatedLink text={t('header.animatedText')} to="/" />
@@ -165,8 +177,8 @@ function Header() {
                     <img
                       className={`lg:w-12 lg:h-12 rounded-full object-cover
                         cursor-pointer transition duration-500 hover:brightness-150 
-                        md:w-12 md:h-12 w-12 h-12 ${isOnHighlightedPage ? 
-                          'ring-2 ring-social-brand' : '' 
+                        md:w-12 md:h-12 w-12 h-12 ${isOnHighlightedPage ?
+                          'ring-2 ring-social-brand' : ''
                         }`}
                       src={avatar}
                       alt="Profile"
@@ -189,25 +201,25 @@ function Header() {
                       {
                         id: 2,
                         trigger: () => navigate('/privacy'),
-                        component: <DropdownItem 
-                          text={t('header.secondDropdownText')} 
-                          edit="" 
+                        component: <DropdownItem
+                          text={t('header.secondDropdownText')}
+                          edit=""
                           icon={<ShieldAlert />} />,
                       },
                       {
                         id: 3,
                         trigger: async () => navigate('/chat'),
-                        component: <DropdownItem 
+                        component: <DropdownItem
                           text={t('header.thirdDropdownText')}
-                          edit="" 
+                          edit=""
                           icon={<Star />} />,
                       },
                       {
                         id: 4,
                         trigger: async () => navigate('/admin'),
-                        component: <DropdownItem 
+                        component: <DropdownItem
                           text={t('header.forthDropdownText')}
-                          edit="" 
+                          edit=""
                           icon={<LockKeyhole />} />,
                       },
                       {
@@ -231,7 +243,9 @@ function Header() {
               )}
             </li>
             <li>
-              <ReactFlagsSelect 
+              <ReactFlagsSelect
+                showSelectedLabel={true}
+                selectButtonClassName="flags"
                 countries={['US', 'ES', 'BR']}
                 placeholder={t('header.languageText')}
                 onSelect={handleLanguageSelection}

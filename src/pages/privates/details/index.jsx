@@ -28,7 +28,7 @@ function DetailsUser() {
     { id: 1, nome: 'Lobinho' },
     { id: 2, nome: 'Junior' }
   ];
-  
+
   const estados = [
     { sigla: 'AC', nome: 'Acre' },
     { sigla: 'AL', nome: 'Alagoas' },
@@ -83,14 +83,14 @@ function DetailsUser() {
 
   return (
     <PageTransition>
-      <section className="pt-12 pb-20">
+      <section className="pt-12 pb-20 dark:bg-dark-social-background dark:text-dark-social-white">
         <div className="max-w-[1024px] mx-auto">
           <div className="flex items-center justify-between">
             <SectionTitle
               className="pt-12 pb-14 whitespace-nowrap"
               content="Dados Detalhados"
             />
-            <Button  
+            <Button
               variant={isActive ? 'green' : 'red'}
               content={isActive ? 'Ativo' : 'Inativo'}
               onClick={toggleStatus}
@@ -99,32 +99,43 @@ function DetailsUser() {
           <Container>
             <div className="py-20 px-16">
               <section>
-                <h2 className="text-lg font-semibold mb-4">Informações pessoais</h2>
+                <h2 className="text-lg font-semibold mb-4 ">Informações pessoais</h2>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Nome completo</label>
-                    <input 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Nome completo</label>
+                    <input
                       type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                 dark:bg-dark-social-background dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Data de nascimento</label>
-                    <input 
-                      type="date" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Data de nascimento</label>
+                    <input
+                      type="date"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
-                      disabled 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
+                      disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">CPF</label>
-                    <input 
-                      type="number" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">CPF</label>
+                    <input
+                      type="number"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
@@ -132,73 +143,101 @@ function DetailsUser() {
                     <Sexo />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Telefone</label>
-                    <input 
-                      type="number" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                      dark:text-dark-social-white">Telefone</label>
+                    <input
+                      type="number"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
-                                font-semibold brightness-125 rounded-md"
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">E-mail</label>
-                    <input 
-                      type="email" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">E-mail</label>
+                    <input
+                      type="email"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">CEP</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">CEP</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Rua</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Rua</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Bairro</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Bairro</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Cidade</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Cidade</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Estado</label>
+                    <label
+                      className="block text-sm font-medium text-social-blac
+                    dark:text-dark-social-white">Estado</label>
                     <div className="mt-1 relative">
                       <select
                         className="block w-full px-3 py-2 bg-gray-100 
-                                  border border-gray-300 rounded-md appearance-none"
+                                  border border-gray-300 rounded-md appearance-none
+                                  dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                         id="estados"
                         value={estadoSelecionadoAdulto}
                         disabled
                         onChange={handleSelectChangeAdulto}
                       >
-                        {estados.map((estado) => 
-                          <option 
-                            key={estado.sigla} 
+                        {estados.map((estado) =>
+                          <option
+                            key={estado.sigla}
                             value={estado.sigla}
                           >
                             {estado.nome}
@@ -208,25 +247,31 @@ function DetailsUser() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Número da residência</label>
-                    <input 
-                      type="number" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Número da residência</label>
+                    <input
+                      type="number"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                 </div>
                 <div className="mt-4">
                   <label className="inline-flex items-center">
-                    <input 
-                      type="checkbox" 
-                      className="h-5 w-5 rounded text-social-brand border-social-gray focus:ring-social-brand" 
-                      checked={isVolunteer} 
+                    <input
+                      type="checkbox"
+                      className="h-5 w-5 rounded text-social-brand border-social-gray focus:ring-social-brand"
+                      checked={isVolunteer}
                       onChange={(e) => setIsVolunteer(e.target.checked)}
                       disabled={!isActive}
                     />
-                    <span className="ml-2 text-social-black">Voluntário</span>
+                    <span
+                      className="ml-2 text-social-black
+                    dark:text-dark-social-white">Voluntário</span>
                   </label>
                 </div>
                 <AnimatePresence>
@@ -237,7 +282,9 @@ function DetailsUser() {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <label className="block text-sm font-medium text-social-black mb-1">Ramo</label>
+                      <label
+                        className="block text-sm font-medium text-social-black 
+                      dark:text-dark-social-white mb-1">Ramo</label>
                       <select
                         className="block px-20 py-2 bg-white border border-social-gray rounded-md shadow-sm 
                                   focus:outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -258,29 +305,41 @@ function DetailsUser() {
                 <h2 className="text-lg font-semibold mb-4">Informações do escoteiro</h2>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Nome completo</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Nome completo</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Data de nascimento</label>
-                    <input 
-                      type="date" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Data de nascimento</label>
+                    <input
+                      type="date"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
-                      disabled 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
+                      disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">CPF</label>
-                    <input 
-                      type="number" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">CPF</label>
+                    <input
+                      type="number"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray appearance-none
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
@@ -288,47 +347,67 @@ function DetailsUser() {
                     <Sexo />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">E-mail</label>
-                    <input 
-                      type="email" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">E-mail</label>
+                    <input
+                      type="email"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">CEP</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">CEP</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Rua</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black 
+                    dark:text-dark-social-white">Rua</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
+                                font-semibold brightness-125 rounded-md 
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Bairro</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                                 dark:text-dark-social-white">Bairro</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Cidade</label>
-                    <input 
-                      type="text" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                                 dark:text-dark-social-white">Cidade</label>
+                    <input
+                      type="text"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md"
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
@@ -337,15 +416,17 @@ function DetailsUser() {
                     <div className="mt-1 relative">
                       <select
                         className="block w-full px-3 py-2 bg-gray-100 
-                                  border border-gray-300 rounded-md appearance-none"
+                                  border border-gray-300 rounded-md appearance-none
+                                  dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                         id="estados"
                         value={estadoSelecionadoEscoteiro}
                         disabled
                         onChange={handleSelectChangeEscoteiro}
                       >
-                        {estados.map((estado) => 
-                          <option 
-                            key={estado.sigla} 
+                        {estados.map((estado) =>
+                          <option
+                            key={estado.sigla}
                             value={estado.sigla}
                           >
                             {estado.nome}
@@ -355,22 +436,28 @@ function DetailsUser() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Número da residência</label>
-                    <input 
-                      type="number" 
+                    <label
+                      className="block text-sm font-medium text-social-black
+                    dark:text-dark-social-white">Número da residência</label>
+                    <input
+                      type="number"
                       className="mt-1 block w-full px-3 py-2 bg-social-gray 
-                                font-semibold brightness-125 rounded-md" 
+                                font-semibold brightness-125 rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       disabled
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-social-black">Status</label>
+                    <label
+                      className="block text-sm font-medium text-social-black 
+                    dark:text-dark-social-white">Status</label>
                     <button
                       type="button"
                       className={`mt-1 flex justify-center items-center w-full px-3 py-2 
-                      font-semibold transition duration-500 hover:brightness-95 rounded-md ${
-                      isScoutActive ? 'bg-social-brand text-social-white' : 'bg-social-red text-social-white'
-                    }`}
+                      font-semibold transition duration-500 hover:brightness-95 rounded-md ${isScoutActive
+                          ? 'bg-social-brand text-social-white' : 'bg-social-red text-social-white'
+                        }`}
                       onClick={toggleScoutStatus}
                       disabled={!isActive}
                     >
@@ -379,19 +466,23 @@ function DetailsUser() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-social-black">Ramo</label>
+                  <label
+                    className="block text-sm font-medium text-social-black
+                  dark:text-dark-social-white">Ramo</label>
                   <div className="mt-1 relative">
                     <select
                       className="block w-60 px-3 py-2 bg-social-white
-                                border border-social-gray rounded-md"
+                                border border-social-gray rounded-md
+                                dark:bg-dark-social-background
+                                 dark:text-dark-social-white"
                       id="ramos"
                       value={ramoSelecionadoEscoteiro}
                       onChange={handleSelectChangeRamoEscoteiro}
                       disabled={!isActive || !isScoutActive}
                     >
-                      {ramos.map((ramo) => 
-                        <option 
-                          key={ramo.id} 
+                      {ramos.map((ramo) =>
+                        <option
+                          key={ramo.id}
                           value={ramo.id}
                         >
                           {ramo.nome}
@@ -403,12 +494,12 @@ function DetailsUser() {
               </section>
               <div className="flex justify-end items-center gap-x-4">
                 <Link
-                  to="/admin" 
+                  to="/admin"
                   className="text-social-red transition duration-500 hover:brightness-50"
                 >
                   Voltar
                 </Link>
-                <Button 
+                <Button
                   variant="green"
                   content="Atualizar"
                 />

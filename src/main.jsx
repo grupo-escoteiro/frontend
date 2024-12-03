@@ -10,6 +10,7 @@ import { createRoot } from 'react-dom/client';
 
 import { SideContact } from './components/side-contact';
 import { ToTop } from './components/to-top';
+import { Weather } from './components/weather';
 import { AccessibilityPanel } from './components/accessibility-panel/index.jsx';
 
 import { AccessibilityContextProvider } from './contexts/accessibility-context.jsx';
@@ -21,26 +22,29 @@ import App from './App.jsx';
 import ptBR from './internacionalization/pt-BR.json';
 import en from './internacionalization/en.json';
 import es from './internacionalization/es.json';
+import { Theme } from './components/theme/index.jsx';
+
+import { ThemeContextProvider } from './contexts/theme.jsx';
 
 i18n
-  .use(initReactI18next) 
+  .use(initReactI18next)
   .use(LanguageDetector)
   .init({
     resources: {
       'pt-BR': {
         translation: ptBR
       },
-      'en':{
+      'en': {
         translation: en
       },
-      'es':{
+      'es': {
         translation: es
       }
     },
-    lng: 'pt-BR', 
+    lng: 'pt-BR',
     fallbackLng: 'pt-BR',
     interpolation: {
-      escapeValue: false 
+      escapeValue: false
     },
     debug: true,
     detection: {
@@ -52,16 +56,20 @@ i18n
 createRoot(document.getElementById('root')).render(
   <>
     <StrictMode>
-      <AccessibilityContextProvider>
-        <App />
-        <AccessibilityPanel />
-        <Toaster
-          richColors
-          expand={true}
-        />
-      </AccessibilityContextProvider>
-      <SideContact />
-      <ToTop />
+      <ThemeContextProvider>
+        <AccessibilityContextProvider>
+          <App />
+          <AccessibilityPanel />
+          <Toaster
+            richColors
+            expand={true}
+          />
+        </AccessibilityContextProvider>
+        <SideContact />
+        <ToTop />
+        <Weather />
+        <Theme />
+      </ThemeContextProvider>
     </StrictMode>
   </>
 );

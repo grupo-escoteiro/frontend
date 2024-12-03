@@ -122,11 +122,11 @@ function ChatGemini() {
       <section
         className="lg:pt-12 lg:pb-20 lg:min-h-full lg:flex
                    md:pt-12 md:pb-20 md:min-h-full md:flex
-                   pt-12 pb-20 min-h-full flex"
+                   pt-12 pb-20 min-h-full flex  lg:dark:bg-dark-social-background lg:dark:text-dark-social-white"
       >
         <div
           className="lg:max-w-[1024px] lg:mx-auto lg:flex-1
-                     md:max-w-[620px] md:mx-auto md:flex-1
+                     md:max-w-[620px] md:mx-auto md:flex-1s
                      max-w-[320px] mx-auto flex-1">
           <div className="flex items-center justify-between">
             <SectionTitle content="Chat" />
@@ -190,6 +190,8 @@ function ChatGemini() {
                   className={`
                     resize-none w-full outline-none border-social-brand border-px
                     text-social-brand p-2 rounded placeholder:text-social-gray
+                     dark:bg-dark-social-background dark:text-dark-social-white
+                     dark:border-x-2
                   `}
                   placeholder="Faça uma pergunta, peça uma história e muito mais..."
                   name="message"

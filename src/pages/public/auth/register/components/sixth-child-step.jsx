@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 
 function SixthChildStep() {
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
   const {
     stepsAmount,
     currentStep,
@@ -65,7 +65,8 @@ function SixthChildStep() {
                 name="cep"
                 id="cep"
                 placeholder={t('register.sixthStepFirstPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -80,7 +81,8 @@ function SixthChildStep() {
                 name="rua"
                 id="rua"
                 placeholder={t('register.sixthStepSecondPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
           </fieldset>
@@ -101,7 +103,8 @@ function SixthChildStep() {
                 name="bairro"
                 id="bairro"
                 placeholder={t('register.sixthStepThirdPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -116,7 +119,8 @@ function SixthChildStep() {
                 name="cidade"
                 id="cidade"
                 placeholder={t('register.sixthStepFourthPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -126,7 +130,10 @@ function SixthChildStep() {
               >
                 {t('register.sixthStepFifithCadastro')}
               </label>
-              <select id="estado" className="w-full h-16 px-4 py-2 rounded border border-social-gray">
+              <select
+                id="estado"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+              dark:bg-dark-social-background dark:text-dark-social-white">
                 <option>SP</option>
                 <option>RJ</option>
                 <option>AM</option>
@@ -145,7 +152,8 @@ function SixthChildStep() {
               name="complemento"
               id="complemento"
               placeholder={t('register.sixthStepFifithPlace')}
-              className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+              className="w-full h-16 px-4 py-2 rounded border border-social-gray
+              dark:bg-dark-social-background dark:text-dark-social-white"
             />
           </fieldset>
           <fieldset

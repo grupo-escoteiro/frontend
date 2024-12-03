@@ -1,7 +1,7 @@
 import { string } from 'prop-types';
 
 function SectionTitle({ content, className }) {
-  return(
+  return (
     <h2 className={`lg:text-3xl lg:font-bold text-2xl font-bold ${className}`}>{content}</h2>
   );
 }

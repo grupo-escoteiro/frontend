@@ -41,7 +41,7 @@ function Home() {
       <section
         className="lg:pt-12 lg:pb-16
                    md:pt-12 md:pb-16
-                   pt-12 pb-16"
+                   pt-12 pb-16 dark:bg-dark-social-gray dark:text-social-white"
       >
         <div
           className="lg:max-w-[1024px] lg:mx-auto
@@ -49,7 +49,7 @@ function Home() {
                      max-w-[320px] mx-auto"
         >
           <div className="w-full aspect-w-4 aspect-h-3 mb-10 shadow-default">
-            <iframe 
+            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.4580113466154
               !2d-48.361909424951634!3d-21.607069280190956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768
               !4f13.1!3m3!1m2!1s0x94b91e2ab58bbe25%3A0xc7f77f012140891d!2sEscola%20Estadual

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 function OurHistory() {
 
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const imagesData = [
     {
@@ -19,7 +19,7 @@ function OurHistory() {
       src: '/gallery/imagem-2.jpg',
       title: 'home.ourHistory.secondImageTitle',
       date: '31/10/2023',
-      text:  'home.ourHistory.secondImageDescription'
+      text: 'home.ourHistory.secondImageDescription'
     },
     {
       src: '/gallery/imagem-3.jpg',
@@ -55,7 +55,7 @@ function OurHistory() {
 
   const imageRefs = useRef([]);
   const [selectedImage, setSelectedImage] = useState(imagesData[0]);
- 
+
 
   function handleImageClick(imageData, e) {
     setSelectedImage(imageData);
@@ -120,8 +120,9 @@ function OurHistory() {
 
   return (
     <section
-      className="lg:bg-light-social-brand lg:pt-12 lg:pb-28
-                   md:bg-light-social-brand md:pt-12 md:pb-28
+      className="lg:bg-light-social-brand dark:bg-dark-social-background dark:text-dark-social-white 
+                  lg:pt-12 lg:pb-28
+                   md:bg-light-social-brand md:dark:bg-dark-social-background md:pt-12 md:pb-28
                    bg-light-social-brand pt-12 pb-16"
     >
       <div
@@ -211,7 +212,7 @@ function OurHistory() {
                     {t('home.ourHistory.cta.span.firstPart')}
                   </span>{' '}
                   {t('home.ourHistory.cta.span.secondPart')}{' '}
-                  <span className="text-social-brand font-semibold"> 
+                  <span className="text-social-brand font-semibold">
                     {t('home.ourHistory.cta.span.thirdPart')}
                   </span>
                 </p>

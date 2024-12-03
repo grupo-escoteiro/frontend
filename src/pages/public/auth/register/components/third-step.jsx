@@ -8,7 +8,7 @@ import { registerContext } from '../../../../../contexts/register-context';
 import { useTranslation } from 'react-i18next';
 
 function ThirdStep() {
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
   const {
     stepsAmount,
     currentStep,
@@ -61,7 +61,8 @@ function ThirdStep() {
                 name="cep"
                 id="cep"
                 placeholder={t('register.thirdStepFirstPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -76,7 +77,8 @@ function ThirdStep() {
                 name="rua"
                 id="rua"
                 placeholder={t('register.thirdStepSecondPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
           </fieldset>
@@ -97,7 +99,8 @@ function ThirdStep() {
                 name="bairro"
                 id="bairro"
                 placeholder={t('register.thirdStepThirdPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -112,7 +115,8 @@ function ThirdStep() {
                 name="cidade"
                 id="cidade"
                 placeholder={t('register.thirdStepFourthPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -122,7 +126,10 @@ function ThirdStep() {
               >
                 {t('register.thirdStepFifithCadastro')}
               </label>
-              <select id="estado" className="w-full h-16 px-4 py-2 rounded border border-social-gray">
+              <select
+                id="estado"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+              dark:bg-dark-social-background dark:text-dark-social-white">
                 <option>SP</option>
                 <option>RJ</option>
                 <option>AM</option>
@@ -141,7 +148,8 @@ function ThirdStep() {
               name="complemento"
               id="complemento"
               placeholder={t('register.thirdStepFifithPlace')}
-              className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+              className="w-full h-16 px-4 py-2 rounded border border-social-gray
+              dark:bg-dark-social-background dark:text-dark-social-white"
             />
           </fieldset>
           <fieldset

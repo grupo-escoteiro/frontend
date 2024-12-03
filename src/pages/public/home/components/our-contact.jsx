@@ -7,7 +7,7 @@ import { contactUsFormScheme } from '../../../../helpers/contact-us-validations-
 import { useTranslation } from 'react-i18next';
 
 function OurContact() {
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const {
     register,
@@ -27,7 +27,9 @@ function OurContact() {
   }
 
   return (
-    <section className="bg-light-social-blue py-16">
+    <section
+      className="bg-light-social-blue py-16 dark:bg-dark-social-background
+      dark:text-dark-social-white">
       <div
         className="lg:max-w-[1024px] lg:mx-auto
                    md:max-w-[620px] md:mx-auto
@@ -67,12 +69,13 @@ function OurContact() {
           <fieldset
             className="lg:flex lg:flex-col lg:row-span-2
                        flex flex-col row-span-2">
-            <label className="font-medium text-[16px] text-social-black">Mensagem</label>
+            <label className="font-medium text-[16px] text-social-black dark:text-dark-social-white">Mensagem</label>
             <textarea
               {...register('content')}
               className={`
                 my-2 rounded py-5 px-4 h-full
                 placeholder:font-regular placeholder:text-sm placeholder:text-social-gray
+                dark:bg-dark-social-gray dark:text-dark-social-white
                 resize-none focus:outline-none text-social-black
                 ${!errors.content?.message
                   ? 'border border-solid border-social-gray text-social-gray'

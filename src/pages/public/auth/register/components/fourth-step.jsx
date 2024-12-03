@@ -9,7 +9,7 @@ import { EJourney } from '../../../../../helpers/enums/journey';
 import { useTranslation } from 'react-i18next';
 
 function FourthStep() {
-  const { t } = useTranslation ();
+  const { t } = useTranslation();
 
   const {
     stepsAmount,
@@ -64,7 +64,8 @@ function FourthStep() {
                 name="email"
                 id={t('register.fourthStepFirstPlace')}
                 placeholder="seuemail@gmail.com"
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
           </fieldset>
@@ -85,7 +86,8 @@ function FourthStep() {
                 name="password"
                 id="senha"
                 placeholder={t('register.fourthStepSecondPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -100,7 +102,8 @@ function FourthStep() {
                 name="passwordConfirmation"
                 id="confirm-password"
                 placeholder={t('register.fourthStepThirdPlace')}
-                className="w-full h-16 px-4 py-2 rounded border border-social-gray"
+                className="w-full h-16 px-4 py-2 rounded border border-social-gray
+                dark:bg-dark-social-background dark:text-dark-social-white"
               />
             </div>
           </fieldset>
@@ -139,7 +142,7 @@ function FourthStep() {
             <Button
               variant="green"
               type={journey === EJourney.voluntary ? 'submit' : 'button'}
-              content={journey === EJourney.voluntary ? t('register.fourthStepSecondtButtom') 
+              content={journey === EJourney.voluntary ? t('register.fourthStepSecondtButtom')
                 : t('register.fourthStepSecondContentButtom')}
               onClick={journey === EJourney.voluntary ? null : changeRegisterStep}
             />

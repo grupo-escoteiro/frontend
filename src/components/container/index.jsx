@@ -6,6 +6,8 @@ function Container({ children, className }) {
       className={`
         bg-social-white rounded shadow-default max-w-6xl
         overflow-hidden ${className}
+        dark:bg-dark-social-background dark:text-dark-social-white
+        dark:shadow-dark-social-white
       `}
     >
       {children}
