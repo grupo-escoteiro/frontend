@@ -6,6 +6,7 @@ function AuthLayout() {
       className={`
         grid place-items-center lg:h-screen lg:w-screen lg:py-0
         lg:bg-[url('/register-flow/background-auth-flow.png')]
+        dark:bg-none
         md:bg-[url('/register-flow/box-side-background.png')]
         md:py-0 md:h-screen md:w-screen
         bg-[url('/register-flow/box-side-background.png')]

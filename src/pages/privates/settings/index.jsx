@@ -19,9 +19,9 @@ function Settings() {
   ];
 
   return (
-    <PageTransition>
+    <PageTransition className="flex flex-col h-screen">
       <Header />
-      <section className="pt-12 pb-16 dark:bg-dark-social-background dark:text-dark-social-white">
+      <section className="pt-12 pb-16 dark:bg-dark-social-background dark:text-dark-social-white h-full flex-1">
         <div
           className="lg:max-w-[1024px] lg:mx-auto
                      md:max-w-[620px] md:mx-auto
