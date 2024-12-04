@@ -12,7 +12,7 @@ function Theme() {
       className={`
       fixed right-[10px] rounded-md lg:top-1/2 lg:translate-y-[83px] bg-dark-social-gray dark:bg-dark-social-white p-2
       cursor-pointer hover:brightness-90 z-50 transition-all lg:inline-block 
-      md:top-1/2 md:bottom-auto md:translate-y-[32px] -translate-y-1/4 bottom-28
+      md:top-1/2 md:bottom-auto md:translate-y-[32px] -translate-y-1/4 bottom-24
     `}>
       <SunMoon className='text-white dark:text-dark-social-gray' />
     </div>

@@ -9,7 +9,7 @@ function Weather() {
       className={`
       fixed right-[10px] rounded-md lg:top-1/2 lg:-translate-y-[73px] bg-social-gray p-2
       cursor-pointer hover:brightness-90 z-50 transition-all lg:inline-block
-      md:top-1/2 md:-translate-y-[73px] md:bottom-auto -translate-y-1/4 bottom-[164px]
+      md:top-1/2 md:-translate-y-[73px] md:bottom-auto -translate-y-1/4 bottom-36
     `}>
       <Cloud className='text-social-white' />
     </div>
