@@ -60,7 +60,7 @@ function Header() {
            md:bg-light-social-brand 
            md:dark:bg-dark-social-background 
            md:dark:text-dark-social-white md:pb-0 bg-light-social-brand pb-8
-           dark:bg-dark-social-background">
+           dark:bg-dark-social-background dark:text-dark-social-white">
       <div
         className="lg:max-w-[1024px] lg:mx-auto lg:py-7 lg:px-0 lg:flex 
               lg:justify-between lg:items-center md:max-w-[620px] md:mx-auto 

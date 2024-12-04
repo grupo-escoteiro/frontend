@@ -12,7 +12,7 @@ function Footer() {
       className="lg:w-full lg:bg-light-social-brand
                  md:w-full md:bg-light-social-brand
                  w-full bg-light-social-brand 
-                 dark:bg-dark-social-background"
+                 dark:bg-dark-social-background dark:text-dark-social-white"
     >
       <div
         className="lg:max-w-[1024px] lg:mx-auto

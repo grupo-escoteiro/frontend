@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef } from 'react';
 import { bool, func, node } from 'prop-types';
 
 import { BackdropModal } from './backdrop';
-
 function Modal({
   children,
   open,
