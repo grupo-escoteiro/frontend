@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: Firebase deploy
 
 on:
   push:
@@ -18,14 +18,13 @@ jobs:
         with:
           version: latest
 
-      - name: Install Vercel CLI
-        run: npm i -g vercel
+      - name: Install dependencies
+        run: npm install
 
       - name: Make Build
         run: npm run build
 
-      - name: Deploy to Vercel
-        run: vercel --token ${{ secrets.TOKEN }} --yes
+      - name: make deploy
+        run: npm run deploy
         env: 
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.prj_WXx9cJqbI8qVdPWZzdlJtG8m6s6N }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
