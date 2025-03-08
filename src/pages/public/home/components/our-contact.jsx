@@ -22,8 +22,14 @@ function OurContact() {
     }
   });
 
-  function handleContactSubmit(data) {
-    console.log(data);
+  async function handleContactSubmit(data) {
+    await fetch('https://localhost:7033/teste', {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
   }
 
   return (
